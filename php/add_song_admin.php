@@ -53,7 +53,7 @@
                     <div>
 
                         <label for="URL" class="">URL</label>
-                        <input type="url" name="URL" id="" class="" required="required" />
+                        <input type="url" name="URL" id="" class="" required="required"/>
 
                     </div>
 
@@ -72,12 +72,12 @@
                                     <div>
                                         <span>De</span>
                                         <div>
-                                            <input id="" type="text" name="Minutes" class="" required="required">
+                                            <input id="" type="number" name="Minutes" class="" required="required" min="0" max="10">
                                             <label for="Minutes" class="">min</label>
                                         </div>
 
                                         <div>
-                                            <input id="" type="text" name="Secondes" class="" required="required">
+                                            <input id="" type="number" name="Secondes" class="" required="required" min="00" max="59" >
                                             <label for="Secondes" class="">s</label>
                                         </div>
                                     </div>
@@ -85,12 +85,12 @@
                                     <div>
                                         <span>A</span>
                                         <div>
-                                            <input id="" type="text" name="MinutesFin" class="" required="required">
+                                            <input id="" type="number" name="MinutesFin" class="" required="required" min="0" max="10">
                                             <label for="MinutesFin" class="">min</label>
                                         </div>
 
                                         <div>
-                                            <input id="" type="text" name="SecondesFin" class="" required="required">
+                                            <input id="" type="number" name="SecondesFin" class="" required="required" min="00" max="59">
                                             <label for="SecondesFin" class="">s</label>
                                         </div>
                                     </div>
@@ -101,12 +101,12 @@
 
                             <div>
                                 <label for="Paroles" class="">Paroles</label>
-                                <input id="" type="text" name="Paroles" class="" required="required">
+                                <input id="" type="text" name="Paroles" class="" required="required" maxlength="100">
                             </div>
 
                             <div>
                                 <label for="Reponse0" class="">Réponse</label>
-                                <input id="" type="text" name="Reponse0" class="" required="required">
+                                <input id="" type="text" name="Reponse0" class="" required="required" maxlength="75">
                             </div>
 
                             <div>
@@ -117,17 +117,17 @@
 
                                 <div>
                                     <label for="Reponse1" class="">1</label>
-                                    <input id="" type="text" name="Reponse1" class="" required="required">
+                                    <input id="" type="text" name="Reponse1" class="" required="required" maxlength="75">
                                 </div>
 
                                 <div>
                                     <label for="Reponse2" class="">2</label>
-                                    <input id="" type="text" name="Reponse2" class="" required="required">
+                                    <input id="" type="text" name="Reponse2" class="" required="required" maxlength="75">
                                 </div>
 
                                 <div>
                                     <label for="Reponse3" class="">3</label>
-                                    <input id="" type="text" name="Reponse3" class="" required="required">
+                                    <input id="" type="text" name="Reponse3" class="" required="required" maxlength="75">
                                 </div>
 
                             </div>
