@@ -39,6 +39,21 @@
                                       ":paramBadRep3" => $_POST["badRep1"],));
         
             // GESTION AUTEUR
+            $requeteSQL = "SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist=" . $_POST["artistSong"];
+            echo("SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist='" . $_POST["artistSong"]) . "'";
+            $statement = $pdo->query($requeteSQL);
+            if($statement != false) {
+                $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                $requeteSQL = "INSERT INTO A_UN(idSong, idArtist) VALUES (" . $idSong . ", " . $ligne["idArtist"] . ")";
+                $statement = $pdo->query($requeteSQL);
+            } else {
+                $requeteSQL = "INSERT INTO ARTISTES(nameArtist) VALUES (:paramArtistSong)";
+                $statement = $pdo->prepare($requeteSQL);
+                $statement->execute(array(":paramArtistSong" => $_POST["artistSong"]));
+                
+                $requeteSQL = "INSERT INTO A_UN(idSong, idArtist) VALUES (" . $idSong . ", LAST_INSERT_ID())";
+                $statement = $pdo->query($requeteSQL);
+            }
                         
         // ETAPE 3 : Déconnecter du serveur
             $pdo = null;
@@ -76,8 +91,8 @@
 
                     </div>
                     <div>
-                        <label for="interpreteSong" class="">Nom de l'interprète</label>
-                        <input type="text" name="interpreteSong" id="interpreteSong" class="" required="required" maxlength="50" />
+                        <label for="artistSong" class="">Nom de l'interprète</label>
+                        <input type="text" name="artistSong" id="artistSong" class="" required="required" maxlength="50" />
                     </div>
 
                     <div>
