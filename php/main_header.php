@@ -1,32 +1,39 @@
 <?php
 	header("Content-type: text/html; charset: UTF-8");
 ?>
-    <header>
-        <nav>
 
-            <ul>
+    <head>
+        <link rel="stylesheet" href="../header.css" type="text/css" media="screen" />
+    </head>
 
-                <li>
-                    <a href="index.php">Accueil</a>
-                </li>
+    <body>
+        <header class="mainHeader">
+            <nav>
 
-                <li>
-                    <a href="">Jouer</a>
-                </li>
+                <ul>
 
-                <li>
-                    <img />
-                </li>
+                    <li>
+                        <a href="index.php">Accueil</a>
+                    </li>
 
-                <li>
-                    <a href="rank.php">Classement</a>
-                </li>
+                    <li>
+                        <a href="">Jouer</a>
+                    </li>
 
-                <li>
-                    <a href="login.php">Connexion</a>
-                </li>
+                    <li class="mainLogo">
+                        <img src="../images/logo.png"/>
+                    </li>
 
-            </ul>
+                    <li>
+                        <a href="rank.php">Classement</a>
+                    </li>
 
-        </nav>
-    </header>
+                    <li>
+                        <a href="login.php">Connexion</a>
+                    </li>
+
+                </ul>
+
+            </nav>
+        </header>
+    </body>
