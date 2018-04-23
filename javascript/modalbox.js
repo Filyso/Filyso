@@ -1,32 +1,30 @@
-"use strict";
-
-
-
 document.addEventListener("DOMContentLoaded", initialiser);
 
 
-
 function initialiser(evt) {
+    
+    var btn = document.getElementById("myBtn");
+    myBtn.addEventListener("onclick", faireApparaitre);
 
-    var box = document.getElementById("myModal");
+    var modal = document.getElementById("myModal");
 
-    var button = document.getElementById("modalBoxButton");
-    button.addEventListener("onclick", faireApparaitre)
-
+    
     var span = document.getElementsByClassName("close")[0];
-    span.addEventListener("onclick", faireDisparaitre)
 
 }
 
 function faireApparaitre (evt) {
+    console.log(modal);
     modal.style.display = "block";
 }
+
 
 function faireDisparaitre (evt) {
     modal.style.display = "none";
 }
 
-window.onclick = function(event) {
+
+window.onclick = function () {
     if (event.target == modal) {
         modal.style.display = "none";
     }
