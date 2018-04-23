@@ -10,10 +10,17 @@
                 $pdo->query("SET CHARACTER SET 'utf8'");
 
             // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
+                // AJOUT CHANSON
                 $requeteSQL = "INSERT INTO CHANSONS(nameSong, linkVideo, lang) VALUES (" . $_POST["song"] . "," . $_POST["linkVideo"] . "," . $_POST["langSong"] . ")";
+                
+                $statement = $pdo->query($requeteSQL);
+        
+                // AJOUT 
+                $requeteSQL = "INSERT INTO APPARTIENT_A_UNE(idCat) VALUES (" . $_POST[""]. ")";
+                
                 $statement = $pdo->query($requeteSQL);
             
-        // ETAPE 4 : Déconnecter du serveur
+            // ETAPE 4 : Déconnecter du serveur
                 $pdo = null;
     }
 ?>
@@ -40,7 +47,7 @@
 
                 <h2>Ajouter une chanson !</h2>
 
-                <form action="" method="post">
+                <form action="add_song_admin.php" method="post">
 
                     <div>
 
