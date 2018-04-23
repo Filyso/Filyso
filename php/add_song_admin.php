@@ -40,11 +40,12 @@
 
                         <label for="Cat" class="">Catégorie</label>
                         <select id="" class="" size="1" type="text" name="Cat">
-
-                        <option>rock
-                        <option>disney
-                        <option>rap
-                        <option>variété française
+                        
+                        <option value="">Choisissez une catégorie</option>
+                        <option value="rock">rock
+                        <option value="disney">disney
+                        <option value="rap">rap
+                        <option value="rap">variété française
 
                     </select>
 
