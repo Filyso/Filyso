@@ -13,6 +13,7 @@ body {
 
 .mainHeader nav {
     background-color: #2D2D2D;
+    margin: 0;
 }
 
 .mainHeader img {
