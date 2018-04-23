@@ -1,17 +1,12 @@
-<!DOCTYPE html>
-<html lang="fr">
-
+<?php
+	header("Content-type: text/html; charset: UTF-8");
+?>
 <head>
-    <meta charset="utf-8" />
-    <title> About </title>
-    <meta name="description" content="À propos de Filyso" />
+    <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
 </head>
 
 <body>
-    <header>
-    </header>
-    <nav>
-    </nav>
+    <?php include("./main_header.php"); ?>
     <main>
         <div class="equipe">
             <h2>Notre équipe</h2>
@@ -69,6 +64,7 @@
             <p>blablabla</p>
         </div>
     </main>
+    <?php include("./main_footer.php"); ?>
 </body>
 
 </html>
