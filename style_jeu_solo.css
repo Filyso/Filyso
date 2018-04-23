@@ -1,0 +1,24 @@
+/********* Style Jeu en Solo **********/
+
+section {
+    display:flex;
+}
+.photoProfil img{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: solid 5px aqua;
+    border-radius: 50%;
+}
+.score{
+    width: 500px;
+    height: 20px;
+    transform: rotateZ(-90deg);
+    margin: 0;
+    padding: 0;
+}
+
+section div:first-child {
+    display: flex;
+    flex-direction: column;
+}
