@@ -12,23 +12,25 @@
         <title></title>
         <meta name="" content="">
         <link rel="stylesheet" href="style.css">
-        <link rel="stylecheet" href="selec_game.css">
+        <link rel="stylesheet" href="../selec_game.css">
     </head>
 
     <body>
        <?php include("./main_header.php")?>
+       
         <main class="mainSelect">
             <h1>Choisir le mode de jeu</h1>
-            <div>
+            <div class="multi">
                 <a href="">MULTI</a>
                 <p>Jouez en ligne contre d'autres personnes.</p>
             </div>
-            <div>
-                <a href="/php/pre_game_page.php">SOLO<br>Jouez seul pour vous entraîner.</a>
+            <div class="solo">
+                <a href="./pre_game_page.php">SOLO</a>
                 <p>Jouez seul pour vous entraîner.</p>
             </div>
 
         </main>
+        
         <?php include("./main_footer.php")?>
     </body>
 

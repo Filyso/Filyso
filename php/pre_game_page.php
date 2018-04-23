@@ -9,7 +9,7 @@
 
     </head>
     <body>
-        <?php //include("./main_header.php"); ?>
+        <?php include("./main_header.php"); ?>
         <from action="" methid="post">
             
             <label for="français">français</label>
@@ -29,6 +29,6 @@
             <button type="submit">Envoyer</button>
             
         </from>
-        <?php //include("./main_footer.php"); ?>
+        <?php include("./main_footer.php"); ?>
     </body>
 </html>
