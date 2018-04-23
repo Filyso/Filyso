@@ -24,7 +24,7 @@
 
                 <h2>Ajouter une chanson !</h2>
 
-                <form action="" method="get">
+                <form action="" method="post">
 
                     <div>
 
@@ -60,7 +60,7 @@
                                 $ligne = $statement->fetch(PDO::FETCH_ASSOC);
                                 while($ligne != false) {
                         ?>
-                            <option value="rock">rock</option>
+                            <option value="<?php echo($ligne["nameCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
                             
                         <?php
                                     $ligne = $statement->fetch(PDO::FETCH_ASSOC);
