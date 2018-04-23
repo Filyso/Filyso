@@ -1,5 +1,21 @@
 <?php
 	header("Content-type: text/html; charset: UTF-8");
+
+    if(isset($_POST["chanson"])) {
+        <?php
+            // ETAPE 1 : Se connecter au serveur de base de données
+                require("./param.inc.php");
+                $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+                $pdo->query("SET NAMES utf8");
+                $pdo->query("SET CHARACTER SET 'utf8'");
+
+            // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
+                $requeteSQL = "INSERT INTO CHANSONS(nameSong, linkVideo, lang) VALUES (" . $_POST["song"] . "," . $_POST["linkVideo"] . "," . $_POST["langSong"] . ")";
+                $statement = $pdo->query($requeteSQL);
+            
+        // ETAPE 4 : Déconnecter du serveur
+                $pdo = null;
+    }
 ?>
 
     <!DOCTYPE html>
@@ -17,7 +33,7 @@
 
     <body>
         <?php include("main_header.php")?>
-        
+
         <main>
 
             <section>
@@ -28,56 +44,67 @@
 
                     <div>
 
-                        <label for="Chanson" class="">Nom de la chanson</label>
-                        <input type="text" name="Chanson" id="" class="" required="required" maxlength="75" />
+                        <label for="song" class="">Nom de la chanson</label>
+                        <input type="text" name="song" id="song" class="" required="required" maxlength="75" />
 
                     </div>
                     <div>
-                        <label for="Interprete" class="">Nom de l'interprète</label>
-                        <input type="text" name="Interprete" id="" class="" required="required" maxlength="50" />
+                        <label for="interpreteSong" class="">Nom de l'interprète</label>
+                        <input type="text" name="interpreteSong" id="interpreteSong" class="" required="required" maxlength="50" />
                     </div>
 
                     <div>
 
-                        <label for="Cat" class="">Catégorie</label>
-                        <select id="" class="" size="1" type="text" name="Cat">
+                        <label for="catSong" class="">Catégorie</label>
+                        <select id="catSong" class="" size="1" type="text" name="catSong">
                         
-                        <option value="">Choisissez une catégorie</option>
-                        <?php
-                            // ETAPE 1 : Se connecter au serveur de base de données
-                                require("./param.inc.php");
-                                $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
-                                $pdo->query("SET NAMES utf8");
-                                $pdo->query("SET CHARACTER SET 'utf8'");
+                            <option value="">Choisissez une catégorie</option>
+                            <?php
+                                // ETAPE 1 : Se connecter au serveur de base de données
+                                    require("./param.inc.php");
+                                    $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+                                    $pdo->query("SET NAMES utf8");
+                                    $pdo->query("SET CHARACTER SET 'utf8'");
 
-                            // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
-                                $requeteSQL = "SELECT nameCat FROM CATEGORIES";
-                                $statement = $pdo->query($requeteSQL);
+                                // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
+                                    $requeteSQL = "SELECT idCat, nameCat FROM CATEGORIES";
+                                    $statement = $pdo->query($requeteSQL);
 
-                            // Boucle sur chaque auteur
-                            // ETAPE 3 : Traiter les données retourner
-                                // Premier auteur
-                                $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-                                while($ligne != false) {
-                        ?>
-                            <option value="<?php echo($ligne["nameCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
-                            
-                        <?php
+                                // Boucle sur chaque auteur
+                                // ETAPE 3 : Traiter les données retourner
+                                    // Premier auteur
                                     $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-                                }
-                            // Fin de la boucle
-                            // ETAPE 4 : Déconnecter du serveur
-                                $pdo = null;
-                        ?>
+                                    while($ligne != false) {
+                            ?>
+                            <option value="<?php echo($ligne["idCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
+                            
+                            <?php
+                                        $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                                    }
+                                // Fin de la boucle
+                                // ETAPE 4 : Déconnecter du serveur
+                                    $pdo = null;
+                            ?>
 
-                    </select>
+                        </select>
+
+                    </div>
+                    <div>
+
+                        <label for="langSong" class="">Langue</label>
+                        <select id="langSong" class="" size="1" type="text" name="langSong">
+                        
+                            <option value="fr">FR</option>
+                            <option value="en">EN</option>
+
+                        </select>
 
                     </div>
 
                     <div>
 
                         <label for="URL" class="">URL</label>
-                        <input type="url" name="URL" id="" class="" required="required" />
+                        <input type="url" name="linkVideo" id="linkVideo" class="" required="required" />
 
                     </div>
 
