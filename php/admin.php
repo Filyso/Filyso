@@ -34,7 +34,7 @@
         
         <section>
             
-            
+            <!--Faire en sorte d'afficher les pages php adaptées-->
     
         </section>
         
