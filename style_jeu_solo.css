@@ -3,22 +3,66 @@
 section {
     display:flex;
 }
-.photoProfil img{
-    width: 100px;
-    height: 100px;
+.score figure img{
+    width: 100%;
+}
+.score figure{
+    width: 150px;
+    height: 150px;
     overflow: hidden;
     border: solid 5px aqua;
     border-radius: 50%;
+    margin: auto;
 }
-.score{
-    width: 500px;
+progress{
+    width: 600px;
     height: 20px;
-    transform: rotateZ(-90deg);
     margin: 0;
     padding: 0;
+    position:absolute;
+    top:calc(600px + 200px);
+    left:calc(50% - 10px);
+    transform-origin: top left;
+    transform: rotateZ(-90deg);
 }
 
-section div:first-child {
+.score {
     display: flex;
     flex-direction: column;
+    position:relative;
+    width:25%;
+    min-width:170px;
+    position: absolute;
 }
+.reponse{
+    display: flex;
+    flex-direction: row;
+}
+.numEtTuto{
+    display: flex;
+    justify-content: space-between;
+}
+.tutoButton{
+    height: 50px;
+    width: 50px;
+}
+.contenu{
+    width: 50%;
+    margin: auto;
+    margin-top: 70px;
+}
+.tutoButton{
+    background-color: #4cd1cb;
+    font: bold 40px Arial;
+    color: white;
+    border-radius: 50%;
+    border: none;
+}
+.reponses{
+    width: 100%;
+}
+.reponse1Button{
+    width: 50%;
+}
+/**** 4cd1cb bleu
+784199 violet ****/ 

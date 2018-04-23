@@ -21,41 +21,44 @@
 
         <section>
             
-            <div>
+            <div class="score">
             
-                <div id="photoProfil" class="photoProfil">
+                <figure>
                     <img alt="Photo de profil" src="../images/chat.jpg"/>
-                </div>
+                </figure>
             
-                <progress id="score" class="score" value="20" max="100">Votre score</progress>
+                <progress id="score" value="20" max="100">Votre score</progress>
             
             </div>
             
-            <div>
+            <div class="contenu">
+                
+                <div class="numEtTuto">
 
-                <input type="button" value="?" id="tutoGameButton" class="tutoButton">
+                    <input type="button" value="?" id="tutoButton" class="tutoButton">
             
-                <p id="numQuestion" class="numQuestion">N°1</p>
+                    <p id="numQuestion" class="numQuestion">Question n°1</p>
+                    
+                </div>
             
                 <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
                 
-            </div>
+                <div class="reponses">
             
-            <div class="reponse">
-            
-                <input type="button" value="Réponse n°1" id="reponse1Button" class="reponse1Button">
-            
-                <input type="button" value="Réponse n°2" id="reponse2Button" class="reponse2Button">
+                    <input type="button" value="Réponse n°1" id="reponse1Button" class="reponse1Button">
+                    <div id="timer" class="timer"></div>
+                    <input type="button" value="Réponse n°2" id="reponse2Button" class="reponse2Button">
+
+                </div>
                 
             </div>
             
-            <div id="timer" class="timer"></div>
             
         </section>
 
     </main>
 
-    <?php include("./main_footer.php");?>
+    <!-- <?php //include("./main_footer.php");?> -->
 </body>
 
 </html>
