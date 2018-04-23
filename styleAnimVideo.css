@@ -1,0 +1,21 @@
+main{
+    
+}
+.player{
+    padding-top: 15%; /*bricolage pour centrer la div*/
+    padding-left: 32%;
+}
+
+#ytplayer{
+    opacity: 0;
+    animation: apparition 1s ease-out 1s forwards, disparition 1s ease-in 6s forwards;
+}
+
+@keyframes apparition{
+    0%{transform: scale(2);opacity: 0}
+    100%{transform: scale(1);opacity: 1;}
+    }
+@keyframes disparition{
+    0%{transform: scale(1);opacity: 1;}
+    100%{transform: scale(0.5);opacity: 0;}
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8" />
+    <title> Animation Vidéo </title>
+    <meta name="description" content="eeeeeeeeee" />
+    <link rel="stylesheet" href="/styleAnimVideo.css" type="text/css" />
+</head>
+    
+<body>
+    <header>
+    </header>
+    <nav>
+    </nav>
+    <main>
+        <!--<iframe id="ytplayer" type="text/html" width="640" height="360"
+  src="http://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
+  frameborder="0"/>-->
+        <div class="player">
+
+        <div>
+        <div id="ytplayer">
+            
+        <script>
+          // Load the IFrame Player API code asynchronously.
+          var tag = document.createElement('script');
+          tag.src = "https://www.youtube.com/player_api";
+          var firstScriptTag = document.getElementsByTagName('script')[0];
+          firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+          // Replace the 'ytplayer' element with an <iframe> and
+          // YouTube player after the API code downloads.
+          var player;
+            var test = 10;
+          function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+                height: '360',
+                width: '640',
+                videoId: 'IcrbM1l_BoI',
+                // PARAMETRES DU LECTEUR
+                playerVars: {
+                    'autoplay' : 1, /* lance la vidéo automatiquement */
+                    'controls' : 0, /* cache l'interférence controles */
+                    'disabledkb' : 1, /* empeche l'utilisation des controles */
+                    'iv_load_policy' : 3, /* supprime les annotations */
+                    'rel' : 0, /* Le lecteur n'affiche pas de vidéo similaire à la fin */
+                    'showinfo' : 0, /* n'affiche pas les infos de la vidéo */
+                    'start' : 120, /* seconde début */
+                    'end' : 120 + test /* seconde fin */
+                },
+            });
+          }
+        </script>
+        </div>
+            </div>
+            </div>
+    
+    </main>
+</body>
