@@ -1,6 +1,9 @@
+main {
+    background: linear-gradient(90deg,#8F8F8F,#F6F6F6,#8F8F8F);
+}
+
 .mainIndex{
     margin: 0;
-    background: linear-gradient(90deg,#8F8F8F,#F6F6F6,#8F8F8F);
     padding: 120px 50px 15% 50px;
     
     display: flex;
