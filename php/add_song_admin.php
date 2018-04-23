@@ -16,7 +16,8 @@
     </head>
 
     <body>
-       
+        <?php include("main_header.php")?>
+        
         <main>
 
             <section>
@@ -33,7 +34,7 @@
                     </div>
                     <div>
                         <label for="Interprete" class="">Nom de l'interprète</label>
-                        <input type="text" name="Interprete" id="" class="" required="required" maxlength="50"/>
+                        <input type="text" name="Interprete" id="" class="" required="required" maxlength="50" />
                     </div>
 
                     <div>
@@ -42,10 +43,32 @@
                         <select id="" class="" size="1" type="text" name="Cat">
                         
                         <option value="">Choisissez une catégorie</option>
-                        <option value="rock">rock
-                        <option value="disney">disney
-                        <option value="rap">rap
-                        <option value="rap">variété française
+                        <?php
+                            // ETAPE 1 : Se connecter au serveur de base de données
+                                require("./param.inc.php");
+                                $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+                                $pdo->query("SET NAMES utf8");
+                                $pdo->query("SET CHARACTER SET 'utf8'");
+
+                            // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
+                                $requeteSQL = "SELECT nameCat FROM CATEGORIES";
+                                $statement = $pdo->query($requeteSQL);
+
+                            // Boucle sur chaque auteur
+                            // ETAPE 3 : Traiter les données retourner
+                                // Premier auteur
+                                $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                                while($ligne != false) {
+                        ?>
+                            <option value="rock">rock</option>
+                            
+                        <?php
+                                    $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                                }
+                            // Fin de la boucle
+                            // ETAPE 4 : Déconnecter du serveur
+                                $pdo = null;
+                        ?>
 
                     </select>
 
@@ -54,7 +77,7 @@
                     <div>
 
                         <label for="URL" class="">URL</label>
-                        <input type="url" name="URL" id="" class="" required="required"/>
+                        <input type="url" name="URL" id="" class="" required="required" />
 
                     </div>
 
@@ -78,7 +101,7 @@
                                         </div>
 
                                         <div>
-                                            <input id="" type="number" name="Secondes" class="" required="required" min="00" max="59" >
+                                            <input id="" type="number" name="Secondes" class="" required="required" min="00" max="59">
                                             <label for="Secondes" class="">s</label>
                                         </div>
                                     </div>
