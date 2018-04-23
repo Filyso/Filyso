@@ -1,25 +1,6 @@
-/*"use strict";
+"use strict";
 
 document.addEventListener("DOMContentLoaded", initialiser);
-
-
-function initialiser(evt) {
-
-    var questions  = document.getElementsByTagName();
-    
-    var derniereQuestion = document.getElementById("");
-    
-    var scoreGeneral = 0 ;
-        
-    for (var currentQuestion of questions) {
-        currentQuestion.addEventListener("onclick", calculScore);
-    }
-    
-    derniereQuestion.addEventListener("onclick", calculDernierScore);
-    
-}
-*/
-
 
 
 function calculScore(seconde, milliseconde, numeroQuestion) {
@@ -45,6 +26,8 @@ function calculScore(seconde, milliseconde, numeroQuestion) {
         
     }
 
-    return scoreReponse;
+    var scoreGeneral = scoreGeneral + scoreReponse;
+    
+    return scoreGeneral;
 
 }
