@@ -20,7 +20,7 @@ function initialiser(evt) {
 }
 */
 
-function temps(duree){
+function temps(){
     
     var ... ;
     
@@ -30,13 +30,13 @@ function temps(duree){
          ... .innerHTML="fin<br />";
     }else{
         if(s<10){
-            s="0"+s;
+            s = "0"+s;
         }
-    }
-    
-    
-    
+    }    
 }
+
+duree = "10";
+temps();
 
 function calculScore(time){
     
