@@ -6,7 +6,7 @@
 <html lang="fr">
     
 <head>
-    <link rel="stylesheet" href="../styleFooter.css" type="text/css" />
+    <link rel="stylesheet" href="../style.css" type="text/css" />
 </head>
 <body>
     <footer class="footer">

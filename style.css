@@ -141,3 +141,208 @@ body {
 
     z-index: 1;
 }
+
+/***************/
+/* Footer  */
+/***************/
+
+.footer{
+	background-color: #2D2D2D;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	font: bold 16px sans-serif;
+    font-family: 'Helvetica' sans-serif;
+	text-align: left;
+	overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+/* Footer left */
+
+.footerGauche{
+	float: left;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    max-width: 50vw;
+    
+    
+}
+
+.logo{
+    max-height: 10vw;
+}
+
+.footer .footer-links{
+	color:  darkgrey;
+	margin: 0;
+	padding: 0;
+    width: 40vw;
+    text-align: center;
+    height: 30px;
+    font-size: 1.5vw;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    min-width: 200px;
+    margin-left : 20px;
+    margin-right : 20px;
+}
+
+.footer .footer-links a{
+	text-decoration: none;
+	color:  inherit;
+    
+}
+.footer .footer-links a:hover{
+    color : lightgrey;
+    transition: 0.2s;
+}
+.footerReseaux img{
+    max-width: 3vw;
+    padding:5px;
+}
+.footerReseaux img:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+.footer .footerReseaux{
+	display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* Footer Right */
+
+.footer .footerDroite{
+	float: right;
+    display: inline-block;
+    padding-bottom: 20px;
+}
+
+.footer .footerDroite p{
+	vertical-align: top;
+	margin-bottom:20px ;
+	color: darkgrey;
+}
+
+/* The contact form */
+
+.footer form{
+	display: inline-block;
+}
+
+.footer form input,
+.footer form textarea{
+	display: block;
+	border-radius: 3px;
+	box-sizing: border-box;
+	background-color:  #1f2022;
+	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+	border: none;
+	resize: none;
+    outline: none;
+	font: inherit;
+	font-size: 14px;
+	font-weight: normal;
+	color:  darkgrey;
+	width: 400px;
+	padding: 18px;
+}
+
+.footer ::-webkit-input-placeholder {
+	color:  #5c666b;
+}
+
+.footer ::-moz-placeholder {
+	color:  #5c666b;
+	opacity: 1;
+}
+
+.footer :-ms-input-placeholder{
+	color:  #5c666b;
+}
+
+
+.footer form input{
+	height: 55px;
+	margin-bottom: 15px;
+    
+}
+
+.footer form textarea{
+	height: 100px;
+	margin-bottom: 20px;
+}
+
+.footer form button{
+	border-radius: 3px;
+	background-color:  #33383b;
+	color: darkgrey;
+	border: 0;
+	padding: 15px 50px;
+	font-weight: bold;
+	float: right;
+    cursor: pointer;
+}
+.footer form button:hover{
+    background-color: dimgray;
+    transition: 0.2s;
+    transform: scale(1.02);
+}
+/* If you don't want the footer to be responsive, remove these media queries */
+
+@media (max-width: 1000px) {
+
+	.footer {
+		font: bold 14px sans-serif;
+	}
+
+	.footer .footerNom{
+		font-size: 12px;
+	}
+
+	.footer form input,
+	.footer form textarea{
+		width: 250px;
+	}
+
+	.footer form button{
+		padding: 10px 35px;
+	}
+
+}
+
+@media (max-width: 800px) {
+
+	.footer{
+		padding: 30px;
+	}
+
+	.footer .footerGauche,
+	.footer .footerDroite{
+		float: none;
+		max-width: 300px;
+		margin: 0 auto;
+	}
+
+	.footer .footerGauche{
+		margin-bottom: 40px;
+	}
+
+	.footer form{
+		margin-top: 30px;
+	}
+
+	.footer form{
+		display: block;
+	}
+
+	.footer form button{
+		float: none;
+	}
+}
