@@ -22,21 +22,21 @@
 
         <section>
             
-            <div id="photoProfil"></div>
+            <div id="photoProfil" class="photoProfil"></div>
             
-            <progress id="score" value="0" max="100">Votre score</progress>
+            <progress id="score" class="score" value="0" max="100">Votre score</progress>
 
-            <input type="button" value="?" id="tutoGameButton" class="button">
+            <input type="button" value="?" id="tutoGameButton" class="tutoButton">
             
-            <p>N°1</p>
+            <p id="numQuestion" class="numQuestion">N°1</p>
             
-            <p>Phrase à compléter</p>
+            <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
             
-            <input type="button" value="Réponse n°1" id="reponse1Button" class="button">
+            <input type="button" value="Réponse n°1" id="reponse1Button" class="reponse1Button">
             
-            <div id="timer"></div>
+            <div id="timer" class="timer"></div>
             
-            <input type="button" value="Réponse n°2" id="reponse2Button" class="button">
+            <input type="button" value="Réponse n°2" id="reponse2Button" class="reponse2Button">
             
         </section>
 
