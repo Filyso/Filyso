@@ -1,7 +1,7 @@
 <?php
 	header("Content-type: text/html; charset: UTF-8");
 
-    if(isset($_POST["chanson"])) {
+    if(isset($_POST["song"])) {
         // ETAPE 1 : Se connecter au serveur de base de données
             require("./param.inc.php");
             $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
@@ -10,11 +10,37 @@
 
         // ETAPE 2 : Envoyer une requête SQL
             // AJOUT CHANSON
-            $requeteSQL = "INSERT INTO CHANSONS(nameSong, linkVideo, lang) VALUES ('" . $_POST["song"] . "','" . $_POST["linkVideo"] . "','" . $_POST["langSong"] . "', NULL)";
-                
+            $requeteSQL = "INSERT INTO CHANSONS(nameSong, linkVideo, lang, idMbr) VALUES (:paramNameSong, :paramLinkVideo, :paramLangSong, NULL)";
+            $statement = $pdo->prepare($requeteSQL);
+            $statement->execute(array(":paramNameSong" => $_POST["song"],
+                                      ":paramLinkVideo" => $_POST["linkVideo"],
+                                      ":paramLangSong" => $_POST["langSong"]));
+        
+            // Récupération idSong
+            $requeteSQL = "SELECT LAST_INSERT_ID() AS idSong";
             $statement = $pdo->query($requeteSQL);
+            $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+            $idSong = $ligne["idSong"];
             
-        // ETAPE 4 : Déconnecter du serveur
+            echo $idSong;
+            
+            $requeteSQL = "INSERT INTO APPARTIENT_A_UNE(idSong, idCat) VALUES (" . $idSong . ", :paramCatSong)";
+            $statement = $pdo->prepare($requeteSQL);
+            $statement->execute(array(":paramCatSong" => $_POST["catSong"]));
+        
+            // AJOUT TIMECODE
+            $timeCode = "00:" . ($_POST["minEnd"]>9 ? ($_POST["minEnd"]):("0" . $_POST["minEnd"])) . ":" . ($_POST["secEnd"]>9 ? ($_POST["secEnd"]):("0" . $_POST["secEnd"]));
+            $requeteSQL = "INSERT INTO TIMECODES(timeCode,previousLyrics,trueRep,falseRep1,falseRep2,falseRep3,idSong) VALUES ('" . $timeCode . "', :paramPrevLyrics, :paramGoodRep, :paramBadRep1, :paramBadRep2, :paramBadRep3," . $idSong . ")";
+            $statement = $pdo->prepare($requeteSQL);
+            $statement->execute(array(":paramPrevLyrics" => $_POST["prevLyrics"],
+                                      ":paramGoodRep" => $_POST["goodRep"],
+                                      ":paramBadRep1" => $_POST["badRep1"],
+                                      ":paramBadRep2" => $_POST["badRep2"],
+                                      ":paramBadRep3" => $_POST["badRep1"],));
+        
+            // GESTION AUTEUR
+                        
+        // ETAPE 3 : Déconnecter du serveur
             $pdo = null;
     }
 ?>
@@ -33,8 +59,8 @@
     </head>
 
     <body>
-        <?php include("main_header.php")?>
-
+        <?php include("main_header.php");
+        echo("aurevoir");?>
         <main>
 
             <section>
@@ -104,7 +130,7 @@
 
                     <div>
 
-                        <label for="URL" class="">URL</label>
+                        <label for="linkVideo" class="">URL</label>
                         <input type="url" name="linkVideo" id="linkVideo" class="" required="required" />
 
                     </div>
@@ -124,26 +150,26 @@
                                     <div>
                                         <span>De</span>
                                         <div>
-                                            <input id="" type="number" name="Minutes" class="" required="required" min="0" max="10">
-                                            <label for="Minutes" class="">min</label>
+                                            <input id="minStart" type="number" name="minStart" class="" required="required" min="0" max="10">
+                                            <label for="minStart" class="">min</label>
                                         </div>
 
                                         <div>
-                                            <input id="" type="number" name="Secondes" class="" required="required" min="00" max="59">
-                                            <label for="Secondes" class="">s</label>
+                                            <input id="secStart" type="number" name="secStart" class="" required="required" min="00" max="59">
+                                            <label for="secStart" class="">s</label>
                                         </div>
                                     </div>
 
                                     <div>
                                         <span>A</span>
                                         <div>
-                                            <input id="" type="number" name="MinutesFin" class="" required="required" min="0" max="10">
-                                            <label for="MinutesFin" class="">min</label>
+                                            <input id="minEnd" type="number" name="minEnd" class="" required="required" min="0" max="10">
+                                            <label for="minEnd" class="">min</label>
                                         </div>
 
                                         <div>
-                                            <input id="" type="number" name="SecondesFin" class="" required="required" min="00" max="59">
-                                            <label for="SecondesFin" class="">s</label>
+                                            <input id="secEnd" type="number" name="secEnd" class="" required="required" min="00" max="59">
+                                            <label for="secEnd" class="">s</label>
                                         </div>
                                     </div>
 
@@ -152,13 +178,13 @@
                             </div>
 
                             <div>
-                                <label for="Paroles" class="">Paroles</label>
-                                <input id="" type="text" name="Paroles" class="" required="required" maxlength="100">
+                                <label for="prevLyrics" class="">Paroles</label>
+                                <input id="prevLyrics" type="text" name="prevLyrics" class="" required="required" maxlength="100">
                             </div>
 
                             <div>
-                                <label for="Reponse0" class="">Réponse</label>
-                                <input id="" type="text" name="Reponse0" class="" required="required" maxlength="75">
+                                <label for="goodRep" class="">Réponse</label>
+                                <input id="goodRep" type="text" name="goodRep" class="" required="required" maxlength="75">
                             </div>
 
                             <div>
@@ -168,18 +194,18 @@
                             <div>
 
                                 <div>
-                                    <label for="Reponse1" class="">1</label>
-                                    <input id="" type="text" name="Reponse1" class="" required="required" maxlength="75">
+                                    <label for="badRep1" class="">1</label>
+                                    <input id="badRep1" type="text" name="badRep1" class="" required="required" maxlength="75">
                                 </div>
 
                                 <div>
-                                    <label for="Reponse2" class="">2</label>
-                                    <input id="" type="text" name="Reponse2" class="" required="required" maxlength="75">
+                                    <label for="badRep2" class="">2</label>
+                                    <input id="badRep2" type="text" name="badRep2" class="" required="required" maxlength="75">
                                 </div>
 
                                 <div>
-                                    <label for="Reponse3" class="">3</label>
-                                    <input id="" type="text" name="Reponse3" class="" required="required" maxlength="75">
+                                    <label for="badRep3" class="">3</label>
+                                    <input id="badRep3" type="text" name="badRep3" class="" required="required" maxlength="75">
                                 </div>
 
                             </div>
