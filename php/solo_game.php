@@ -44,15 +44,22 @@
                 <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
                 
                 <div class="reponses">
-            
-                    <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton">
-                    <div id="timer" class="timer"></div>
-                    <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton">
+                    <div class="Sousreponses">
+                        <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton">
 
+                        <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton">
+                    </div>
+                        <div class="divTimer">
+                            <p id="timer" class="timer">00</p>
+                        </div>
+                    <div class="Sousreponses">
+                        <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton">
+
+                        <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton">
+                    </div>
                 </div>
                 
             </div>
-            
             
         </section>
 
