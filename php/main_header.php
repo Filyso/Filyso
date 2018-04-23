@@ -20,8 +20,8 @@
                         <a href="">Jouer</a>
                     </li>
 
-                    <li>
-                        <img />
+                    <li class="mainLogo">
+                        <img src="../images/logo.png"/>
                     </li>
 
                     <li>
