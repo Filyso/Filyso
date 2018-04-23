@@ -24,7 +24,7 @@
             
             <div id="photoProfil"></div>
             
-            <div id="score"></div>
+            <progress id="score" value="0" max="100">Votre score</progress>
 
             <input type="button" value="?" id="tutoGameButton" class="button">
             
@@ -37,7 +37,6 @@
             <div id="timer"></div>
             
             <input type="button" value="Réponse n°2" id="reponse2Button" class="button">
-            
             
         </section>
 
