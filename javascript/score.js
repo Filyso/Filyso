@@ -12,13 +12,31 @@ function initialiser(evt) {
     var scoreGeneral = 0 ;
         
     for (var currentQuestion of questions) {
-        currentQuestion.addEventListener("onload", calculScore);
+        currentQuestion.addEventListener("onclick", calculScore);
     }
     
-    derniereQuestion.addEventListener("onload", calculDernierScore);
+    derniereQuestion.addEventListener("onclick", calculDernierScore);
     
 }
 */
+
+function temps(duree){
+    
+    var ... ;
+    
+    s = this;
+    
+    if(s<0){
+         ... .innerHTML="fin<br />";
+    }else{
+        if(s<10){
+            s="0"+s;
+        }
+    }
+    
+    
+    
+}
 
 function calculScore(time){
     
