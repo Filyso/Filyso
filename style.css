@@ -1,3 +1,38 @@
+.mainIndex{
+    margin: 0;
+    background: linear-gradient(90deg,#8F8F8F,#F6F6F6,#8F8F8F);
+    padding: 120px 50px 15% 50px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.mainIndex h1{
+    margin-top: 0;
+    
+    font-family: 'Helvetica';
+}
+.mainIndex section{
+    width: 60%;
+    text-align: justify;
+    margin: 20px 0 50px 0;
+    
+    font-family: 'Helvetica';
+}
+.mainIndex a{
+    background-color: #784199;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 32px;
+    
+    width: 150px;
+    padding: 20px 0 20px 0;
+    border-radius: 20px;
+    
+    font-family: 'Helvetica';
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -13,6 +48,7 @@ body {
 
 .mainHeader nav {
     background-color: #2D2D2D;
+    margin: 0;
 }
 
 .mainHeader img {
@@ -36,13 +72,15 @@ body {
     margin: 0;
     padding: 20px 5% 20px 6%;
     list-style-type: none;
+    
     display: flex;
-
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
 
     height: 24px;
+    
+    font-family: 'Helvetica';
 }
 
 .mainHeader ul::after {
@@ -75,7 +113,7 @@ body {
     height: 0;
     display: inline-block;
     border-style: solid;
-    border-width: 110px 150px 110px 0;
+    border-width: 110px 151px 110px 0;
     border-color: transparent #784199 transparent transparent;
 
     position: absolute;
@@ -91,7 +129,7 @@ body {
     height: 0;
     display: inline-block;
     border-style: solid;
-    border-width: 110px 0 110px 150px;
+    border-width: 110px 0 110px 151px;
     border-color: transparent transparent transparent #784199;
 
     position: absolute;
