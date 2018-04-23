@@ -45,9 +45,9 @@
                 
                 <div class="reponses">
             
-                    <input type="button" value="Réponse n°1" id="reponse1Button" class="reponse1Button">
+                    <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton">
                     <div id="timer" class="timer"></div>
-                    <input type="button" value="Réponse n°2" id="reponse2Button" class="reponse2Button">
+                    <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton">
 
                 </div>
                 

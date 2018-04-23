@@ -1,8 +1,11 @@
 /********* Style Jeu en Solo **********/
 
+/*****Général*****/
 section {
     display:flex;
 }
+
+/***Photo Profil*****/
 .score figure img{
     width: 100%;
 }
@@ -10,10 +13,11 @@ section {
     width: 150px;
     height: 150px;
     overflow: hidden;
-    border: solid 5px aqua;
+    border: solid 8px #4cd1cb;
     border-radius: 50%;
     margin: auto;
 }
+/******Score*****/
 progress{
     width: 600px;
     height: 20px;
@@ -34,35 +38,58 @@ progress{
     min-width:170px;
     position: absolute;
 }
-.reponse{
-    display: flex;
-    flex-direction: row;
-}
-.numEtTuto{
-    display: flex;
-    justify-content: space-between;
-}
-.tutoButton{
-    height: 50px;
-    width: 50px;
-}
+/******Contenu******/
+
 .contenu{
     width: 50%;
+    height: 50%;
     margin: auto;
     margin-top: 70px;
+    marging-bottom: 100px;
 }
-.tutoButton{
-    background-color: #4cd1cb;
-    font: bold 40px Arial;
-    color: white;
-    border-radius: 50%;
-    border: none;
-}
-.reponses{
-    width: 100%;
-}
-.reponse1Button{
-    width: 50%;
-}
+    /*****Numéro question et tuto*****/
+        .numEtTuto{
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+        }
+
+        .tutoButton{
+            height: 50px;
+            width: 50px;
+            background-color: #4cd1cb;
+            font: bold 40px Arial;
+            color: white;
+            border-radius: 50%;
+            border: none;
+        }
+    /*****Phrase à compléter***/
+        .phraseACompleter{
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 10%;
+        }
+    /*****Div des Reponses*****/
+    
+        .reponses{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            height: 100%;
+        }
+        .reponseButton{
+            margin: 10px;
+            width: 50%;
+            height: 100px;
+            min-width: 200px;
+            border-radius: 20px;
+            border: none;
+            background-color: #784199;
+            color: white;
+            font: bold 25px Arial;
+        }
+        
+
 /**** 4cd1cb bleu
 784199 violet ****/ 
