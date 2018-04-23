@@ -45,7 +45,7 @@ body {
     height: 24px;
 }
 
-.mainHeader nav::after {
+.mainHeader ul::after {
     content: '';
     height: 40px;
     width: 3px;
@@ -57,7 +57,7 @@ body {
     left: 20%;
 }
 
-.mainHeader nav::before {
+.mainHeader ul::before {
     content: '';
     height: 40px;
     width: 3px;
