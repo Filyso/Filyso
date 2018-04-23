@@ -8,10 +8,9 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="" content="">
-    <title></title>
-    <meta name="" content="">
-    <link rel="" href="">
+    <title>Jeu en Solo</title>
+    <meta name="description" content="Jouez !">
+    <link rel="stylesheet" type="text/css" href="style_jeu_solo.css">
 
 </head>
 
