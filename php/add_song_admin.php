@@ -2,26 +2,20 @@
 	header("Content-type: text/html; charset: UTF-8");
 
     if(isset($_POST["chanson"])) {
-        <?php
-            // ETAPE 1 : Se connecter au serveur de base de données
-                require("./param.inc.php");
-                $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
-                $pdo->query("SET NAMES utf8");
-                $pdo->query("SET CHARACTER SET 'utf8'");
+        // ETAPE 1 : Se connecter au serveur de base de données
+            require("./param.inc.php");
+            $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+            $pdo->query("SET NAMES utf8");
+            $pdo->query("SET CHARACTER SET 'utf8'");
 
-            // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
-                // AJOUT CHANSON
-                $requeteSQL = "INSERT INTO CHANSONS(nameSong, linkVideo, lang) VALUES (" . $_POST["song"] . "," . $_POST["linkVideo"] . "," . $_POST["langSong"] . ")";
+        // ETAPE 2 : Envoyer une requête SQL
+            // AJOUT CHANSON
+            $requeteSQL = "INSERT INTO CHANSONS(nameSong, linkVideo, lang) VALUES ('" . $_POST["song"] . "','" . $_POST["linkVideo"] . "','" . $_POST["langSong"] . "', NULL)";
                 
-                $statement = $pdo->query($requeteSQL);
-        
-                // AJOUT 
-                $requeteSQL = "INSERT INTO APPARTIENT_A_UNE(idCat) VALUES (" . $_POST[""]. ")";
-                
-                $statement = $pdo->query($requeteSQL);
+            $statement = $pdo->query($requeteSQL);
             
-            // ETAPE 4 : Déconnecter du serveur
-                $pdo = null;
+        // ETAPE 4 : Déconnecter du serveur
+            $pdo = null;
     }
 ?>
 
