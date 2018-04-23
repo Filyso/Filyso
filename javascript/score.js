@@ -1,8 +1,3 @@
-"use strict";
-
-document.addEventListener("DOMContentLoaded", initialiser);
-
-
 function calculScore(seconde, milliseconde, numeroQuestion) {
 
     var tempsCourant = seconde + (milliseconde/100);
