@@ -2,52 +2,51 @@
 	header("Content-type: text/html; charset: UTF-8");
 
 ?>
-<!DOCTYPE html>
-<html lang="fr">
-    
-<head>
-    <link rel="stylesheet" href="../style.css" type="text/css" />
-</head>
-<body>
-    <footer class="footer">
+    <!DOCTYPE html>
+    <html lang="fr">
 
-			<div class="footerGauche">
+    <head>
+        <link rel="stylesheet" href="../style.css" type="text/css" />
+    </head>
 
-				<img class="logo" src="../images/logo_couleur.png" alt="logo">
-                
+    <body>
+        <footer class="footer">
 
-				<p class="footer-links">
-					<a href="#">L'équipe</a>
-					·
-					<a href="#">Boîte à idée</a>
-					·
-					<a href="#">À venir</a>
-					
-				</p>
+            <div class="footerGauche">
 
-				<div class="footerReseaux">
+                <img class="logo" src="../images/logo_couleur.png" alt="logo">
 
-					<a href="LIEN"><img src="../images/Facebook.png"></a>
-					<a href="LIEN"><img src="../images/Twitter.png"></a>
-					<a href="LIEN"><img src="../images/Instagram.png"></a>
 
-				</div>
+                <p class="footer-links">
+                    <a href="./about.html">L'équipe</a> ·
+                    <a href="./about.html">Boîte à idée</a> ·
+                    <a href="./about.html">À venir</a>
 
-			</div>
+                </p>
 
-			<div class="footerDroite">
+                <div class="footerReseaux">
+                    <!- lier les réseaux sociaux ->
+                    <a href=""><img src="../images/Facebook.png"></a>
+                    <a href=""><img src="../images/Twitter.png"></a>
+                    <a href=""><img src="../images/Instagram.png"></a>
 
-				<p>Contactez-nous</p>
+                </div>
 
-				<form action="#" method="post">
+            </div>
 
-					<input type="text" name="email" placeholder="Email" />
-					<textarea name="message" placeholder="Message"></textarea>
-					<button>Envoyer</button>
+            <div class="footerDroite">
 
-				</form>
+                <p>Contactez-nous</p>
 
-			</div>
+                <form action="#" method="post">
 
-		</footer>
-</body>
+                    <input type="text" name="email" placeholder="Email" />
+                    <textarea name="message" placeholder="Message"></textarea>
+                    <button>Envoyer</button>
+
+                </form>
+
+            </div>
+
+        </footer>
+    </body>
