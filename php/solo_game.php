@@ -8,41 +8,67 @@
 <head>
 
     <meta charset="utf-8">
-    <meta http-equiv="" content="">
-    <title></title>
-    <meta name="" content="">
-    <link rel="" href="">
+    <title>Jeu en Solo</title>
+    <meta name="description" content="Jouez !">
+    <link rel="stylesheet" type="text/css" href="../style_jeu_solo.css"/>
 
 </head>
 
 <body>
-    <?php include("./main_header.php")?>
+    <?php include("./main_header.php");?>
     
     <main>
 
         <section>
             
-            <div id="photoProfil" class="photoProfil"></div>
+            <div class="score">
             
-            <progress id="score" class="score" value="0" max="100">Votre score</progress>
+                <figure>
+                    <img alt="Photo de profil" src="../images/chat.jpg"/>
+                </figure>
+                
+                <div class="barScoreMax">
+                    <div class="barScore">
+                    </div>
+                </div>
+            
+            </div>
+            
+            <div class="contenu">
+                
+                <div class="numEtTuto">
 
-            <input type="button" value="?" id="tutoGameButton" class="tutoButton">
+                    <input type="button" value="?" id="tutoButton" class="tutoButton"/>
             
-            <p id="numQuestion" class="numQuestion">N°1</p>
+                    <p id="numQuestion" class="numQuestion">Question n°1</p>
+                    
+                </div>
             
-            <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
-            
-            <input type="button" value="Réponse n°1" id="reponse1Button" class="reponse1Button">
-            
-            <div id="timer" class="timer"></div>
-            
-            <input type="button" value="Réponse n°2" id="reponse2Button" class="reponse2Button">
+                <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
+                
+                <div class="reponses">
+                    <div class="Sousreponses">
+                        <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton"/>
+
+                        <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton"/>
+                    </div>
+                        <div class="divTimer">
+                            <p id="timer" class="timer">00</p>
+                        </div>
+                    <div class="Sousreponses">
+                        <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton"/>
+
+                        <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton"/>
+                    </div>
+                </div>
+                
+            </div>
             
         </section>
 
     </main>
 
-    <?php include("./main_footer.php")?>
+    <?php //include("./main_footer.php");?>
 </body>
 
 </html>
