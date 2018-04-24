@@ -64,44 +64,28 @@
     }
 ?>
 
-    <!DOCTYPE html>
-    <html lang="fr">
+    <section class="addSongSection">
 
-    <head>
+        <h3>Ajouter une chanson !</h3>
 
-        <meta charset="utf-8">
-        <meta http-equiv="" content="">
-        <title></title>
-        <meta name="" content="">
-        <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="../styleAddSong.css" type="text/css" media="screen" />
+        <form action="add_song_admin.php" method="post" class="addSongForm">
 
-    </head>
+            <div>
+                <label for="song">Nom de la chanson</label>
+                <input type="text" name="song" id="song" class="" required="required" maxlength="75" />
+            </div>
 
-    <body>
+            <div>
+                <label for="artistSong" class="">Nom de l'interprète</label>
+                <input type="text" name="artistSong" id="artistSong" class="" required="required" maxlength="50" />
+            </div>
 
-        <section class="addSongSection">
+            <div>
 
-            <h2>Ajouter une chanson !</h2>
-
-            <form action="add_song_admin.php" method="post" class="addSongForm">
-
-                <div>
-                    <label for="song">Nom de la chanson</label>
-                    <input type="text" name="song" id="song" class="" required="required" maxlength="75" />
-                </div>
-
-                <div>
-                    <label for="artistSong" class="">Nom de l'interprète</label>
-                    <input type="text" name="artistSong" id="artistSong" class="" required="required" maxlength="50" />
-                </div>
-
-                <div>
-
-                    <label for="catSong" class="">Catégorie</label>
-                    <select id="catSong" class="" size="1" type="text" name="catSong">
+                <label for="catSong" class="">Catégorie</label>
+                <select id="catSong" class="" size="1" type="text" name="catSong" required>
                         
-                            <option value="">Choisissez une catégorie</option>
+                            <option value="" disabled selected>Choisissez une catégorie</option>
                             <?php
                                 try {
                                 // ETAPE 1 : Se connecter au serveur de base de données
@@ -135,92 +119,88 @@
 
                         </select>
 
-                </div>
-                <div>
-                    <span>Langue</span>
+            </div>
+            <div>
+                <span>Langue</span>
 
-                    <input type="radio" id="langSongFR" name="langSong" value="fr">
-                    <label for="langSongFR">FR</label>
+                <input type="radio" id="langSongFR" name="langSong" value="fr" required>
+                <label for="langSongFR">FR</label>
 
-                    <input type="radio" id="langSongEN" name="langSong" value="en">
-                    <label for="langSongEN">EN</label>
-                </div>
+                <input type="radio" id="langSongEN" name="langSong" value="en">
+                <label for="langSongEN">EN</label>
+            </div>
 
-                <div>
-                    <label for="linkVideo" class="">URL</label>
-                    <input type="url" name="linkVideo" id="linkVideo" class="" required="required" />
-                </div>
+            <div>
+                <label for="linkVideo" class="">URL</label>
+                <input type="url" name="linkVideo" id="linkVideo" class="" required="required" />
+            </div>
 
-                <fieldset class="timeCode">
-                    <legend>Timecode</legend>
+            <fieldset class="timeCode">
+                <legend>Timecode</legend>
 
-                    <div class="timeForm">
-                        <!-- De tant de minutes à tant de minutes ???? -->
-                        <div>
-                            <span>De</span>
-                            <input id="minStart" type="number" name="minStart" class="" required="required" min="0" max="10">
-                            <label for="minStart" class="">min</label>
-                        </div>
-
-                        <div>
-                            <input id="secStart" type="number" name="secStart" class="" required="required" min="00" max="59">
-                            <label for="secStart" class="">s</label>
-                        </div>
-
-                        <div>
-                            <span>A</span>
-                            <input id="minEnd" type="number" name="minEnd" class="" required="required" min="0" max="10">
-                            <label for="minEnd" class="">min</label>
-                        </div>
-
-                        <div>
-                            <input id="secEnd" type="number" name="secEnd" class="" required="required" min="00" max="59">
-                            <label for="secEnd" class="">s</label>
-                        </div>
-
+                <div class="timeForm">
+                    <!-- De tant de minutes à tant de minutes ???? -->
+                    <div>
+                        <span>De</span>
+                        <input id="minStart" type="number" name="minStart" class="" required="required" min="0" max="10">
+                        <label for="minStart" class="">min</label>
                     </div>
 
                     <div>
-                        <label for="prevLyrics" class="">Paroles</label>
-                        <input id="prevLyrics" type="text" name="prevLyrics" class="" required="required" maxlength="100">
+                        <input id="secStart" type="number" name="secStart" class="" required="required" min="00" max="59">
+                        <label for="secStart" class="">s</label>
                     </div>
 
                     <div>
-                        <label for="goodRep" class="">Réponse</label>
-                        <input id="goodRep" type="text" name="goodRep" class="" required="required" maxlength="75">
+                        <span>A</span>
+                        <input id="minEnd" type="number" name="minEnd" class="" required="required" min="0" max="10">
+                        <label for="minEnd" class="">min</label>
                     </div>
 
-                    <fieldset>
-                        <legend>Autres réponses</legend>
+                    <div>
+                        <input id="secEnd" type="number" name="secEnd" class="" required="required" min="00" max="59">
+                        <label for="secEnd" class="">s</label>
+                    </div>
 
-                        <div>
-                            <label for="badRep1" class="">1</label>
-                            <input id="badRep1" type="text" name="badRep1" class="" required="required" maxlength="75">
-                        </div>
+                </div>
 
-                        <div>
-                            <label for="badRep2" class="">2</label>
-                            <input id="badRep2" type="text" name="badRep2" class="" required="required" maxlength="75">
-                        </div>
+                <div>
+                    <label for="prevLyrics" class="">Paroles</label>
+                    <input id="prevLyrics" type="text" name="prevLyrics" class="" required="required" maxlength="100">
+                </div>
 
-                        <div>
-                            <label for="badRep3" class="">3</label>
-                            <input id="badRep3" type="text" name="badRep3" class="" required="required" maxlength="75">
-                        </div>
+                <div>
+                    <label for="goodRep" class="">Réponse</label>
+                    <input id="goodRep" type="text" name="goodRep" class="" required="required" maxlength="75">
+                </div>
 
-                    </fieldset>
+                <fieldset>
+                    <legend>Autres réponses</legend>
+
+                    <div>
+                        <label for="badRep1" class="">1</label>
+                        <input id="badRep1" type="text" name="badRep1" class="" required="required" maxlength="75">
+                    </div>
+
+                    <div>
+                        <label for="badRep2" class="">2</label>
+                        <input id="badRep2" type="text" name="badRep2" class="" required="required" maxlength="75">
+                    </div>
+
+                    <div>
+                        <label for="badRep3" class="">3</label>
+                        <input id="badRep3" type="text" name="badRep3" class="" required="required" maxlength="75">
+                    </div>
 
                 </fieldset>
 
-                <div class="button">
-                    <button class="bouton">Ajouter un TimeCode</button>
-                    <button type="submit" class="bouton">Ajouter la chanson</button>
-                </div>
+            </fieldset>
 
-            </form>
+            <div class="button">
+                <button class="bouton">Ajouter un TimeCode</button>
+                <button type="submit" class="bouton">Ajouter la chanson</button>
+            </div>
 
-        </section>
+        </form>
 
-    </body>
-
-    </html>
+    </section>
