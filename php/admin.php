@@ -33,13 +33,8 @@
 
                 </div>
             </header>
-
-
-            <section>
-
-                <!--Faire en sorte d'afficher les pages php adaptées-->
-
-            </section>
+            
+            <?php include("./add_song_admin.php"); ?>
 
         </main>
 
