@@ -13,10 +13,9 @@ body {
 }
 
 .modal {
-    /*display:none;*/
     display: block;
-    animation: fadeIn .8s ease-in 1 forwards;
     opacity: 0;
+    transition: opacity linear .8s;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -25,19 +24,11 @@ body {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     animation-play-state: running;
+   
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-.is-paused {
-    animation-play-state: paused;
+.is-open {
+     opacity: 1;
 }
 
 .modal-content {
@@ -47,6 +38,7 @@ body {
     border: 1px solid #888;
     width: 80%;
     border-radius: 18px;
+    border: 2px solid red;
 }
 
 .close {
