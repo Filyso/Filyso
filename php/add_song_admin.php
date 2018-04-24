@@ -105,6 +105,7 @@
                         
                             <option value="">Choisissez une catégorie</option>
                             <?php
+                                try {
                                 // ETAPE 1 : Se connecter au serveur de base de données
                                     require("./param.inc.php");
                                     $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
@@ -129,6 +130,9 @@
                                 // Fin de la boucle
                                 // ETAPE 4 : Déconnecter du serveur
                                     $pdo = null;
+                                } catch (Exception $e) {
+                                    echo($e);
+                                }
                             ?>
 
                         </select>
