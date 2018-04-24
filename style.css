@@ -306,7 +306,7 @@ body {
 }
 .preGamePage fieldset:first-child div{
     max-width: 200px;
-    display:f
+    display: inline-block;
 }
 
 .preGamePage label {
@@ -329,13 +329,16 @@ body {
     transform-origin: center;
     transform: scale(1.05);
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+    cursor: pointer;
 }
 
 .preGamePage input[type=radio] {
     width: 15px;
     height: 15px;
 }
-
+.preGamePage input[type=radio]:hover{
+     cursor: pointer;
+}
 .preGamePage button[type=submit] {
     min-width: 30%;
     height: 20%;
@@ -353,6 +356,7 @@ body {
     transform-origin: center;
     transform: scale(1.05);
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+    cursor: pointer;
 }
 
 .preGamePage select {
