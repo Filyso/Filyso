@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <title>Jeu en Solo</title>
     <meta name="description" content="Jouez !">
-    <link rel="stylesheet" type="text/css" href="../style_jeu_solo.css"/>
+    <link rel="stylesheet" type="text/css" href="../style.css"/>
     <script type="text/javascript" src="../game.js"></script>
 
 </head>
@@ -22,6 +22,8 @@
 
         <section>
             
+        
+            <div id="ytplayer" class="ytplayer"></div>
             <div class="score">
             
                 <figure>

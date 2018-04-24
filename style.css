@@ -379,7 +379,7 @@ section {
 
 .barScore {
     width: 20px;
-    height: 50%;
+    height: 0%;
     background-color: #4cd1cb;
     border-radius: 10px;
     position: absolute;
@@ -391,7 +391,7 @@ section {
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 25%;
+    width: 25s%;
     min-width: 170px;
     position: absolute;
 }
@@ -406,6 +406,11 @@ section {
     margin: auto;
     margin-top: 70px;
     marging-bottom: 100px;
+    display:none;
+}
+.ytplayer{
+    margin:auto;
+    margin-top: 150px;
 }
 
 /*****Numéro question et tuto*****/
