@@ -29,8 +29,11 @@
             $statement->execute(array(":paramCatSong" => $_POST["catSong"]));
         
             // AJOUT TIMECODE
+            $startTimeCode = "00:" . ($_POST["minStart"]>9 ? ($_POST["minStart"]):("0" . $_POST["minStart"])) . ":" . ($_POST["secStart"]>9 ? ($_POST["secStart"]):("0" . $_POST["secStart"]));
+        
             $timeCode = "00:" . ($_POST["minEnd"]>9 ? ($_POST["minEnd"]):("0" . $_POST["minEnd"])) . ":" . ($_POST["secEnd"]>9 ? ($_POST["secEnd"]):("0" . $_POST["secEnd"]));
-            $requeteSQL = "INSERT INTO TIMECODES(timeCode,previousLyrics,trueRep,falseRep1,falseRep2,falseRep3,idSong) VALUES ('" . $timeCode . "', :paramPrevLyrics, :paramGoodRep, :paramBadRep1, :paramBadRep2, :paramBadRep3," . $idSong . ")";
+            
+            $requeteSQL = "INSERT INTO TIMECODES(startTimeCode,timeCode,previousLyrics,trueRep,falseRep1,falseRep2,falseRep3,idSong) VALUES ('" . $startTimeCode . "','" . $timeCode . "', :paramPrevLyrics, :paramGoodRep, :paramBadRep1, :paramBadRep2, :paramBadRep3," . $idSong . ")";
             $statement = $pdo->prepare($requeteSQL);
             $statement->execute(array(":paramPrevLyrics" => $_POST["prevLyrics"],
                                       ":paramGoodRep" => $_POST["goodRep"],
