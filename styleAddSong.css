@@ -1,0 +1,76 @@
+/* ===================== */
+/* === ADD SONG PAGE === */
+/* ===================== */
+.addSongSection {
+    width: 100%;
+    flex-direction: column;
+    padding: 0 5em;
+    max-width: 60vw;
+}
+
+.addSongForm div {
+    display: flex;
+    margin: 0.5em 0;
+}
+
+.addSongForm fieldset {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+.addSongForm>fieldset {
+    margin: 2em 0 0 0;
+}
+
+.addSongForm>fieldset::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    top: -5px;
+    background-color: #784199;
+    border-radius: 50px;
+}
+
+.addSongForm>fieldset>legend {
+    padding: 5px 0 0 0;
+    font-weight: bold;
+}
+
+.addSongForm>fieldset>fieldset label {
+    text-align: right;
+    font-style: italic;
+}
+
+.addSongForm label:first-child, span {
+    min-width: 10em;
+}
+
+.addSongForm input, select {
+    margin: 0 0 0 1em;
+}
+
+.addSongForm input[type="text"], .addSongForm input[type="number"], .addSongForm input[type="url"], select {
+    flex: 1;
+}
+
+.addSongForm input[type="number"] {
+    width: 3em;
+    text-align: center;
+    margin-right: 0.5em;
+}
+
+.timeForm {
+    display: flex;
+}
+
+.timeForm span {
+    text-align: right;
+}
+
+.timeForm div {
+    margin: 0;
+}

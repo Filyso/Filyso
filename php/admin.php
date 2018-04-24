@@ -9,7 +9,7 @@
         <meta name="description" content="">
         <title>Choix des options de jeu</title>
         <link rel="stylesheet" type="text/css" href="../style.css" />
-
+        <link rel="stylesheet" href="../styleAddSong.css" type="text/css" media="screen" />
     </head>
 
     <body>
@@ -30,13 +30,8 @@
                     <input type="button" value="Suppression d'utilisateurs" />
                 </div>
             </header>
-
-
-            <section>
-
-                <!--Faire en sorte d'afficher les pages php adaptées-->
-
-            </section>
+            
+            <?php include("./add_song_admin.php"); ?>
 
         </main>
 
