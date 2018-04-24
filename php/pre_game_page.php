@@ -7,7 +7,7 @@
     <meta name="description" content="Choisissez vos options de jeu et lancer votre partie ! Sur cette page vous pouvez choisir la catégorie de hanson sur la quelle vous voulez être testé.">
     <title>Choix des options de jeu</title>
     <link rel="stylesheet" type="text/css" href="../style.css" />
-
+    <script type="text/javascript" src="../solo_game_test.js"></script>
 </head>
 
 <body>
@@ -15,12 +15,12 @@
 
     <main class="preGamePage">
         <h1>Sélectionnez la langue et la catégorie</h1>
-        <form action="./solo_game.php" methid="post">
+        <form action="./solo_game.php" method="post">
 
-            <fieldset>
+            <fieldset id="checkBox">
                 <div>
                     <label for="français">Français</label>
-                    <input type="radio" name="langue" id="français" value="français" />
+                    <input type="radio" name="langue" id="français" value="français" checked/>
                 </div>
 
                 <div>
@@ -46,7 +46,7 @@
                 </div>
 
                 <div>
-                    <button type="button">Aléatoire</button>
+                    <button id="btnAlea" type="button">Aléatoire</button>
                 </div>
             </fieldset>
             <button type="submit">Jouer</button>
