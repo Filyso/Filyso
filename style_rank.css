@@ -1,0 +1,16 @@
+.mainRank table {
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    background-color: antiquewhite;
+}
+
+.mainRank tr {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mainRank th:first-child,
+.mainRank td:first-child {
+    align-self: flex-start;
+}
