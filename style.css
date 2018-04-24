@@ -1,51 +1,59 @@
 main {
-    background: linear-gradient(90deg,#8F8F8F,#F6F6F6,#8F8F8F);
+    background: linear-gradient(90deg, #8F8F8F, #F6F6F6, #8F8F8F);
 }
-h1{
-    margin-top: 0px; 
+
+h1 {
+    margin-top: 0px;
 }
 
 /********************/
+
 /*****    INDEX  ****/
+
 /********************/
 
-.mainIndex{
+.mainIndex {
     margin: 0;
     padding: 120px 50px 15% 50px;
-    
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-.mainIndex h1{
+
+.mainIndex h1 {
     margin-top: 0;
-    
+
     font-family: 'Helvetica';
 }
-.mainIndex p{
+
+.mainIndex p {
     font-size: 20px;
 }
-.mainIndex section{
+
+.mainIndex section {
     width: 60%;
     text-align: justify;
     margin: 20px 0 50px 0;
-    
+
     font-family: 'Helvetica';
 }
-.mainIndex a{
+
+.mainIndex a {
     background-color: #784199;
     color: white;
     text-decoration: none;
     text-align: center;
     font-size: 32px;
-    
+
     width: 150px;
     padding: 20px 0 20px 0;
     border-radius: 20px;
-    
+
     font-family: 'Helvetica';
 }
-.mainIndex a:hover{
+
+.mainIndex a:hover {
     background-color: #4CD1CB;
     transform-origin: center;
     transform: scale(1.05);
@@ -53,7 +61,9 @@ h1{
 }
 
 /*************************/
+
 /*****    HEADER    ******/
+
 /*************************/
 
 body {
@@ -90,7 +100,8 @@ body {
     text-decoration: none;
     font-size: 28px;
 }
-.mainHeader a:hover{
+
+.mainHeader a:hover {
     color: lightgrey;
 }
 
@@ -98,14 +109,14 @@ body {
     margin: 0;
     padding: 20px 5% 20px 6%;
     list-style-type: none;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
 
     height: 24px;
-    
+
     font-family: 'Helvetica';
 }
 
@@ -165,23 +176,30 @@ body {
     z-index: 1;
 }
 
-main{
+.mainSelect,
+.mainIndex,
+.mainAdmin {
     margin: 0;
     padding: 120px 50px 15% 50px;
 
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
     font-family: Helvetica;
 }
 
-h1 {
+.mainSelect h1,
+.mainIndex h1,
+.mainAdmin h1s {
     margin-top: 0;
     font-family: 'Helvetica';
 }
+
 /********************/
+
 /****   SELECT  *****/
+
 /********************/
 
 .mainSelect div {
@@ -235,33 +253,38 @@ h1 {
 }
 
 /*************************/
+
 /***  CHOIX CATEGORIE ****/
+
 /*************************/
 
-.preGamePage form{
+.preGamePage form {
     min-width: 50%;
     height: 350px;
-    display:flex;
+    display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
-.preGamePage fieldset{
+
+.preGamePage fieldset {
     height: 30%;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
+
     border: none;
     background-color: #784199;
     color: white;
     font-size: 20px;
-    
+
     border-radius: 30px;
 }
-.preGamePage label{
+
+.preGamePage label {
     padding-right: 10px;
 }
-.preGamePage button[type="button"]{
+
+.preGamePage button[type="button"] {
     width: 110%;
     height: 40px;
     border-radius: 20px;
@@ -271,16 +294,19 @@ h1 {
     font-family: "Helvetica";
     font-size: 20px;
 }
-.preGamePage button[type="button"]:hover{
+
+.preGamePage button[type="button"]:hover {
     transform-origin: center;
     transform: scale(1.05);
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
 }
-.preGamePage input[type=radio]{
+
+.preGamePage input[type=radio] {
     width: 15px;
     height: 15px;
 }
-.preGamePage button[type=submit]{
+
+.preGamePage button[type=submit] {
     min-width: 30%;
     height: 20%;
     align-self: center;
@@ -291,36 +317,43 @@ h1 {
     color: white;
     border-radius: 20px;
 }
-.preGamePage button[type=submit]:hover{
+
+.preGamePage button[type=submit]:hover {
     background-color: #4CD1CB;
     transform-origin: center;
     transform: scale(1.05);
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
 }
-.preGamePage select{
+
+.preGamePage select {
     background-color: #2f2f2f;
     color: white;
     border: none;
     font-family: "Helvetica";
-    padding-left: 10px; 
+    padding-left: 10px;
 }
 
 
 /**************************************/
+
 /********* Style Jeu en Solo **********/
+
 /**************************************/
 
 /*****Général*****/
+
 section {
-    display:flex;
+    display: flex;
     font-family: Arial;
 }
 
 /***Photo Profil*****/
-.score figure img{
+
+.score figure img {
     width: 100%;
 }
-.score figure{
+
+.score figure {
     width: 150px;
     height: 150px;
     overflow: hidden;
@@ -328,8 +361,10 @@ section {
     border-radius: 50%;
     margin: auto;
 }
+
 /******Score*****/
-.barScoreMax{
+
+.barScoreMax {
     width: 20px;
     height: 600px;
     margin: 0;
@@ -341,7 +376,8 @@ section {
     border-radius: 10px;
     z-index: 1;
 }
-.barScore{
+
+.barScore {
     width: 20px;
     height: 50%;
     background-color: #4cd1cb;
@@ -350,17 +386,19 @@ section {
     bottom: 0;
     z-index: 2;
 }
+
 .score {
     display: flex;
     flex-direction: column;
-    position:relative;
-    width:25%;
-    min-width:170px;
+    position: relative;
+    width: 25%;
+    min-width: 170px;
     position: absolute;
 }
+
 /******Contenu******/
 
-.contenu{
+.contenu {
     width: 50%;
     min-width: 450px;
     height: 50%;
@@ -369,104 +407,115 @@ section {
     margin-top: 70px;
     marging-bottom: 100px;
 }
-    /*****Numéro question et tuto*****/
-        .numEtTuto{
-            display: flex;
-            justify-content: space-between;
-            font-size: 20px;
-        }
 
-        .tutoButton{
-            height: 50px;
-            width: 50px;
-            background-color: #4cd1cb;
-            font-size: 40px ;
-            color: white;
-            border-radius: 50%;
-            border: none;
-            transition: 0.2s linear;
-        }
-        .tutoButton:hover{
-            transform-origin: center;
-            transform: scale(1.2);
-            transition: 0.2s linear;
-        }
-    /*****Phrase à compléter***/
-        .phraseACompleter{
-            text-align: center;
-            font-size: 40px;
-            margin-bottom: 10%;
-        }
-    /*****Div des Reponses*****/
-    
-        .reponses{
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 100%;
-            height: 100%;
-            position:relative;
-        }
-        .reponseButton{
-            margin: 10px;
-            width: 40%;
-            height: 100px;
-            min-width: 200px;
-            border-radius: 20px;
-            border: none;
-            background-color: #784199;
-            color: white;
-            font-size: 25px ;
-        }
-        .Sousreponses{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .reponseButton:hover{
-            background-color: #4cd1cb;
-            color: black;
-        }
-    /*****Timer*****/
+/*****Numéro question et tuto*****/
 
-        .divTimer{
-            width: 100px;
-            min-width: 100px;
-            height: 100px;
-            border: solid 8px #4cd1cb;
-            border-radius: 50%;
-            margin:auto;
-            background-color:aliceblue;
-            position:absolute;
-            top:calc(50% - 54px);
-            left:calc(50% - 54px);
-        }
-        .timer{
-            margin-top: calc(50% - 29px);
-            text-align: center;
-            font-size: 50px;
-            
-        }
-       
+.numEtTuto {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+}
+
+.tutoButton {
+    height: 50px;
+    width: 50px;
+    background-color: #4cd1cb;
+    font-size: 40px;
+    color: white;
+    border-radius: 50%;
+    border: none;
+    transition: 0.2s linear;
+}
+
+.tutoButton:hover {
+    transform-origin: center;
+    transform: scale(1.2);
+    transition: 0.2s linear;
+}
+
+/*****Phrase à compléter***/
+
+.phraseACompleter {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 10%;
+}
+
+/*****Div des Reponses*****/
+
+.reponses {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.reponseButton {
+    margin: 10px;
+    width: 40%;
+    height: 100px;
+    min-width: 200px;
+    border-radius: 20px;
+    border: none;
+    background-color: #784199;
+    color: white;
+    font-size: 25px;
+}
+
+.Sousreponses {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.reponseButton:hover {
+    background-color: #4cd1cb;
+    color: black;
+}
+
+/*****Timer*****/
+
+.divTimer {
+    width: 100px;
+    min-width: 100px;
+    height: 100px;
+    border: solid 8px #4cd1cb;
+    border-radius: 50%;
+    margin: auto;
+    background-color: aliceblue;
+    position: absolute;
+    top: calc(50% - 54px);
+    left: calc(50% - 54px);
+}
+
+.timer {
+    margin-top: calc(50% - 29px);
+    text-align: center;
+    font-size: 50px;
+
+}
+
 
 /**** 4cd1cb bleu
 784199 violet ****/
 
-
-
 /**********/
+
 /* Footer */
+
 /**********/
 
-.footer{
-	background-color: #2D2D2D;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	font: bold 16px sans-serif;
+.footer {
+    background-color: #2D2D2D;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    font: bold 16px sans-serif;
     font-family: 'Helvetica' sans-serif;
-	text-align: left;
-	overflow: hidden;
+    text-align: left;
+    overflow: hidden;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -474,25 +523,25 @@ section {
 
 /* Footer left */
 
-.footerGauche{
-	float: left;
+.footerGauche {
+    float: left;
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
     max-width: 50vw;
-    
-    
+
+
 }
 
-.logo{
+.logo {
     max-height: 10vw;
 }
 
-.footer .footer-links{
-	color:  darkgrey;
-	margin: 0;
-	padding: 0;
+.footer .footer-links {
+    color: darkgrey;
+    margin: 0;
+    padding: 0;
     width: 40vw;
     text-align: center;
     height: 30px;
@@ -501,160 +550,166 @@ section {
     justify-content: space-around;
     flex-wrap: nowrap;
     min-width: 200px;
-    margin-left : 20px;
-    margin-right : 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
-.footer .footer-links a{
-	text-decoration: none;
-	color:  inherit;
-    
+.footer .footer-links a {
+    text-decoration: none;
+    color: inherit;
+
 }
-.footer .footer-links a:hover{
-    color : lightgrey;
+
+.footer .footer-links a:hover {
+    color: lightgrey;
     transition: 0.2s;
 }
-.footerReseaux img{
+
+.footerReseaux img {
     max-width: 3vw;
-    padding:5px;
+    padding: 5px;
 }
-.footerReseaux img:hover{
+
+.footerReseaux img:hover {
     transform: scale(1.1);
     transition: 0.2s;
 }
-.footer .footerReseaux{
-	display: flex;
+
+.footer .footerReseaux {
+    display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
 }
 
 /* Footer Right */
 
-.footer .footerDroite{
-	float: right;
+.footer .footerDroite {
+    float: right;
     display: inline-block;
     padding-bottom: 20px;
 }
 
-.footer .footerDroite p{
-	vertical-align: top;
-	margin-bottom:20px ;
-	color: darkgrey;
+.footer .footerDroite p {
+    vertical-align: top;
+    margin-bottom: 20px;
+    color: darkgrey;
 }
 
 /* The contact form */
 
-.footer form{
-	display: inline-block;
+.footer form {
+    display: inline-block;
 }
 
 .footer form input,
-.footer form textarea{
-	display: block;
-	border-radius: 3px;
-	box-sizing: border-box;
-	background-color:  #1f2022;
-	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-	border: none;
-	resize: none;
+.footer form textarea {
+    display: block;
+    border-radius: 3px;
+    box-sizing: border-box;
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    border: none;
+    resize: none;
     outline: none;
-	font: inherit;
-	font-size: 14px;
-	font-weight: normal;
-	color:  darkgrey;
-	width: 400px;
-	padding: 18px;
+    font: inherit;
+    font-size: 14px;
+    font-weight: normal;
+    color: darkgrey;
+    width: 400px;
+    padding: 18px;
 }
 
 .footer ::-webkit-input-placeholder {
-	color:  #5c666b;
+    color: #5c666b;
 }
 
 .footer ::-moz-placeholder {
-	color:  #5c666b;
-	opacity: 1;
+    color: #5c666b;
+    opacity: 1;
 }
 
-.footer :-ms-input-placeholder{
-	color:  #5c666b;
+.footer :-ms-input-placeholder {
+    color: #5c666b;
 }
 
 
-.footer form input{
-	height: 55px;
-	margin-bottom: 15px;
-    
+.footer form input {
+    height: 55px;
+    margin-bottom: 15px;
+
 }
 
-.footer form textarea{
-	height: 100px;
-	margin-bottom: 20px;
+.footer form textarea {
+    height: 100px;
+    margin-bottom: 20px;
 }
 
-.footer form button{
-	border-radius: 3px;
-	background-color:  #33383b;
-	color: darkgrey;
-	border: 0;
-	padding: 15px 50px;
-	font-weight: bold;
-	float: right;
+.footer form button {
+    border-radius: 3px;
+    background-color: #33383b;
+    color: darkgrey;
+    border: 0;
+    padding: 15px 50px;
+    font-weight: bold;
+    float: right;
     cursor: pointer;
 }
-.footer form button:hover{
+
+.footer form button:hover {
     background-color: dimgray;
     transition: 0.2s;
     transform: scale(1.02);
 }
+
 /* If you don't want the footer to be responsive, remove these media queries */
 
 @media (max-width: 1000px) {
 
-	.footer {
-		font: bold 14px sans-serif;
-	}
+    .footer {
+        font: bold 14px sans-serif;
+    }
 
-	.footer .footerNom{
-		font-size: 12px;
-	}
+    .footer .footerNom {
+        font-size: 12px;
+    }
 
-	.footer form input,
-	.footer form textarea{
-		width: 250px;
-	}
+    .footer form input,
+    .footer form textarea {
+        width: 250px;
+    }
 
-	.footer form button{
-		padding: 10px 35px;
-	}
+    .footer form button {
+        padding: 10px 35px;
+    }
 
 }
 
 @media (max-width: 800px) {
 
-	.footer{
-		padding: 30px;
-	}
+    .footer {
+        padding: 30px;
+    }
 
-	.footer .footerGauche,
-	.footer .footerDroite{
-		float: none;
-		max-width: 300px;
-		margin: 0 auto;
-	}
+    .footer .footerGauche,
+    .footer .footerDroite {
+        float: none;
+        max-width: 300px;
+        margin: 0 auto;
+    }
 
-	.footer .footerGauche{
-		margin-bottom: 40px;
-	}
+    .footer .footerGauche {
+        margin-bottom: 40px;
+    }
 
-	.footer form{
-		margin-top: 30px;
-	}
+    .footer form {
+        margin-top: 30px;
+    }
 
-	.footer form{
-		display: block;
-	}
+    .footer form {
+        display: block;
+    }
 
-	.footer form button{
-		float: none;
-	}
+    .footer form button {
+        float: none;
+    }
 }
