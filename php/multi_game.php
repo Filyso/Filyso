@@ -14,7 +14,7 @@
 
     <body>
         <?php include("./main_header.php")?>
-        <main>
+        <main class="selectMulti">
             <h1>Le jeu en multijoueur est encore en développement !</h1>
         </main>
 

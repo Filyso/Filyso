@@ -17,20 +17,23 @@
         <h1>Sélectionnez la langue et la catégorie</h1>
         <form action="./solo_game.php" method="post">
 
-            <fieldset id="checkBox">
-                <div>
-                    <label for="français">Français</label>
-                    <input type="radio" name="langue" id="français" value="français" checked/>
+            <fieldset class="section">
+                <div class="container">
+                    
+                    <input type="radio" name="langue" id="français" value="français" class="inputRadio" />
+                    <label for="français"><img src="../images/FR.png" alt="drapeau français"></label>
                 </div>
 
-                <div>
-                    <label for="anglais">Anglais</label>
-                    <input type="radio" name="langue" id="anglais" value="anglais" />
+                <div class="container">
+                    
+                    <input type="radio" name="langue" id="anglais" value="anglais" class="inputRadio"/>
+                    <label for="anglais"><img src="../images/UK.png" alt="drapeau anglais"></label>
                 </div>
 
-                <div>
-                    <label for="Bilingue">Bilingue</label>
-                    <input type="radio" name="langue" id="bilingue" value="bilingue" />
+                <div class="container">
+                    
+                    <input type="radio" name="langue" id="bilingue" value="bilingue" class="inputR  adio"/>
+                    <label for="bilingue"><img src="../images/FRUK.png" alt="drapeau bilingue"></label>
                 </div>
             </fieldset>
 

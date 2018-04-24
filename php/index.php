@@ -12,6 +12,7 @@
         <title></title>
         <meta name="" content="">
         <link rel="stylesheet" href="../style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
     </head>
 
     <body>

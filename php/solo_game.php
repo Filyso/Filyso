@@ -10,16 +10,16 @@
     <meta charset="utf-8">
     <title>Jeu en Solo</title>
     <meta name="description" content="Jouez !">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css"/>
-
 </head>
 
 <body>
     <?php include("./main_header.php");?>
     
-    <main>
+    <main class="mainJeuSolo">
 
-        <section>
+        <section class="sectionSolo">
             
             <div class="score">
             
