@@ -1,0 +1,37 @@
+.mainRank table {
+    width: 50%;
+    border-collapse: collapse;
+    font-size: 20px;
+    border-radius: 10px;
+}
+
+.mainRank tr {
+    padding-top: 15px;
+}
+
+.mainRank th {
+    font-size: 30px;
+    padding: 10px 20px 10px 20px;
+}
+
+.mainRank td {
+    padding: 5px 20px 5px 20px;
+}
+
+.mainRank th:first-child,
+.mainRank td:first-child {
+    text-align: left;
+}
+
+.mainRank th:last-child,
+.mainRank td:last-child {
+    text-align: right;
+}
+
+.mainRank tr:nth-child(even) {
+    background-color: #4CD1CB;
+}
+
+.mainRank tr:nth-child(odd) {
+    background-color: #85e0db;
+}

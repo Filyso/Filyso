@@ -178,6 +178,7 @@ body {
 
 .mainSelect,
 .mainIndex,
+.mainRank
 {
     margin: 0;
     padding: 120px 50px 15% 50px;
@@ -191,7 +192,8 @@ body {
 
 .mainSelect h1,
 .mainIndex h1,
-.mainAdmin h1 {
+.mainAdmin h1,
+.mainRank h1{
     margin-top: 0;
     font-family: 'Helvetica';
 }
