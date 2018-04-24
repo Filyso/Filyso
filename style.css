@@ -1,5 +1,6 @@
 main {
     background: linear-gradient(90deg, #8F8F8F, #F6F6F6, #8F8F8F);
+    
 }
 
 h1 {
@@ -15,7 +16,6 @@ h1 {
 .mainIndex {
     margin: 0;
     padding: 120px 50px 15% 50px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,20 +23,23 @@ h1 {
 
 .mainIndex h1 {
     margin-top: 0;
-
-    font-family: 'Helvetica';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mainIndex p {
     font-size: 20px;
 }
-
+.mainIndex h2 {
+        font-weight: normal;
+}
 .mainIndex section {
+    display: flex;
+    flex-wrap: wrap;
     width: 60%;
-    text-align: justify;
+    text-align: center;
+    justify-content: center;
     margin: 20px 0 50px 0;
-
-    font-family: 'Helvetica';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mainIndex a {
@@ -50,7 +53,7 @@ h1 {
     padding: 20px 0 20px 0;
     border-radius: 20px;
 
-    font-family: 'Helvetica';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mainIndex a:hover {
@@ -193,7 +196,7 @@ body {
 .mainIndex h1,
 .mainAdmin h1s {
     margin-top: 0;
-    font-family: 'Helvetica';
+    font-family: 'Montserrat', sans-serif;
 }
 
 /********************/
@@ -207,7 +210,7 @@ body {
     text-align: justify;
     margin: 20px 0 50px 0;
 
-    font-family: 'Helvetica';
+    font-family: 'Montserrat', sans-serif;
 
     display: flex;
     flex-direction: column;
@@ -229,7 +232,7 @@ body {
     padding: 30px 0 30px 0;
     border-radius: 20px;
 
-    font-family: 'Helvetica';
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mainSelect .multi a {
@@ -243,7 +246,7 @@ body {
     padding: 40px 0 40px 0;
     border-radius: 30px;
 
-    font-family: 'Helvetica';
+   font-family: 'Montserrat', sans-serif;
 }
 
 .mainSelect a:hover {
@@ -252,15 +255,37 @@ body {
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
 }
 
+.selectMulti{
+    height: 80vh;
+    display: flex;
+}
+.selectMulti h1{
+    margin: auto;
+    text-align: center;
+    padding:20px;
+    background-color : #2D2D2D;
+    border-radius: 20px;
+    color:white;
+    font-family: 'Montserrat', sans-serif;
+}
 /*************************/
 
 /***  CHOIX CATEGORIE ****/
 
 /*************************/
 
+.preGamePage{
+    height: 80vh;
+    padding: 50px;
+    padding-top:150px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
 .preGamePage form {
-    min-width: 50%;
-    height: 350px;
+    margin: auto;
+    max-width: 50%;
+    min-height: 30vh;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -268,30 +293,35 @@ body {
 
 .preGamePage fieldset {
     height: 30%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
     border: none;
     background-color: #784199;
     color: white;
     font-size: 20px;
-
-    border-radius: 30px;
+    padding: 20px;
+    border-radius: 20px;
+}
+.preGamePage fieldset:first-child{
+    display:block;
+    
+}
+.preGamePage fieldset:first-child div{
+    max-width: 200px;
+    display:f
 }
 
 .preGamePage label {
     padding-right: 10px;
+    
 }
 
 .preGamePage button[type="button"] {
-    width: 110%;
-    height: 40px;
+    margin-top: 10px;
+    padding: 5px 15px 5px 15px;
     border-radius: 20px;
     background-color: #4CD1CB;
     border: none;
     color: white;
-    font-family: "Helvetica";
+    font-family: inherit;
     font-size: 20px;
 }
 
@@ -312,7 +342,7 @@ body {
     align-self: center;
     border: none;
     background-color: #784199;
-    font-family: "Helvetica";
+    font-family: inherit;
     font-size: 30px;
     color: white;
     border-radius: 20px;
@@ -329,8 +359,9 @@ body {
     background-color: #2f2f2f;
     color: white;
     border: none;
-    font-family: "Helvetica";
+    font-family: inherit;
     padding-left: 10px;
+    outline: none;
 }
 
 
@@ -770,6 +801,7 @@ section {
     padding: 3vh 3vw 3vh 3vw;
     border-radius: 5px;
     background-color: #2D2D2D;
+    margin-top: 50px;
 }
 .BoiteAIdee h2{
     font-weight: normal;
@@ -832,6 +864,7 @@ section {
     padding: 3vh 3vw 3vh 3vw;
     border-radius: 5px;
     background-color: #2D2D2D;
+    margin-top: 50px;
 }
 .AVenir h2{
     color: white;

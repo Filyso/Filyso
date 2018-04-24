@@ -6,7 +6,7 @@
 
     <head>
         <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
         <meta charset="utf-8">
         <meta http-equiv="" content="">
         <title></title>
