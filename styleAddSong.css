@@ -1,0 +1,7 @@
+.addSongSection {
+    flex-direction: column;
+}
+
+.addSongSection > div {
+    margin: 20px;
+}

@@ -73,7 +73,8 @@
         <meta http-equiv="" content="">
         <title></title>
         <meta name="" content="">
-        <link rel="" href="">
+        <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
+        <link rel="stylesheet" href="../styleAddSong.css" type="text/css" media="screen" />
 
     </head>
 
@@ -81,18 +82,17 @@
         <?php include("main_header.php");?>
         <main>
 
-            <section>
+            <section class="addSongSection">
 
                 <h2>Ajouter une chanson !</h2>
 
                 <form action="add_song_admin.php" method="post">
 
                     <div>
-
                         <label for="song" class="">Nom de la chanson</label>
                         <input type="text" name="song" id="song" class="" required="required" maxlength="75" />
-
                     </div>
+                    
                     <div>
                         <label for="artistSong" class="">Nom de l'interprète</label>
                         <input type="text" name="artistSong" id="artistSong" class="" required="required" maxlength="50" />
@@ -139,7 +139,6 @@
 
                     </div>
                     <div>
-
                         <span>Langue</span>
                         
                         <input type="radio" id="langSongFR" name="langSong" value="fr">
@@ -147,15 +146,11 @@
                         
                         <input type="radio" id="langSongEN" name="langSong" value="en">
                         <label for="langSongEN">EN</label>
-
-
                     </div>
 
                     <div>
-
                         <label for="linkVideo" class="">URL</label>
                         <input type="url" name="linkVideo" id="linkVideo" class="" required="required" />
-
                     </div>
 
                     <div>
