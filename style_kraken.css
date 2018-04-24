@@ -5,12 +5,17 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
+    
+    font-family: Helvetica;
 }
 
 h1 {
     margin-top: 0;
     font-family: 'Helvetica';
 }
+/********************/
+/****   SELECT  *****/
+/********************/
 
 .mainSelect div {
     width: 60%;
@@ -60,4 +65,75 @@ h1 {
     transform-origin: center;
     transform: scale(1.05);
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+}
+
+/*************************/
+/***  CHOIX CATEGORIE ****/
+/*************************/
+
+.preGamePage form{
+    min-width: 50%;
+    height: 350px;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.preGamePage fieldset{
+    height: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+    border: none;
+    background-color: #784199;
+    color: white;
+    font-size: 20px;
+    
+    border-radius: 30px;
+}
+.preGamePage label{
+    padding-right: 10px;
+}
+.preGamePage button[type="button"]{
+    width: 110%;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #4CD1CB;
+    border: none;
+    color: white;
+    font-family: "Helvetica";
+    font-size: 20px;
+}
+.preGamePage button[type="button"]:hover{
+    transform-origin: center;
+    transform: scale(1.05);
+    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+}
+.preGamePage input[type=radio]{
+    width: 15px;
+    height: 15px;
+}
+.preGamePage button[type=submit]{
+    min-width: 30%;
+    height: 20%;
+    align-self: center;
+    border: none;
+    background-color: #784199;
+    font-family: "Helvetica";
+    font-size: 30px;
+    color: white;
+    border-radius: 20px;
+}
+.preGamePage button[type=submit]:hover{
+    background-color: #4CD1CB;
+    transform-origin: center;
+    transform: scale(1.05);
+    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+}
+.preGamePage select{
+    background-color: #2f2f2f;
+    color: white;
+    border: none;
+    font-family: "Helvetica";
+    padding-left: 10px; 
 }
