@@ -63,63 +63,62 @@
             $pdo = null;
     }
 ?>
-
+    <script type="text/javascript" src="../javascript/add_Time_Code.js"></script>
     <section class="addSongSection">
 
         <h3>Ajouter une chanson !</h3>
 
-        <form action="add_song_admin.php" method="post" class="addSongForm">
+        <form action="add_song_admin.php" method="post" id="addSongForm" class="addSongForm">
 
             <div>
                 <label for="song">Nom de la chanson</label>
-                <input type="text" name="song" id="song" class="" required="required" maxlength="75" />
+                <input type="text" name="song" id="song" required="required" maxlength="75" />
             </div>
 
             <div>
-                <label for="artistSong" class="">Nom de l'interprète</label>
-                <input type="text" name="artistSong" id="artistSong" class="" required="required" maxlength="50" />
+                <label for="artistSong">Nom de l'interprète</label>
+                <input type="text" name="artistSong" id="artistSong" required="required" maxlength="50" />
             </div>
 
             <div>
 
-                <label for="catSong" class="">Catégorie</label>
-                <select id="catSong" class="" size="1" type="text" name="catSong" required>
+                <label for="catSong" >Catégorie</label>
+                <select id="catSong" size="1" type="text" name="catSong" required>
                         
-                            <option value="" disabled selected>Choisissez une catégorie</option>
-                            <?php
-                                try {
-                                // ETAPE 1 : Se connecter au serveur de base de données
-                                    require("./param.inc.php");
-                                    $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
-                                    $pdo->query("SET NAMES utf8");
-                                    $pdo->query("SET CHARACTER SET 'utf8'");
+                    <option value="" disabled selected>Choisissez une catégorie</option>
+                    <?php
+                        try {
+                        // ETAPE 1 : Se connecter au serveur de base de données
+                            require("./param.inc.php");
+                            $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+                            $pdo->query("SET NAMES utf8");
+                            $pdo->query("SET CHARACTER SET 'utf8'");
 
-                                // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
-                                    $requeteSQL = "SELECT idCat, nameCat FROM CATEGORIES";
-                                    $statement = $pdo->query($requeteSQL);
+                        // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
+                            $requeteSQL = "SELECT idCat, nameCat FROM CATEGORIES";
+                            $statement = $pdo->query($requeteSQL);
 
-                                // Boucle sur chaque auteur
-                                // ETAPE 3 : Traiter les données retourner
-                                    // Premier auteur
-                                    $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-                                    while($ligne != false) {
-                            ?>
-                            <option value="<?php echo($ligne["idCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
+                        // ETAPE 3 : Traiter les données retourner
+                            $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                            while($ligne != false) {
+                    ?>
+                    <option value="<?php echo($ligne["idCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
                             
-                            <?php
-                                        $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-                                    }
-                                // Fin de la boucle
-                                // ETAPE 4 : Déconnecter du serveur
-                                    $pdo = null;
-                                } catch (Exception $e) {
-                                    echo($e);
-                                }
-                            ?>
+                    <?php
+                                $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                            }
+                        // Fin de la boucle
+                        // ETAPE 4 : Déconnecter du serveur
+                            $pdo = null;
+                        } catch (Exception $e) {
+                            echo($e);
+                        }
+                    ?>
 
-                        </select>
+                </select>
 
             </div>
+            
             <div>
                 <span>Langue</span>
 
@@ -131,10 +130,12 @@
             </div>
 
             <div>
-                <label for="linkVideo" class="">URL</label>
-                <input type="url" name="linkVideo" id="linkVideo" class="" required="required" />
+                <label for="linkVideo">URL</label>
+                <input type="url" name="linkVideo" id="linkVideo" required="required" />
             </div>
-
+            
+            <input id="nbTimecode" name="nbTimeCode" value="1"/>
+            
             <fieldset class="timeCode">
                 <legend>Timecode</legend>
 
@@ -142,63 +143,63 @@
                     <!-- De tant de minutes à tant de minutes ???? -->
                     <div>
                         <span>De</span>
-                        <input id="minStart" type="number" name="minStart" class="" required="required" min="0" max="10">
-                        <label for="minStart" class="">min</label>
+                        <input id="minStart_1" type="number" name="minStart_1" required="required" min="0" max="10">
+                        <label for="minStart_1">min</label>
                     </div>
 
                     <div>
-                        <input id="secStart" type="number" name="secStart" class="" required="required" min="00" max="59">
-                        <label for="secStart" class="">s</label>
+                        <input id="secStart_1" type="number" name="secStart_1" required="required" min="00" max="59">
+                        <label for="secStart_1">s</label>
                     </div>
 
                     <div>
                         <span>A</span>
-                        <input id="minEnd" type="number" name="minEnd" class="" required="required" min="0" max="10">
-                        <label for="minEnd" class="">min</label>
+                        <input id="minEnd_1" type="number" name="minEnd_1" required="required" min="0" max="10">
+                        <label for="minEnd_1">min</label>
                     </div>
 
                     <div>
-                        <input id="secEnd" type="number" name="secEnd" class="" required="required" min="00" max="59">
-                        <label for="secEnd" class="">s</label>
+                        <input id="secEnd_1" type="number_1" name="secEnd_1" required="required" min="00" max="59">
+                        <label for="secEnd_1">s</label>
                     </div>
 
                 </div>
 
                 <div>
-                    <label for="prevLyrics" class="">Paroles</label>
-                    <input id="prevLyrics" type="text" name="prevLyrics" class="" required="required" maxlength="100">
+                    <label for="prevLyrics_1">Paroles</label>
+                    <input id="prevLyrics_1" type="text" name="prevLyrics_1" required="required" maxlength="100">
                 </div>
 
                 <div>
-                    <label for="goodRep" class="">Réponse</label>
-                    <input id="goodRep" type="text" name="goodRep" class="" required="required" maxlength="75">
+                    <label for="goodRep_1">Réponse</label>
+                    <input id="goodRep_1" type="text" name="goodRep_1" required="required" maxlength="75">
                 </div>
 
                 <fieldset>
                     <legend>Autres réponses</legend>
 
                     <div>
-                        <label for="badRep1" class="">1</label>
-                        <input id="badRep1" type="text" name="badRep1" class="" required="required" maxlength="75">
+                        <label for="badRep1_1">1</label>
+                        <input id="badRep1_1" type="text" name="badRep1_1" required="required" maxlength="75">
                     </div>
 
                     <div>
-                        <label for="badRep2" class="">2</label>
-                        <input id="badRep2" type="text" name="badRep2" class="" required="required" maxlength="75">
+                        <label for="badRep2_1">2</label>
+                        <input id="badRep2_1" type="text" name="badRep2_1" required="required" maxlength="75">
                     </div>
 
                     <div>
-                        <label for="badRep3" class="">3</label>
-                        <input id="badRep3" type="text" name="badRep3" class="" required="required" maxlength="75">
+                        <label for="badRep3_1">3</label>
+                        <input id="badRep3_1" type="text" name="badRep3_1" required="required" maxlength="75">
                     </div>
 
                 </fieldset>
 
             </fieldset>
 
-            <div class="button">
-                <button class="bouton">Ajouter un TimeCode</button>
-                <button type="submit" class="bouton">Ajouter la chanson</button>
+            <div >
+                <input type="button" id="addTCBtn" value="Ajouter un TimeCode"/>
+                <input type="submit" value="Ajouter la chanson"/>
             </div>
 
         </form>
