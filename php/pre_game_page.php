@@ -12,10 +12,9 @@
 
 <body>
     <?php include("./main_header.php"); ?>
-
     <main class="preGamePage">
         <h1>Sélectionnez la langue et la catégorie</h1>
-        <form action="./solo_game.php" method="post">
+        <form action="./solo_game.php" method="get">
 
             <fieldset id="checkBox">
                 <div>
@@ -37,7 +36,7 @@
             <fieldset>
                 <div>
                     <label for="categorie">Catégorie</label>
-                    <select id="categorie">
+                    <select id="categorie" name="categorie">
                         <option value="pop">Pop</option>
                         <option value="rock">Rock</option>
                         <option value="metal">Metal</option>

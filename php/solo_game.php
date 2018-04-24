@@ -1,5 +1,15 @@
 <?php
 	header("Content-type: text/html; charset: UTF-8");
+
+     // ETAPE 1 : Se connecter au serveur de base de données
+            require("./param.inc.php");
+            $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+            $pdo->query("SET NAMES utf8");
+            $pdo->query("SET CHARACTER SET 'utf8'");
+    // ETAPE 2 : Envoyer une requête SQL
+            $requeteSQL = "SELECT CHANSONS WHERE lang=".$_GET["langue"];
+            $requeteSQL = ""
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +26,6 @@
 
 <body>
     <?php include("./main_header.php");?>
-    
     <main>
 
         <section>
@@ -25,6 +34,7 @@
             
                 <figure>
                     <img alt="Photo de profil" src="../images/chat.jpg"/>
+                    
                 </figure>
                 
                 <div class="barScoreMax">
