@@ -19,11 +19,11 @@
        
         <main class="mainSelect">
             <h1>Choisir le mode de jeu</h1>
-            <div class="multi">
+            <div class="buttonMulti">
                 <a href="./multi_game.php">MULTI</a>
                 <p>Jouez en ligne contre d'autres personnes.</p>
             </div>
-            <div class="solo">
+            <div class="buttonSolo">
                 <a href="./pre_game_page.php">SOLO</a>
                 <p>Jouez seul pour vous entraîner.</p>
             </div>

@@ -11,15 +11,15 @@
     <title>Jeu en Solo</title>
     <meta name="description" content="Jouez !">
     <link rel="stylesheet" type="text/css" href="../style_jeu_solo.css"/>
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
 </head>
 
 <body>
     <?php include("./main_header.php");?>
     
-    <main>
+    <main class="mainJeuSolo">
 
-        <section>
+        <section class="sectionSolo">
             
             <div class="score">
             

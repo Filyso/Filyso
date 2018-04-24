@@ -14,6 +14,7 @@ h1 {
 /********************/
 
 .mainIndex {
+    height: 54vh;
     margin: 0;
     padding: 120px 50px 15% 50px;
     display: flex;
@@ -52,15 +53,15 @@ h1 {
     width: 150px;
     padding: 20px 0 20px 0;
     border-radius: 20px;
-
+    transition: 0.2s ;
     font-family: 'Montserrat', sans-serif;
 }
 
 .mainIndex a:hover {
     background-color: #4CD1CB;
     transform-origin: center;
-    transform: scale(1.05);
-    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+    box-shadow: 0px 0px 0px 10px #85e0db;
+    transition: 0.2s ;
 }
 
 /*************************/
@@ -217,42 +218,37 @@ body {
     align-items: center;
 }
 
-.maTCinSelect .multi {
-    margin-bottom: 0;
-}
-
-.mainSelect a {
+.buttonSolo a {
     background-color: #784199;
     color: white;
     text-decoration: none;
     text-align: center;
     font-size: 32px;
-
     width: 180px;
-    padding: 30px 0 30px 0;
+    padding: 20px 0 20px 0;
     border-radius: 20px;
-
     font-family: 'Montserrat', sans-serif;
 }
 
-.mainSelect .multi a {
+.buttonMulti a {
     background-color: #4CD1CB;
     color: white;
     text-decoration: none;
     text-align: center;
     font-size: 42px;
-
     width: 220px;
-    padding: 40px 0 40px 0;
+    padding: 20px 0 20px 0;
     border-radius: 30px;
-
-   font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.mainSelect a:hover {
-    transform-origin: center;
-    transform: scale(1.05);
-    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+.buttonSolo a:hover {
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px 10px #a470c2;
+}
+.buttonMulti a:hover {
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px 10px #85e0db;
 }
 
 .selectMulti{
@@ -281,17 +277,21 @@ body {
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
+.preGamePage h1{
+    margin-bottom: 30px;
+}
 
 .preGamePage form {
     margin: auto;
-    max-width: 50%;
-    min-height: 30vh;
+    max-width: 35%;
+    min-height: 300px;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
 }
 
 .preGamePage fieldset {
+    box-shadow: 0px 0px 0px 5px #a470c2;
     height: 30%;
     border: none;
     background-color: #784199;
@@ -299,18 +299,35 @@ body {
     font-size: 20px;
     padding: 20px;
     border-radius: 20px;
+    margin-bottom: 30px;
 }
-.preGamePage fieldset:first-child{
-    display:block;
-    
+.preGamePage img{
+    max-width: 50px;
+    vertical-align: center
 }
+
+
 .preGamePage fieldset:first-child div{
     max-width: 200px;
     display: inline-block;
 }
-
+.preGamePage fieldset:first-child div input{
+    vertical-align: middle;
+    margin: 0;
+    margin-top: 7px;
+}
+.preGamePage fieldset:first-child div img{
+    vertical-align: middle;
+}
+.preGamePage fieldset:first-child div img:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: 0.2s;
+}
 .preGamePage label {
-    padding-right: 10px;
+    padding: 0px 5px 0 5px;
+    vertical-align: middle;
+    
     
 }
 
@@ -319,23 +336,45 @@ body {
     padding: 5px 15px 5px 15px;
     border-radius: 20px;
     background-color: #4CD1CB;
-    border: none;
     color: white;
+    border:none;
     font-family: inherit;
     font-size: 20px;
+    transition: 0.2s;
+    outline:none;
 }
 
 .preGamePage button[type="button"]:hover {
     transform-origin: center;
-    transform: scale(1.05);
-    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+    transition: 0.2s;
     cursor: pointer;
+    color: #2D2D2D;
+    box-shadow: 0px 0px 0px 5px #85e0db;
 }
 
 .preGamePage input[type=radio] {
     width: 15px;
     height: 15px;
+    opacity: 0;
 }
+.preGamePage input[type=radio] + label:after{
+    background: #fff;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    content: '';
+    width: 17px;
+    height: 17px;
+}
+.preGamePage input[type=radio]:checked + label:after {
+    background: #4CD1CB;
+    border-color: #4CD1CB;
+    transition: 0.1s;
+    box-shadow: inset 0px 0px 0px 2px #fff;
+}
+
 .preGamePage input[type=radio]:hover{
      cursor: pointer;
 }
@@ -343,31 +382,39 @@ body {
     min-width: 30%;
     height: 20%;
     align-self: center;
-    border: none;
-    background-color: #784199;
+    background-color:transparent;
     font-family: inherit;
     font-size: 30px;
-    color: white;
+    border :none;
+    color: #2D2D2D;
     border-radius: 20px;
+    transition: 0.2s;
+    background-color: #784199;
+    color:white;
 }
 
 .preGamePage button[type=submit]:hover {
-    background-color: #4CD1CB;
+    
     transform-origin: center;
-    transform: scale(1.05);
-    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+    box-shadow: 0px 0px 0px 10px #a470c2;
+    transition: 0.2s;
     cursor: pointer;
+    
 }
 
 .preGamePage select {
-    background-color: #2f2f2f;
+    background-color: transparent;
     color: white;
     border: none;
     font-family: inherit;
-    padding-left: 10px;
     outline: none;
+    font-size: 18px;
+    border-bottom: white 2px solid; 
+    
 }
-
+.preGamePage select option{
+    background-color: #2D2D2D;
+}
 
 /**************************************/
 
@@ -377,9 +424,11 @@ body {
 
 /*****Général*****/
 
-section {
+
+.sectionSolo {
     display: flex;
-    font-family: Arial;
+    font-family: 'Montserrat', sans-serif;
+    min-height: calc(100vh - 74px);
 }
 
 /***Photo Profil*****/
@@ -395,13 +444,14 @@ section {
     border: solid 8px #4cd1cb;
     border-radius: 50%;
     margin: auto;
+    margin-top: 20px;
 }
 
 /******Score*****/
 
 .barScoreMax {
     width: 20px;
-    height: 600px;
+    height: 500px;
     margin: 0;
     padding: 0;
     position: absolute;
@@ -459,13 +509,13 @@ section {
     color: white;
     border-radius: 50%;
     border: none;
-    transition: 0.2s linear;
+    transition: 0.2s;
 }
 
 .tutoButton:hover {
     transform-origin: center;
-    transform: scale(1.2);
-    transition: 0.2s linear;
+    transition: 0.2s;
+    box-shadow: 0px 0px 0px 5px #85e0db;
 }
 
 /*****Phrase à compléter***/
@@ -497,6 +547,9 @@ section {
     background-color: #784199;
     color: white;
     font-size: 25px;
+    outline: none;
+    transition: 0.2s;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .Sousreponses {
@@ -507,6 +560,8 @@ section {
 
 .reponseButton:hover {
     background-color: #4cd1cb;
+    box-shadow: 0px 0px 0px 7px #85e0db;
+    transition: 0.2s;
     color: black;
 }
 
