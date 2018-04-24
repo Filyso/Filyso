@@ -26,8 +26,11 @@
                 <figure>
                     <img alt="Photo de profil" src="../images/chat.jpg"/>
                 </figure>
-            
-                <progress id="score" value="20" max="100">Votre score</progress>
+                
+                <div class="barScoreMax">
+                    <div class="barScore">
+                    </div>
+                </div>
             
             </div>
             
