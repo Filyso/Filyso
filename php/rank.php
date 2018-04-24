@@ -11,7 +11,6 @@
         <title></title>
         <meta name="" content="">
         <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="../style_rank.css">
     </head>
 
     <body>
