@@ -7,6 +7,7 @@
 
     <head>
         <link rel="stylesheet" href="../style.css" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
     </head>
 
     <body>
@@ -18,9 +19,9 @@
 
 
                 <p class="footer-links">
-                    <a href="./about.html">L'équipe</a> ·
-                    <a href="./about.html">Boîte à idée</a> ·
-                    <a href="./about.html">À venir</a>
+                    <a href="./about.php">L'équipe</a> ·
+                    <a href="./about.php">Boîte à idée</a> ·
+                    <a href="./about.php">À venir</a>
 
                 </p>
 
@@ -40,8 +41,8 @@
 
                 <form action="#" method="post">
 
-                    <input type="text" name="email" placeholder="Email" />
-                    <textarea name="message" placeholder="Message"></textarea>
+                    <input type="email" name="email" placeholder="Email" required />
+                    <textarea name="message" placeholder="Message" required></textarea>
                     <button>Envoyer</button>
 
                 </form>
