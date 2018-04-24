@@ -42,8 +42,9 @@
             $requeteSQL = "SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist=" . $_POST["artistSong"];
             echo("SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist='" . $_POST["artistSong"]) . "'";
             $statement = $pdo->query($requeteSQL);
-            if($statement != false) {
-                $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+            $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+            echo("BBBonjour");
+            if($ligne != false) {
                 $requeteSQL = "INSERT INTO A_UN(idSong, idArtist) VALUES (" . $idSong . ", " . $ligne["idArtist"] . ")";
                 $statement = $pdo->query($requeteSQL);
             } else {
@@ -74,8 +75,7 @@
     </head>
 
     <body>
-        <?php include("main_header.php");
-        echo("aurevoir");?>
+        <?php include("main_header.php");?>
         <main>
 
             <section>
