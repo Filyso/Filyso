@@ -11,6 +11,7 @@
     <title>Jeu en Solo</title>
     <meta name="description" content="Jouez !">
     <link rel="stylesheet" type="text/css" href="../style_jeu_solo.css"/>
+    <script type="text/javascript" src="../game.js"></script>
 
 </head>
 
@@ -53,7 +54,7 @@
                         <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton"/>
                     </div>
                         <div class="divTimer">
-                            <p id="timer" class="timer">00</p>
+                            <p id="timer" class="timer">10</p>
                         </div>
                     <div class="Sousreponses">
                         <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton"/>
