@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <title>Jeu en Solo</title>
     <meta name="description" content="Jouez !">
-    <link rel="stylesheet" type="text/css" href="../style_jeu_solo.css">
+    <link rel="stylesheet" type="text/css" href="../style_jeu_solo.css"/>
 
 </head>
 
@@ -38,7 +38,7 @@
                 
                 <div class="numEtTuto">
 
-                    <input type="button" value="?" id="tutoButton" class="tutoButton">
+                    <input type="button" value="?" id="tutoButton" class="tutoButton"/>
             
                     <p id="numQuestion" class="numQuestion">Question n°1</p>
                     
@@ -48,17 +48,17 @@
                 
                 <div class="reponses">
                     <div class="Sousreponses">
-                        <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton">
+                        <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton"/>
 
-                        <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton">
+                        <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton"/>
                     </div>
                         <div class="divTimer">
                             <p id="timer" class="timer">00</p>
                         </div>
                     <div class="Sousreponses">
-                        <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton">
+                        <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton"/>
 
-                        <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton">
+                        <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton"/>
                     </div>
                 </div>
                 
