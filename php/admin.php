@@ -9,7 +9,6 @@
         <meta name="description" content="">
         <title>Choix des options de jeu</title>
         <link rel="stylesheet" type="text/css" href="../style.css" />
-        <link rel="stylesheet" type="text/css" href="../style_admin.css" />
 
     </head>
 

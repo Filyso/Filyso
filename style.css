@@ -196,6 +196,8 @@ body {
     font-family: 'Helvetica';
 }
 
+
+
 /********************/
 
 /****   SELECT  *****/
@@ -251,6 +253,8 @@ body {
     transform: scale(1.05);
     transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
 }
+
+
 
 /*************************/
 
@@ -334,10 +338,47 @@ body {
 }
 
 
+
+/**************************/
+/******  PAGE ADMIN  ******/
+/**************************/
+
+.mainAdmin {
+    color: white;
+    font-family: "Helvetica";
+    padding-bottom: 20%;
+    padding-top: 5px;
+}
+
+.headerAdmin {
+    display: flex;
+    justify-content: space-between;
+    background-color: #2d2d2d;
+    padding: 0 15% 0 8%;
+}
+.headerAdmin div{
+    text-align: center;
+}
+.headerAdmin input{
+    border: none;
+    background-color: #784199;
+    color: white;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    height: 30px;
+    border-radius: 15px;
+}
+.headerAdmin input:hover{
+    background-color: #4CD1CB;
+    transform-origin: center;
+    transform: scale(1.05);
+    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+}
+
+
 /**************************************/
-
 /********* Style Jeu en Solo **********/
-
 /**************************************/
 
 /*****Général*****/
