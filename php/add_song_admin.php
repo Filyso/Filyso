@@ -2,6 +2,7 @@
 	header("Content-type: text/html; charset: UTF-8");
 
     if(isset($_POST["song"])) {
+        try {
         // ETAPE 1 : Se connecter au serveur de base de données
             require("./param.inc.php");
             $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
@@ -22,31 +23,29 @@
             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
             $idSong = $ligne["idSong"];
             
-            echo $idSong;
-            
             $requeteSQL = "INSERT INTO APPARTIENT_A_UNE(idSong, idCat) VALUES (" . $idSong . ", :paramCatSong)";
             $statement = $pdo->prepare($requeteSQL);
             $statement->execute(array(":paramCatSong" => $_POST["catSong"]));
         
             // AJOUT TIMECODE
-            $startTimeCode = "00:" . ($_POST["minStart"]>9 ? ($_POST["minStart"]):("0" . $_POST["minStart"])) . ":" . ($_POST["secStart"]>9 ? ($_POST["secStart"]):("0" . $_POST["secStart"]));
-        
-            $timeCode = "00:" . ($_POST["minEnd"]>9 ? ($_POST["minEnd"]):("0" . $_POST["minEnd"])) . ":" . ($_POST["secEnd"]>9 ? ($_POST["secEnd"]):("0" . $_POST["secEnd"]));
-            
-            $requeteSQL = "INSERT INTO TIMECODES(startTimeCode,timeCode,previousLyrics,trueRep,falseRep1,falseRep2,falseRep3,idSong) VALUES ('" . $startTimeCode . "','" . $timeCode . "', :paramPrevLyrics, :paramGoodRep, :paramBadRep1, :paramBadRep2, :paramBadRep3," . $idSong . ")";
-            $statement = $pdo->prepare($requeteSQL);
-            $statement->execute(array(":paramPrevLyrics" => $_POST["prevLyrics"],
-                                      ":paramGoodRep" => $_POST["goodRep"],
-                                      ":paramBadRep1" => $_POST["badRep1"],
-                                      ":paramBadRep2" => $_POST["badRep2"],
-                                      ":paramBadRep3" => $_POST["badRep1"],));
+            for ($i=1; $i <= $_POST["nbTimecode"]; $i++) {
+                $startTimeCode = "00:" . ($_POST["minStart_".$i]>9 ? ($_POST["minStart_".$i]):("0" . $_POST["minStart_".$i])) . ":" . ($_POST["secStart_".$i]>9 ? ($_POST["secStart_".$i]):("0" . $_POST["secStart_".$i]));
+
+                $timeCode = "00:" . ($_POST["minEnd_".$i]>9 ? ($_POST["minEnd_".$i]):("0" . $_POST["minEnd_".$i])) . ":" . ($_POST["secEnd_".$i]>9 ? ($_POST["secEnd_".$i]):("0" . $_POST["secEnd_".$i]));
+
+                $requeteSQL = "INSERT INTO TIMECODES(startTimeCode,timeCode,previousLyrics,trueRep,falseRep1,falseRep2,falseRep3,idSong) VALUES ('" . $startTimeCode . "','" . $timeCode . "', :paramPrevLyrics, :paramGoodRep, :paramBadRep1, :paramBadRep2, :paramBadRep3," . $idSong . ")";
+                $statement = $pdo->prepare($requeteSQL);
+                $statement->execute(array(":paramPrevLyrics" => $_POST["prevLyrics_".$i],
+                                          ":paramGoodRep" => $_POST["goodRep_".$i],
+                                          ":paramBadRep1" => $_POST["badRep1_".$i],
+                                          ":paramBadRep2" => $_POST["badRep2_".$i],
+                                          ":paramBadRep3" => $_POST["badRep3_".$i]));
+            }
         
             // GESTION AUTEUR
             $requeteSQL = "SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist='" . $_POST["artistSong"] . "'";
-            echo("SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist=" . $_POST["artistSong"] . "'");
             $statement = $pdo->query($requeteSQL);
             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-            echo("BBBonjour");
             if($ligne != false) {
                 $requeteSQL = "INSERT INTO A_UN(idSong, idArtist) VALUES (" . $idSong . ", " . $ligne["idArtist"] . ")";
                 $statement = $pdo->query($requeteSQL);
@@ -61,6 +60,15 @@
                         
         // ETAPE 3 : Déconnecter du serveur
             $pdo = null;
+            
+        // SETUP message retourner à l'utilisateur
+            $msg = "La chanson " . $_POST["song"] . " a bien été ajoutée à la base de donnée.";
+            
+        } catch (Exception $e) {
+            $msg = "Erreur de connexion à la base de donnée";
+        }
+        
+        echo '<script type="text/javascript">alert("' . $msg . '")</script>';
     }
 ?>
     <script type="text/javascript" src="../javascript/add_Time_Code.js"></script>
@@ -86,6 +94,7 @@
                 <select id="catSong" size="1" type="text" name="catSong" required>
                         
                     <option value="" disabled selected>Choisissez une catégorie</option>
+                    <option value="1" >test</option>
                     <?php
                         try {
                         // ETAPE 1 : Se connecter au serveur de base de données
@@ -134,7 +143,7 @@
                 <input type="url" name="linkVideo" id="linkVideo" required="required" />
             </div>
             
-            <input id="nbTimecode" name="nbTimeCode" value="1"/>
+            <input id="nbTimecode" name="nbTimecode" value="1"/>
             
             <fieldset class="timeCode">
                 <legend>Timecode</legend>
@@ -159,7 +168,7 @@
                     </div>
 
                     <div>
-                        <input id="secEnd_1" type="number_1" name="secEnd_1" required="required" min="00" max="59">
+                        <input id="secEnd_1" type="number" name="secEnd_1" required="required" min="00" max="59">
                         <label for="secEnd_1">s</label>
                     </div>
 
