@@ -17,7 +17,7 @@
                     </li>
 
                     <li>
-                        <a href="">Jouer</a>
+                        <a href="./select_game.php">Jouer</a>
                     </li>
 
                     <li class="mainLogo">
