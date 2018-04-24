@@ -7,7 +7,6 @@
     <meta name="description" content="Choisissez vos options de jeu et lancer votre partie ! Sur cette page vous pouvez choisir la catégorie de hanson sur la quelle vous voulez être testé.">
     <title>Choix des options de jeu</title>
     <link rel="stylesheet" type="text/css" href="../style.css" />
-    <link rel="stylesheet" type="text/css" href="../style_kraken.css" />
 
 </head>
 
