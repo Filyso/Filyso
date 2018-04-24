@@ -24,13 +24,11 @@
                     <input type="button" value="Gestion de contenu" disabled="disabled" />
                     <input type="button" value="Ajout de médias" />
                     <input type="button" value="Modification/Suppression de médias" />
-
                 </div>
 
                 <div>
                     <h2>Gestion d'utilisateurs</h2>
                     <input type="button" value="Suppression d'utilisateurs" />
-
                 </div>
             </header>
 

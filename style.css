@@ -178,7 +178,7 @@ body {
 
 .mainSelect,
 .mainIndex,
-.mainAdmin {
+{
     margin: 0;
     padding: 120px 50px 15% 50px;
 
@@ -191,7 +191,7 @@ body {
 
 .mainSelect h1,
 .mainIndex h1,
-.mainAdmin h1s {
+.mainAdmin h1 {
     margin-top: 0;
     font-family: 'Helvetica';
 }
@@ -507,15 +507,15 @@ section {
 
 /**********/
 
-.footer{
-	background-color: #2D2D2D;
-	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
-	box-sizing: border-box;
-	width: 100%;
-	font: 16px sans-serif;
+.footer {
+    background-color: #2D2D2D;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    font: 16px sans-serif;
     font-family: 'Montserrat', sans-serif;
-	text-align: left;
-	overflow: hidden;
+    text-align: left;
+    overflow: hidden;
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -644,13 +644,13 @@ section {
     margin-bottom: 20px;
 }
 
-.footer form button{
-	border-radius: 3px;
-	background-color:  #33383b;
-	color: darkgrey;
-	border: 0;
-	padding: 15px 50px;
-	float: right;
+.footer form button {
+    border-radius: 3px;
+    background-color: #33383b;
+    color: darkgrey;
+    border: 0;
+    padding: 15px 50px;
+    float: right;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
 }
@@ -713,17 +713,21 @@ section {
         float: none;
     }
 }
+
 /************ about.php ****************/
-.equipe{
+
+.equipe {
     padding: 10vh 10vw 0 10vw;
     text-align: left;
     font-family: 'Montserrat', sans-serif;
     color: #2D2D2D;
 }
-.equipe h2{
+
+.equipe h2 {
     padding-left: 18vw;
 }
-.lesPhotos{
+
+.lesPhotos {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -732,33 +736,39 @@ section {
     min-width: 500px;
     margin: auto;
 }
-.unePhoto{
+
+.unePhoto {
     max-width: 10vw;
     min-width: 150px;
-    background-color:#2D2D2D;
+    background-color: #2D2D2D;
     border-radius: 5px;
     box-shadow: 0px 0px 10px black;
 }
-.unePhoto:hover{
+
+.unePhoto:hover {
     transform: scale(1.05);
     transition: 0.2s;
 }
-.unePhoto img{
+
+.unePhoto img {
     max-width: 100%;
     margin: 0;
     padding: 0;
     border-radius: 5px;
 }
-.unePhoto figcaption h3{
+
+.unePhoto figcaption h3 {
     margin: 10px;
     font-weight: normal;
 }
-.unePhoto figcaption{
+
+.unePhoto figcaption {
     color: white;
     padding-bottom: 15px;
     font-family: 'Montserrat', sans-serif;
 }
-.enDessous{
+
+.enDessous {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -766,82 +776,95 @@ section {
     font-family: 'Montserrat', sans-serif;
     padding-bottom: 10vh;
 }
-.BoiteAIdee{
+
+.BoiteAIdee {
     padding: 3vh 3vw 3vh 3vw;
     border-radius: 5px;
     background-color: #2D2D2D;
 }
-.BoiteAIdee h2{
+
+.BoiteAIdee h2 {
     font-weight: normal;
     margin: 0;
-    color:white;
+    color: white;
 }
-.BoiteAIdee p{
-    color:white;
+
+.BoiteAIdee p {
+    color: white;
 }
-.BoiteAIdee form textarea{
+
+.BoiteAIdee form textarea {
     display: block;
-    width:100%;
+    width: 100%;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
     resize: none;
     outline: none;
     border-radius: 3px;
-	box-sizing: border-box;
-	background-color:  #1f2022;
-	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-    color:  white;
-    border:none;
+    box-sizing: border-box;
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
     padding: 10px;
 }
-.BoiteAIdee form{
+
+.BoiteAIdee form {
     width: 100%;
     margin: 0;
-    
+
 }
-.BoiteAIdee form input{
+
+.BoiteAIdee form input {
     width: 100%;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
     outline: none;
     border-radius: 3px;
-	box-sizing: border-box;
-	background-color:  #1f2022;
-	box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-    color:  white;
-    border:none;
+    box-sizing: border-box;
+    background-color: #1f2022;
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
+    color: white;
+    border: none;
     padding: 10px;
 }
-.BoiteAIdee button{
+
+.BoiteAIdee button {
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     border-radius: 3px;
-	background-color: #33383b;
-	color: white;
-	border: 0;
-    padding:10px;
-    
+    background-color: #33383b;
+    color: white;
+    border: 0;
+    padding: 10px;
+
 }
-.BoiteAIdee button:hover{
+
+.BoiteAIdee button:hover {
     background-color: dimgray;
     transition: 0.2s;
     transform: scale(1.02);
 }
+
 .AVenir {
     padding: 3vh 3vw 3vh 3vw;
     border-radius: 5px;
     background-color: #2D2D2D;
 }
-.AVenir h2{
+
+.AVenir h2 {
     color: white;
     font-weight: normal;
-    margin:0;
+    margin: 0;
 }
-.AVenir p,.AVenir ul{
-    color:white;
+
+.AVenir p,
+.AVenir ul {
+    color: white;
 }
-.AVenir li{
-    padding-top:10px;
-    color:darkgrey;
+
+.AVenir li {
+    padding-top: 10px;
+    color: darkgrey;
 }
