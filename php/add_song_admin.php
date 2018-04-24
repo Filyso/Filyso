@@ -39,8 +39,8 @@
                                       ":paramBadRep3" => $_POST["badRep1"],));
         
             // GESTION AUTEUR
-            $requeteSQL = "SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist=" . $_POST["artistSong"];
-            echo("SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist='" . $_POST["artistSong"]) . "'";
+            $requeteSQL = "SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist='" . $_POST["artistSong"] . "'";
+            echo("SELECT idArtist, nameArtist FROM ARTISTES WHERE nameArtist=" . $_POST["artistSong"] . "'");
             $statement = $pdo->query($requeteSQL);
             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
             echo("BBBonjour");
@@ -133,13 +133,14 @@
                     </div>
                     <div>
 
-                        <label for="langSong" class="">Langue</label>
-                        <select id="langSong" class="" size="1" type="text" name="langSong">
+                        <span>Langue</span>
                         
-                            <option value="fr">FR</option>
-                            <option value="en">EN</option>
+                        <input type="radio" id="langSongFR" name="langSong" value="fr">
+                        <label for="langSongFR">FR</label>
+                        
+                        <input type="radio" id="langSongEN" name="langSong" value="en">
+                        <label for="langSongEN">EN</label>
 
-                        </select>
 
                     </div>
 
