@@ -1,6 +1,6 @@
 <?php
 	if(!defined("MYHOST"))
-		define("MYHOST","127.0.0.1");
+		define("MYHOST","localhost");
 	if(!defined("MYUSER"))
 		define("MYUSER","17mmi1pj02");
 	if(!defined("MYPASS"))
