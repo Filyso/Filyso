@@ -10,7 +10,6 @@
         <title></title>
         <meta name="" content="">
         <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="../style_kraken.css">
     </head>
 
     <body>
