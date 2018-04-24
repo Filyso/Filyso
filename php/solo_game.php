@@ -68,7 +68,7 @@
 
     </main>
 
-    <?php //include("./main_footer.php");?>
+    <?php include("./main_footer.php");?>
 </body>
 
 </html>
