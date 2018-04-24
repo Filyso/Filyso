@@ -9,21 +9,21 @@ function initialiser(evt) {
     modal.style.visibility = "hidden";
 
     var btn = document.getElementById("myBtn");
-    btn.addEventListener("click", faireApparaitre);
+    btn.addEventListener("click", show);
 
     var span = document.getElementsByClassName("close");
-    span[0].addEventListener("click", faireDisparaitre);
+    span[0].addEventListener("click", hide);
 
 }
 
-function faireApparaitre(evt) {
+function show(evt) {
     modal.style.visibility = "visible";
     modal.classList.add("is-open");
 }
 
-function faireDisparaitre(evt) {
+function hide(evt) {
     modal.classList.remove("is-open");
     modal.addEventListener("transitionend", function () {
         modal.style.visibility = "hidden";
-    });
+    })
 }
