@@ -186,11 +186,10 @@
                         <div class="divTimer">
                             <p id="timer" class="timer">10</p>
                         </div>
-                        <div class="Sousreponses">
-                            <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton" />
+                    <div class="Sousreponses">
+                        <button id="reponse3Button" class="reponseButton"></button>
 
-                            <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton" />
-                        </div>
+                        <button id="reponse4Button" class="reponseButton"></button>
                     </div>
 
                 </div>
