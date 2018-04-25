@@ -7,9 +7,14 @@
             $pdo->query("SET NAMES utf8");
             $pdo->query("SET CHARACTER SET 'utf8'");
     // ETAPE 2 : Envoyer une requête SQL
-            $requeteSQL = "SELECT CHANSONS.lang , CATEGORIES.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong INNER JOIN CATEGORIES
-ON APPARTIENT_A_UNE.idCat = CATEGORIES.idCat WHERE lang =".$_GET["langue"]" and idCat =".$_GET["categorie"];
-    // ETAPE 3 :
+            $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE lang ='".$_GET["langue"]."' and idCat ='".$_GET["categorie"]."'";
+            //$statement = $pdo->query($requeteSQL) ;
+            $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+            while($ligne != false) {
+            echo($ligne["nameSong"]);
+             }
+    // ETAPE 3 : Déconnecter du serveur
+            $pdo = null;
 ?>
 
     <!DOCTYPE html>
