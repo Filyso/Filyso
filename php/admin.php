@@ -19,18 +19,33 @@
 
                 <div>
                     <h2>Gestion de contenu</h2>
-                    <input type="button" value="Gestion de contenu" disabled="disabled" />
-                    <input type="button" value="Ajout de médias" />
-                    <input type="button" value="Modification/Suppression de médias" />
+                    <form action="./admin.php" method="get">
+                        <input type="submit" value="Ajout de médias" name="admin"/>
+                        <input type="submit" value="Modification/Suppression de médias" name="admin"/>
+                    </form>
                 </div>
 
                 <div>
                     <h2>Gestion d'utilisateurs</h2>
-                    <input type="button" value="Suppression d'utilisateurs" />
+                    <form action="./admin.php" method="get">
+                        <input type="submit" value="Suppression d'utilisateurs" name="admin"/>
+                    </form>
                 </div>
             </header>
             
-            <?php include("./add_song_admin.php"); ?>
+            <?php 
+                if (isset($_GET["admin"])) {
+                    if ($_GET["admin"] == "Suppression d'utilisateurs") {
+                        include("./rm_user.php");
+                    } else if ($_GET["admin"] == "Modification/Suppression de médias") {
+                        include("./modify_song_admin.php");
+                    } else {
+                        include("./add_song_admin.php");
+                    }
+                } else {
+                    include("./add_song_admin.php");
+                }
+            ?>
 
         </main>
 
