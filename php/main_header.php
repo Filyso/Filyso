@@ -22,7 +22,9 @@
                     </li>
 
                     <li class="mainLogo">
-                        <img src="../images/logo.png"/>
+                        <a href="./index.php">
+                            <img src="../images/logo.png"/>
+                        </a>
                     </li>
 
                     <li>

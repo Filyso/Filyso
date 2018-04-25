@@ -27,14 +27,16 @@
 
                 <div>
                     <h2>Gestion d'utilisateurs</h2>
-                    <input type="button" value="Suppression d'utilisateurs" />
+                    <form action="./admin.php" method="get">
+                        <input type="submit" value="Suppression d'utilisateurs" name="admin"/>
+                    </form>
                 </div>
             </header>
             
             <?php 
                 if (isset($_GET["admin"])) {
-                    if ($_GET["admin"] == "Ajout de médias") {
-                        include("./add_song_admin.php");
+                    if ($_GET["admin"] == "Suppression d'utilisateurs") {
+                        include("./rm_user.php");
                     } else if ($_GET["admin"] == "Modification/Suppression de médias") {
                         include("./modify_song_admin.php");
                     } else {
