@@ -19,12 +19,12 @@
             <fieldset id="checkBox">
                 <div>
                     <label for="français">Français</label>
-                    <input type="radio" name="langue" id="français" value="français" checked/>
+                    <input type="radio" name="langue" id="français" value="fr" checked/>
                 </div>
 
                 <div>
                     <label for="anglais">Anglais</label>
-                    <input type="radio" name="langue" id="anglais" value="anglais" />
+                    <input type="radio" name="langue" id="anglais" value="en" />
                 </div>
 
                 <div>
@@ -37,10 +37,10 @@
                 <div>
                     <label for="categorie">Catégorie</label>
                     <select id="categorie" name="categorie">
-                        <option value="pop">Pop</option>
-                        <option value="rock">Rock</option>
-                        <option value="metal">Metal</option>
-                        <option value="disney">Disney</option>
+                        <option value="1">Pop</option>
+                        <option value="2">Rock</option>
+                        <option value="3">Metal</option>
+                        <option value="4">Disney</option>
                     </select>
                 </div>
 
