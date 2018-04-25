@@ -40,9 +40,10 @@
             <div class="popup">
                 <div class="popup-content">
                     <span class="close">&times;</span>
+                    <h2>CONNECTEZ-VOUS</h2>
                     <form>
-                        <input id="email" type="email" required="required" name="email" placeholder="Adresse Email..." >
-                        <input id="passwd" type="password" required="required" name="passwd" placeholder="Mot de passe..." >
+                        <input id="email" type="email" required="required" name="email" placeholder="Adresse Email...">
+                        <input id="passwd" type="password" required="required" name="passwd" placeholder="Mot de passe...">
                         <button type="submit">SE CONNECTER</button>
                     </form>
                 </div>
