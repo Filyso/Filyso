@@ -8,6 +8,8 @@ var score = 0;
 var numQuest = 0;
 var stopTimerBool = false;
 var reps;
+var stateChangeTamponMemory = new Array();
+var verifMemory = false;
 
 var musique1 = new Musique("Basique","Orelsan","2bjk26RwjyU",58,72,"Les mecs les plus fous sont souvent","les mecs les plus tristes","les hommes les plus tristes","les types les plus activistes","les mecs les plus alcoolique");
 var musique2 = new Musique("Nothing Else Matters","Metallica","tAGnKpE4NCI",120,134,"Never cared for what they do","Never cared for what they know","Never cared for what they show","Never cared for what they say","Never cared for games they play");
@@ -59,7 +61,16 @@ function onYouTubePlayerAPIReady() {
     
 }
 function swap(evt){
-    if(evt.data == YT.PlayerState.ENDED){
+    stateChangeTamponMemory.push(evt.data);
+    for(var z = 0;z<stateChangeTamponMemory.length;z++){
+        if (stateChangeTamponMemory[z] == 3){
+            verifMemory = true;
+            
+        }
+    }
+    if(evt.data == YT.PlayerState.ENDED && verifMemory){
+        stateChangeTamponMemory = [];
+        verifMemory = false;
         document.getElementById("ytplayer").style.display = "none"; //player.getDuration()>(tabMusique[numQuest].timeCodeEnd - tabMusique[numQuest].timeCodeStart)
         
         //player.destroy();
@@ -78,13 +89,11 @@ function swap(evt){
         for(var rep of reps){
             rep.addEventListener("click",verfierReps);
         }
-            
-        
     }
    
 }
 function verfierReps(evt){
-    //document.getElementsByClassName("contenu")[0].addEventListener("click",function(evt){evt.stopPropagation()},true);
+    window.addEventListener("click",stopProp,true);
     if(this.value==tabMusique[numQuest].reponse){
         this.style.backgroundColor="green";
         stopTimer();
@@ -94,28 +103,34 @@ function verfierReps(evt){
         stopTimer();
         this.style.backgroundColor="red";
     }
-    setTimeout(function(){
-            numQuest = numQuest + 1;
-            document.getElementsByClassName("contenu")[0].style.display = "block";
-            document.getElementById("ytplayer").style.display = "none";
+    if(numQuest < 7){
+        setTimeout(function(){
+                numQuest = numQuest + 1;
+                document.getElementsByClassName("contenu")[0].style.display = "none";
+                document.getElementById("ytplayer").style.display = "block";
 
-            player.loadVideoById(
-                        tabMusique[numQuest].url,
-                        tabMusique[numQuest].timeCodeStart,
-                        tabMusique[numQuest].timeCodeEnd
-            );
-            player.playVideo();
-            reps[0].style.backgroundColor="#784199";
-            reps[1].style.backgroundColor="#784199";
-            reps[2].style.backgroundColor="#784199";
-            reps[3].style.backgroundColor="#784199";
-            player.addEventListener("onStateChange",swap);
-            //document.getElementsByClassName("contenu")[0].removeEventListener();
-    },5000);
-    
+                player.loadVideoById(
+                    {
+                        videoId:tabMusique[numQuest].url,
+                        startSeconds:tabMusique[numQuest].timeCodeStart,
+                        endSeconds:tabMusique[numQuest].timeCodeEnd,}
+                );
+                player.playVideo();
+                reps[0].style.backgroundColor="#784199";
+                reps[1].style.backgroundColor="#784199";
+                reps[2].style.backgroundColor="#784199";
+                reps[3].style.backgroundColor="#784199";
+                //player.addEventListener("onStateChange",swap);
+                window.removeEventListener("click",stopProp);
+        },2000);
+    }else{
+        document.getElementById("ytplayer").style.display = "none";
+    }
     
 }
-
+function stopProp(evt){
+    evt.stopPropagation();
+}
 function initialiser(evt){
     document.getElementsByClassName("barScore")[0].style.height=0+"%";
     
@@ -125,6 +140,7 @@ function initialiser(evt){
 function timerStart(niv){
     milli = 1050;
     encours = setInterval(decrement,10);
+    stopTimerBool = false;
 }
 function stopTimer(){
     stopTimerBool = true;
