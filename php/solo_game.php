@@ -13,7 +13,6 @@
         <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../style.css" />
         <script type="text/javascript" src="../javascript/popup_regles.js"></script>
-        <script type="text/javascript" src="../javascript/game.js"></script>
 
         <?php
     if(isset($_GET["categorie"])){
@@ -95,10 +94,10 @@
                 $url = $urlSegment[1];
                 
                 $currentMusic += 1;
-           
+
 ?>
 
-                var musique <?php echo($currentMusic) ?> = new Musique(<?php echo('"'.$ligne["nameSong"].'"') ?>, <?php echo('"'.$ligne["nameArtist"].'"') ?>, <?php echo('"'.$url.'"') ?>, <?php echo('"'.$startTime.'"') ?>, <?php echo('"'.$endTime.'"') ?>, <?php echo('"'.$ligne["previousLyrics"].'"') ?>, <?php echo('"'.$ligne["trueRep"].'"') ?>, <?php echo('"'.$ligne["falseRep1"].'"') ?>, <?php echo('"'.$ligne["falseRep2"].'"') ?>, <?php echo('"'.$ligne["falseRep3"].'"') ?>);
+                var musique<?php echo($currentMusic) ?> = new Musique(<?php echo('"'.$ligne["nameSong"].'"') ?>, <?php echo('"'.$ligne["nameArtist"].'"') ?>, <?php echo('"'.$url.'"') ?>, <?php echo('"'.$startTime.'"') ?>, <?php echo('"'.$endTime.'"') ?>, <?php echo('"'.$ligne["previousLyrics"].'"') ?>, <?php echo('"'.$ligne["trueRep"].'"') ?>, <?php echo('"'.$ligne["falseRep1"].'"') ?>, <?php echo('"'.$ligne["falseRep2"].'"') ?>, <?php echo('"'.$ligne["falseRep3"].'"') ?>);
 
                 <?php
                     
@@ -122,7 +121,7 @@
     }
 
 ?>
-
+        <script type="text/javascript" src="../game.js"></script>
     </head>
 
     <body>
