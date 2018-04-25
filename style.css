@@ -453,7 +453,7 @@ body {
 
 .mainAdmin {
     color: white;
-    font-family: "Helvetica";
+    font-family: 'Raleway', sans-serif;
     padding-bottom: 20%;
     padding-top: 5px;
 }
@@ -468,20 +468,26 @@ body {
     text-align: center;
 }
 .headerAdmin input{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
     border: none;
     background-color: #784199;
     color: white;
+    padding: 0 10px 0 10px;
     font-size: 15px;
     margin-right: 10px;
     margin-bottom: 10px;
     height: 30px;
     border-radius: 15px;
+    transition: 0.2s;
 }
 .headerAdmin input:hover{
     background-color: #4CD1CB;
     transform-origin: center;
+    font-weight: 500;
     transform: scale(1.05);
-    transition: 0.1s cubic-bezier(.42, 0, .31, 1.47);
+    transition: 0.2s;
+    cursor:pointer;
 }
 
 
@@ -1093,17 +1099,31 @@ body {
 /* === ADD SONG PAGE === */
 /* ===================== */
 .addSongSection {
+    background-color: #2D2D2D;
+    border-radius: 15px;
+    margin: auto;
     width: 100%;
+    display: flex;
     flex-direction: column;
-    padding: 0 5em;
+    margin-top: 5vh;
     max-width: 60vw;
+    text-align: center;
+    padding: 10px 30px 10px 30px;
+    max-height: 54vh;
 }
-
+.addSongSection h3{
+    color:white;
+    font-weight: 500;
+}
 .addSongForm div {
+    text-align: right;
+    font-weight: 300;
     display: flex;
     margin: 0.5em 0;
 }
-
+.addSongForm div option{
+    outline:none;
+}
 .addSongForm fieldset {
     position: relative;
     padding: 0;
@@ -1122,13 +1142,13 @@ body {
     height: 5px;
     position: absolute;
     top: -5px;
-    background-color: #784199;
+    background-color: #4cd1cb;
     border-radius: 50px;
 }
 
 .addSongForm>fieldset>legend {
     padding: 5px 0 0 0;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 .addSongForm>fieldset>fieldset label {
@@ -1141,13 +1161,41 @@ body {
 }
 
 .addSongForm input, select {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    border:none;
+    border-radius: 5px;
+    padding:3px;
+    outline:none;
+    background-color: dimgrey;
+    color:white;
     margin: 0 0 0 1em;
 }
-
+.addSongForm input[type=button],
+.addSongForm input[type=submit]{
+    background-color: #4cd1cb;
+    padding: 2px 7px 2px 7px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+.addSongForm input[type=button]:hover,
+.addSongForm input[type=submit]:hover{
+    transform-origin: center;
+    border: #B6FEF5 3px solid;
+    font-weight: 500;
+    transition: 0.2s;
+}
 .addSongForm input[type="text"], .addSongForm input[type="number"], .addSongForm input[type="url"], select {
     flex: 1;
 }
-
+.inputMasque{
+    display: none;
+}
+.adminLangues input {
+    margin-top: 3px;
+    margin-right: 5px; 
+    
+}
 .addSongForm input[type="number"] {
     width: 3em;
     text-align: center;

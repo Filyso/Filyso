@@ -4,6 +4,7 @@
     <html>
 
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="description" content="">
         <title>Choix des options de jeu</title>

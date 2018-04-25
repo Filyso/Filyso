@@ -74,7 +74,7 @@
     <script type="text/javascript" src="../javascript/add_Time_Code.js"></script>
     <section class="addSongSection">
 
-        <h3>Ajouter une chanson !</h3>
+        <h3>Ajouter une chanson</h3>
 
         <form action="add_song_admin.php" method="post" id="addSongForm" class="addSongForm">
 
@@ -128,7 +128,7 @@
 
             </div>
             
-            <div>
+            <div class="adminLangues">
                 <span>Langue</span>
 
                 <input type="radio" id="langSongFR" name="langSong" value="fr" required>
@@ -143,7 +143,7 @@
                 <input type="url" name="linkVideo" id="linkVideo" required="required" />
             </div>
             
-            <input id="nbTimecode" name="nbTimecode" value="1"/>
+            <input id="nbTimecode" name="nbTimecode" value="1" class="inputMasque"/>
             
             <fieldset class="timeCode">
                 <legend>Timecode</legend>
