@@ -140,7 +140,7 @@
 
             <div>
                 <label for="linkVideo">URL</label>
-                <input type="url" name="linkVideo" id="linkVideo" required="required" />
+                <input type="url" name="linkVideo" id="linkVideo" required="required" pattern="^https://www.youtube.com/watch?.+" placeholder="https://www.youtube.com/watch?..."/>
             </div>
             
             <input id="nbTimecode" name="nbTimecode" value="1" class="inputMasque"/>
@@ -176,12 +176,12 @@
 
                 <div>
                     <label for="prevLyrics_1">Paroles</label>
-                    <input id="prevLyrics_1" type="text" name="prevLyrics_1" required="required" maxlength="100">
+                    <input id="prevLyrics_1" type="text" name="prevLyrics_1" required="required" maxlength="100" maxlength="250">
                 </div>
 
                 <div>
                     <label for="goodRep_1">Réponse</label>
-                    <input id="goodRep_1" type="text" name="goodRep_1" required="required" maxlength="75">
+                    <input id="goodRep_1" type="text" name="goodRep_1" required="required" maxlength="75" maxlength="250">
                 </div>
 
                 <fieldset>
@@ -189,17 +189,17 @@
 
                     <div>
                         <label for="badRep1_1">1</label>
-                        <input id="badRep1_1" type="text" name="badRep1_1" required="required" maxlength="75">
+                        <input id="badRep1_1" type="text" name="badRep1_1" required="required" maxlength="75" maxlength="250">
                     </div>
 
                     <div>
                         <label for="badRep2_1">2</label>
-                        <input id="badRep2_1" type="text" name="badRep2_1" required="required" maxlength="75">
+                        <input id="badRep2_1" type="text" name="badRep2_1" required="required" maxlength="75" maxlength="250">
                     </div>
 
                     <div>
                         <label for="badRep3_1">3</label>
-                        <input id="badRep3_1" type="text" name="badRep3_1" required="required" maxlength="75">
+                        <input id="badRep3_1" type="text" name="badRep3_1" required="required" maxlength="75" maxlength="250">
                     </div>
 
                 </fieldset>
