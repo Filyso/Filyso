@@ -5,7 +5,7 @@
     <head>
         <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="../style_popup_login.css" />
+        <link rel="stylesheet" type="text/css" href="../style_popup.css" />
         <script type="text/javascript" src="../javascript/popup_login.js"></script>
     </head>
 

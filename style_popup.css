@@ -8,7 +8,8 @@ body {
     position: relative;
 }
 
-.popup {
+.popup,
+.popup_regle{
     display: block;
     opacity: 0;
     transition: opacity linear .2s;
@@ -26,7 +27,8 @@ body {
     opacity: 1;
 }
 
-.popup-content {
+.popup-content,
+.popup-content_regle{
     background-color: #fefefe;
     margin: 15% auto;
     border: 2px solid #888;
@@ -39,6 +41,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 .popup-content form {
     display: flex;
     height: 100%;
@@ -46,7 +49,9 @@ body {
     flex-direction: column;
     width: 50%;
 }
-.popup-content h2{
+
+.popup-content h2,
+.popup-content_regle h2{
     padding-top: 10%;
     margin: 0;
     font-family: 'Raleway', sans-serif;
@@ -75,14 +80,17 @@ body {
     border-radius: 20px;
     color: white;
 }
+
 .popup-content button:hover {
     background-color: #4CD1CB;
     transform-origin: center;
     box-shadow: 0px 0px 0px 10px #85e0db;
-    transition: 0.2s ;
+    transition: 0.2s;
     font-weight: 700;
 }
-.close {
+
+.close,
+.close_regle{
     color: #aaa;
     font-size: 28px;
     font-weight: bold;
@@ -93,7 +101,9 @@ body {
 }
 
 .close:hover,
-.close:focus {
+.close:focus,
+.close_regle:hover,
+.close_regle:focus {
     color: #784199;
     text-decoration: none;
     cursor: pointer;
