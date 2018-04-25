@@ -1,50 +1,58 @@
 <?php
-
+    
 	header("Content-type: text/html; charset: UTF-8");
-
+    if(isset($_GET["categorie"])){
      // ETAPE 1 : Se connecter au serveur de base de données
-
+        try {
             require("./param.inc.php");
             $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
             $pdo->query("SET NAMES utf8");
             $pdo->query("SET CHARACTER SET 'utf8'");
-
+            
     // ETAPE 2 : Envoyer une requête SQL
 
+            // conditions pour l'envoi de la requête en fonction du choix du joueur
+            
             if($_GET["categorie"] != 0 && $_GET["langue"] != "bilingue"){
                 // cas où la catégorie est choisie et la langue est choisie
                 $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE lang =:paramLangue and idCat=:paramCategorie";
                 $statement = $pdo->prepare($requeteSQL);
                 $statement->execute(array(":paramLangue" => $_GET["langue"],
-                                      ":paramCategorie" => $_GET["categorie"]));
-                
+                                          ":paramCategorie" => $_GET["categorie"]));
+
             } else if($_GET["categorie"] == 0 && $_GET["langue"] != "bilingue") { 
                 // cas où la catégorie n'est pas choisie et la langue est choisie
                 $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE lang =:paramLangue";
                 $statement = $pdo->prepare($requeteSQL);
                 $statement->execute(array(":paramLangue" => $_GET["langue"]));
-                
+
             } else if($_GET["categorie"] == 0 && $_GET["langue"] == "bilingue"){
                 // cas où la catégorie n'est pas choisie et la langue n'est pas choisie
-                 $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong";
-                
+                $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong";
+                $statement = $pdo->query($requeteSQL);
+
             } else if ($_GET["categorie"] != 0 && $_GET["langue"] == "bilingue"){
-                // cas où la catégorie est choisie et la langue n'est pas choisis
+                // cas où la catégorie est choisie et la langue n'est pas choisie
                 $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE idCat=:paramCategorie";
                 $statement = $pdo->prepare($requeteSQL);
                 $statement->execute(array(":paramCategorie" => $_GET["categorie"]));
             }
-
+               
             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
 
             while($ligne != false) {
-                echo($ligne["nameSong"]);
+                echo($ligne["nameSong"])."\n";
                 $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-             }
+            }
 
-    // ETAPE 3 : Déconnecter du serveur
+        // ETAPE 3 : Déconnecter du serveur
 
             $pdo = null;
+        
+        } catch (Exception $e){
+            echo($e);
+        }
+    }
 
 ?>
 

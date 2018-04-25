@@ -19,7 +19,7 @@
             <fieldset id="checkBox">
                 <div>
                     <label for="français">Français</label>
-                    <input type="radio" name="langue" id="français" value="fr" checked/>
+                    <input type="radio" name="langue" id="français" value="fr"/>
                 </div>
 
                 <div>
@@ -29,7 +29,7 @@
 
                 <div>
                     <label for="Bilingue">Bilingue</label>
-                    <input type="radio" name="langue" id="bilingue" value="bilingue" />
+                    <input type="radio" name="langue" id="bilingue" value="bilingue" checked/>
                 </div>
             </fieldset>
 
@@ -37,6 +37,7 @@
                 <div>
                     <label for="categorie">Catégorie</label>
                     <select id="categorie" name="categorie">
+                        <option value="0">Toutes les catégories</option>
                         <option value="1">Pop</option>
                         <option value="2">Rock</option>
                         <option value="3">Metal</option>
