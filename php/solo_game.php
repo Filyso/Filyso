@@ -15,25 +15,25 @@
             
             if($_GET["categorie"] != 0 && $_GET["langue"] != "bilingue"){
                 // cas où la catégorie est choisie et la langue est choisie
-                $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE lang =:paramLangue and idCat=:paramCategorie";
+                $requeteSQL = "SELECT APPARTIENT_A_UNE.idCat, CHANSONS.lang, CHANSONS.nameSong, ARTISTES.nameArtist, CHANSONS.linkVideo, TIMECODES.startTimeCode, TIMECODES.timeCode, TIMECODES.previousLyrics, TIMECODES.trueRep, TIMECODES.falseRep1, TIMECODES.falseRep2, TIMECODES.falseRep3 FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong INNER JOIN TIMECODES ON CHANSONS.idSong = TIMECODES.idSong INNER JOIN A_UN ON CHANSONS.idSong = A_UN.idArtist INNER JOIN ARTISTES ON A_UN.idArtist = ARTISTES.idArtist WHERE lang =:paramLangue and idCat=:paramCategorie";
                 $statement = $pdo->prepare($requeteSQL);
                 $statement->execute(array(":paramLangue" => $_GET["langue"],
                                           ":paramCategorie" => $_GET["categorie"]));
 
             } else if($_GET["categorie"] == 0 && $_GET["langue"] != "bilingue") { 
                 // cas où la catégorie n'est pas choisie et la langue est choisie
-                $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE lang =:paramLangue";
+                $requeteSQL = "SELECT CHANSONS.lang, CHANSONS.nameSong, ARTISTES.nameArtist, CHANSONS.linkVideo, TIMECODES.startTimeCode, TIMECODES.timeCode, TIMECODES.previousLyrics, TIMECODES.trueRep, TIMECODES.falseRep1, TIMECODES.falseRep2, TIMECODES.falseRep3 FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong INNER JOIN TIMECODES ON CHANSONS.idSong = TIMECODES.idSong INNER JOIN A_UN ON CHANSONS.idSong = A_UN.idArtist INNER JOIN ARTISTES ON A_UN.idArtist = ARTISTES.idArtist WHERE lang =:paramLangue";
                 $statement = $pdo->prepare($requeteSQL);
                 $statement->execute(array(":paramLangue" => $_GET["langue"]));
 
             } else if($_GET["categorie"] == 0 && $_GET["langue"] == "bilingue"){
                 // cas où la catégorie n'est pas choisie et la langue n'est pas choisie
-                $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong";
+                $requeteSQL = "SELECT CHANSONS.nameSong, ARTISTES.nameArtist, CHANSONS.linkVideo, TIMECODES.startTimeCode, TIMECODES.timeCode, TIMECODES.previousLyrics, TIMECODES.trueRep, TIMECODES.falseRep1, TIMECODES.falseRep2, TIMECODES.falseRep3 FROM CHANSONS INNER JOIN TIMECODES ON CHANSONS.idSong = TIMECODES.idSong INNER JOIN A_UN ON CHANSONS.idSong = A_UN.idArtist INNER JOIN ARTISTES ON A_UN.idArtist = ARTISTES.idArtist";
                 $statement = $pdo->query($requeteSQL);
 
             } else if ($_GET["categorie"] != 0 && $_GET["langue"] == "bilingue"){
                 // cas où la catégorie est choisie et la langue n'est pas choisie
-                $requeteSQL = "SELECT CHANSONS.nameSong, CHANSONS.lang , APPARTIENT_A_UNE.idCat FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong WHERE idCat=:paramCategorie";
+                $requeteSQL = "SELECT APPARTIENT_A_UNE.idCat, CHANSONS.nameSong, ARTISTES.nameArtist, CHANSONS.linkVideo, TIMECODES.startTimeCode, TIMECODES.timeCode, TIMECODES.previousLyrics, TIMECODES.trueRep, TIMECODES.falseRep1, TIMECODES.falseRep2, TIMECODES.falseRep3 FROM CHANSONS INNER JOIN APPARTIENT_A_UNE ON CHANSONS.idSong = APPARTIENT_A_UNE.idSong INNER JOIN TIMECODES ON CHANSONS.idSong = TIMECODES.idSong INNER JOIN A_UN ON CHANSONS.idSong = A_UN.idArtist INNER JOIN ARTISTES ON A_UN.idArtist = ARTISTES.idArtist WHERE idCat=:paramCategorie";
                 $statement = $pdo->prepare($requeteSQL);
                 $statement->execute(array(":paramCategorie" => $_GET["categorie"]));
             }
