@@ -72,6 +72,7 @@
     }
 ?>
     <script type="text/javascript" src="../javascript/add_Time_Code.js"></script>
+    <script type="text/javascript" src="../javascript/valid_time_code.js"></script>
     <section class="addSongSection">
 
         <h3>Ajouter une chanson</h3>
@@ -90,7 +91,7 @@
 
             <div>
 
-                <label for="catSong" >Catégorie</label>
+                <label for="catSong">Catégorie</label>
                 <select id="catSong" size="1" type="text" name="catSong" required>
                         
                     <option value="" disabled selected>Choisissez une catégorie</option>
@@ -127,7 +128,7 @@
                 </select>
 
             </div>
-            
+
             <div class="adminLangues">
                 <span>Langue</span>
 
@@ -140,11 +141,11 @@
 
             <div>
                 <label for="linkVideo">URL</label>
-                <input type="url" name="linkVideo" id="linkVideo" required="required" pattern="^https://www.youtube.com/watch?.+" placeholder="https://www.youtube.com/watch?..."/>
+                <input type="url" name="linkVideo" id="linkVideo" required="required" pattern="^https://www.youtube.com/watch?.+" placeholder="https://www.youtube.com/watch?..." />
             </div>
-            
-            <input id="nbTimecode" name="nbTimecode" value="1" class="inputMasque"/>
-            
+
+            <input id="nbTimecode" name="nbTimecode" value="1" class="inputMasque" />
+
             <fieldset class="timeCode">
                 <legend>Timecode</legend>
 
@@ -206,9 +207,9 @@
 
             </fieldset>
 
-            <div >
-                <input type="button" id="addTCBtn" value="Ajouter un TimeCode"/>
-                <input type="submit" value="Ajouter la chanson"/>
+            <div>
+                <input type="button" id="addTCBtn" value="Ajouter un TimeCode" />
+                <input type="submit" value="Ajouter la chanson" />
             </div>
 
         </form>
