@@ -1325,10 +1325,14 @@ body {
 /***********************************************/
 
 .mainResultat{
-    height: calc(100vh - 74px);
+    height: calc(80vh - 74px);
     padding-top: 20vh;
 }
 .mainResultat .resultat{
+/*    box-shadow: 0px 0px 0px 5px grey;*/
+    border-radius: 30px;
+    padding: 40px;
+/*    background-color: #2D2D2D;*/
     display: flex;
     width: 40vw;
     margin: auto;
@@ -1369,16 +1373,16 @@ body {
 .chiffreScoreResultat{
     font-family: 'Raleway', sans-serif;
     font-weight: 300;
-    font-size: 90px;
+    font-size: 120px;
     color:white;
     margin:0;
     transition: 0.2s;
-    padding-top: 20px;
+    
 }
 .btnSaveScore{
     margin:0;
     font-family: 'Raleway', sans-serif;
-    margin-top: 50px;
+    margin-top: 30px;
     font-size: 18px;
     border-radius: 10px;
     outline: none;
@@ -1411,18 +1415,44 @@ body {
     cursor: pointer;
 }
 .mainResultat .partieDroite{
-    padding-top: 10vh;
+    padding-top: 2vh;
     display: flex;
+    align-items: center;
     flex-direction: column;
 }
+.bonnesReponses{
+    background-color: #4CD1CB;
+    box-shadow: 0px 0px 0px 8px #85e0db;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 60px;
+    border-radius:100%;
+    height: 200px;
+    width: 200px; 
+}
+
+
 .nbBonneReponse{
     font-family: 'Raleway', sans-serif;
     color:white;
-    font-size: 30px;
+    font-size: 100px;
+    margin: 0;
+    font-weight: 300;
+    padding-top: 30px;
+    
 }
+.txtBonnesReponses{
+    font-family: 'Raleway', sans-serif;
+    color:white;
+    margin: 0;
+    font-size: 16px;
+}
+
 .mainResultat .partieDroite button{
     display: flex;
     height: 90px;
+    width: 250px;
     justify-content:space-around;
     align-items: center;
     border-radius: 20px;
@@ -1431,6 +1461,10 @@ body {
     padding: 5px 20px 5px 20px;
     background-color:#a470c2;
     transition: 0.2s;
+}
+.mainResultat .partieDroite a{
+    text-decoration: none;
+    outline: none;
 }
 .mainResultat .partieDroite button p{
     font-family: 'Raleway', sans-serif;
@@ -1441,7 +1475,7 @@ body {
     padding-left:10px;
     transition: 0.2s;
 }
-.mainResultat .partieDroite img{
+.mainResultat .partieDroite .imgReplay{
     height: 60px;
     width: 60px;
     transform: rotate(90deg);
@@ -1456,7 +1490,22 @@ body {
     font-weight: 500;
     transition: 0.3s ease;
 }
-.mainResultat .partieDroite button:hover img{
+.mainResultat .partieDroite button:hover .imgReplay{
     transform: rotate(-90deg);
     transition:0.3s ease;
+}
+.badgesObtenus{
+    text-align: center;
+}
+.badgesObtenus img{
+    margin-top:30px;
+    width:200px;
+}
+.badgesObtenus p{
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    color: #2D2D2D;
+    font-size: 20px;
+    font-weight: 300;
+    padding-top:20px;
 }

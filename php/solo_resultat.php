@@ -22,8 +22,15 @@
                     </div>
                 </div>
                 <div class="partieDroite">
-                    <p class="nbBonneReponse">6 bonnes réponses</p>
-                    <button type="button" class="btnRejouer"><img src="../images/fleche.png" alt="fleche pour rejouer"><p>Rejouer</p></button>
+                    <div class="bonnesReponses">
+                        <p class="nbBonneReponse">6</p>
+                        <p class="txtBonnesReponses">bonnes réponses</p>
+                    </div>
+                    <a href="pre_game_page.php"><button type="button" class="btnRejouer"><img src="../images/fleche.png" alt="fleche pour rejouer" class="imgReplay"><p>Rejouer</p></button></a>
+                    <div class="badgesObtenus">
+                        <img src="../images/tropheeexemple.png" alt="exemples de badges gagnés">
+                        <p>Badges obtenus</p>
+                    </div>
                 </div>
             </div>
         </main>
