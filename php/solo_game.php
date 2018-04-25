@@ -12,6 +12,7 @@
     <meta name="description" content="Jouez !">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../style.css"/>
+    <script type="text/javascript" src="../game.js"></script>
 </head>
 
 <body>
@@ -21,6 +22,8 @@
 
         <section class="sectionSolo">
             
+        
+            <div id="ytplayer" class="ytplayer"></div>
             <div class="score">
             
                 <figure>
@@ -53,7 +56,7 @@
                         <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton"/>
                     </div>
                         <div class="divTimer">
-                            <p id="timer" class="timer">00</p>
+                            <p id="timer" class="timer">10</p>
                         </div>
                     <div class="Sousreponses">
                         <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton"/>
