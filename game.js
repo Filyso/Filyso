@@ -10,14 +10,22 @@ var stopTimerBool = false;
 var reps;
 var stateChangeTamponMemory = new Array();
 var verifMemory = false;
+var timeOut = false;
 
 var musique1 = new Musique("Basique","Orelsan","2bjk26RwjyU",58,72,"Les mecs les plus fous sont souvent","les mecs les plus tristes","les hommes les plus tristes","les types les plus activistes","les mecs les plus alcoolique");
+
 var musique2 = new Musique("Nothing Else Matters","Metallica","tAGnKpE4NCI",120,134,"Never cared for what they do","Never cared for what they know","Never cared for what they show","Never cared for what they say","Never cared for games they play");
+
 var musique3 = new Musique("The Diary of Jane","Breaking Benjamin","DWaB4PXCwFU",58,67,"I will try to find my place","In the diary of Jane","In the diarrhea of Jane","In the diary of John","In the paper of Jane");
+
 var musique4 = new Musique("The Final Countdown","Europe","9jK-NcRmVcw",103,117,"Will things ever be the same again ?","It's the final countdown","That’s the final countdown","It’s the ultimate countdown","It's the final breakdown");
-var musique5 = new Musique("Je l’aime à mourir","Francis Cabrel","wQW1rnRrPx4",28,41,"Je dois clouer des notes à mes sabots de bois, je l'aime à mourir","Je dois juste m'asseoir, je ne dois pas parler","Je veux juste m'asseoir, je ne dois pas péter","Je dois juste boire, je ne dois pas danser","Je ne dois juste pas voir, je ne dois pas penser");
+
+var musique5 = new Musique("Je l’aime à mourir","Francis Cabrel","wQW1rnRrPx4",78,100,"Je dois clouer des notes à mes sabots de bois, je l'aime à mourir","Je dois juste m'asseoir, je ne dois pas parler","Je veux juste m'asseoir, je ne dois pas péter","Je dois juste boire, je ne dois pas danser","Je ne dois juste pas voir, je ne dois pas penser");
+
 var musique6 = new Musique("Les Lacs du Connemara","Michel Sardou","bpEmjxobvbY",172,182,"Colorent la terre, les lacs, les rivières","C'est le décor du Connemara","C'est le port du Contémaran","C’est pas l’or de mon papa","C'est l’essor du Condemala");
+
 var musique7 = new Musique("Take On Me","a-ha","djV11Xbc914",35,58,"Take on me,","Take me on","Take on me","Take on you","Take you on");
+
 var tabMusique = new Array(musique1,musique2,musique3,musique4,musique5,musique6,musique7);
 melangeMusique();
 
@@ -86,6 +94,15 @@ function swap(evt){
         reps[2].value=tabMusique[numQuest].false2;
         reps[3].value=tabMusique[numQuest].false3;
         
+        if(numQuest < 2){
+            reps[2].style.display = "none";
+            reps[3].style.display = "none";
+        }else if(numQuest < 4){
+            reps[2].style.display = "block";
+            reps[3].style.display = "none";     
+        }else if(numQuest < 7){
+            reps[3].style.display = "block"; 
+        }
         for(var rep of reps){
             rep.addEventListener("click",verfierReps);
         }
@@ -93,16 +110,22 @@ function swap(evt){
    
 }
 function verfierReps(evt){
-    window.addEventListener("click",stopProp,true);
-    if(this.value==tabMusique[numQuest].reponse){
-        this.style.backgroundColor="green";
-        stopTimer();
-        score = score + (1/7);
-        document.getElementsByClassName("barScore")[0].style.height=Math.round(score*100)+"%";
+    //window.addEventListener("click",stopProp,true);
+    
+    if(!timeOut){
+        if(this.value==tabMusique[numQuest].reponse){
+            this.style.backgroundColor="#3df22d";
+            stopTimer();
+            score = score + (1/7);
+            document.getElementsByClassName("barScore")[0].style.height=Math.round(score*100)+"%";
+        }else{
+            stopTimer();
+            this.style.backgroundColor="red";
+        }
     }else{
-        stopTimer();
-        this.style.backgroundColor="red";
+        document.getElementsByClassName("divTimer")[0].style.borderColor="red";
     }
+    
     if(numQuest < 7){
         setTimeout(function(){
                 numQuest = numQuest + 1;
@@ -121,7 +144,7 @@ function verfierReps(evt){
                 reps[2].style.backgroundColor="#784199";
                 reps[3].style.backgroundColor="#784199";
                 //player.addEventListener("onStateChange",swap);
-                window.removeEventListener("click",stopProp);
+                //window.removeEventListener("click",stopProp);
         },2000);
     }else{
         document.getElementById("ytplayer").style.display = "none";
@@ -141,6 +164,8 @@ function timerStart(niv){
     milli = 1050;
     encours = setInterval(decrement,10);
     stopTimerBool = false;
+    timeOut = false;
+    document.getElementsByClassName("divTimer")[0].style.borderColor="#4cd1cb";
 }
 function stopTimer(){
     stopTimerBool = true;
@@ -150,6 +175,8 @@ function decrement(evt){
     var timer = document.getElementById("timer");
     if(!stopTimerBool){
         milli = milli - 1;
+    }else{
+        clearInterval(encours);
     }
     timerSec = Math.round(milli/100);
     
@@ -163,7 +190,12 @@ function decrement(evt){
     
     if(timerSec<1 && timerMilli<1){
         clearInterval(encours);
+        if(timer.textContent ="0.0"){
+            timeOut = true;
+            verfierReps();
+        }
     }
+    
     
 }
 
