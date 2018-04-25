@@ -9,7 +9,7 @@
 <body>
     <?php include("./main_header.php"); ?>
     <main>
-        <div class="equipe">
+        <div class="equipe" id="equipe">
             <h2>Notre équipe</h2>
             <div class="lesPhotos">
                 <figure class="unePhoto">
@@ -51,7 +51,7 @@
             </div>
         </div>
         <div class="enDessous">
-        <div class="BoiteAIdee">
+        <div class="BoiteAIdee" id="idee">
             <h2>Boîte à idées</h2>
             <p>Une idée ? Un bug ? Une amélioration ? Dites le nous !</p>
             <form action="#" method="post">
@@ -61,7 +61,7 @@
             </form>
 
         </div>
-        <div class="AVenir">
+        <div class="AVenir" id="avenir">
             <h2>Prochainement sur Filyso</h2>
             <p>Quelques événements à venir sur Filyso :</p>
             <ul>

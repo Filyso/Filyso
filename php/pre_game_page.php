@@ -17,10 +17,10 @@
         <h1>Sélectionnez la langue et la catégorie</h1>
         <form action="./solo_game.php" method="post">
 
-            <fieldset class="section">
+            <fieldset class="section" >
                 <div class="container">
                     
-                    <input type="radio" name="langue" id="français" value="français" class="inputRadio" />
+                    <input type="radio" name="langue" id="français" value="français" class="inputRadio" required />
                     <label for="français"><img src="../images/FR.png" alt="drapeau français"></label>
                 </div>
 

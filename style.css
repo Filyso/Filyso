@@ -24,7 +24,7 @@ h1 {
 
 .mainIndex h1 {
     margin-top: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .mainIndex p {
@@ -40,7 +40,7 @@ h1 {
     text-align: center;
     justify-content: center;
     margin: 20px 0 50px 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .mainIndex a {
@@ -120,8 +120,8 @@ body {
     flex-direction: row;
 
     height: 24px;
-
-    font-family: 'Helvetica';
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
 }
 
 .mainHeader ul::after {
@@ -209,7 +209,10 @@ body {
 /****   SELECT  *****/
 
 /********************/
-
+.mainSelect{
+    height: 48vh;
+    padding-top: 170px;
+}
 .mainSelect div {
     width: 60%;
     text-align: justify;
@@ -390,6 +393,7 @@ body {
     font-family: inherit;
     font-size: 30px;
     border :none;
+    outline: none;
     color: #2D2D2D;
     border-radius: 20px;
     transition: 0.2s;
@@ -545,6 +549,7 @@ body {
 
 .tutoButton {
     height: 50px;
+    outline: none;
     width: 50px;
     background-color: #4cd1cb;
     font-size: 40px;
@@ -645,7 +650,7 @@ body {
     box-sizing: border-box;
     width: 100%;
     font: 16px sans-serif;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     text-align: left;
     overflow: hidden;
     display: flex;
@@ -689,6 +694,7 @@ body {
 .footer .footer-links a {
     text-decoration: none;
     color: inherit;
+    font-weight: 700;
 
 }
 
@@ -781,6 +787,7 @@ body {
     background-color: #33383b;
     color: darkgrey;
     border: 0;
+    outline: none;
     padding: 15px 50px;
     float: right;
     cursor: pointer;
@@ -851,7 +858,7 @@ body {
 .equipe {
     padding: 10vh 10vw 0 10vw;
     text-align: left;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     color: #2D2D2D;
 }
 
@@ -897,7 +904,7 @@ body {
 .unePhoto figcaption {
     color: white;
     padding-bottom: 15px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
 }
 
 .enDessous {
@@ -970,6 +977,7 @@ body {
     background-color: #33383b;
     color: white;
     border: 0;
+    outline: none;
     padding: 10px;
 
 }
@@ -1006,6 +1014,7 @@ body {
 /* === rank.php === */
 
 .mainRank table {
+    font-family: 'Montserrat', sans-serif;
     width: 50%;
     border-collapse: collapse;
     font-size: 20px;
@@ -1017,6 +1026,7 @@ body {
 }
 
 .mainRank th {
+    font-weight: normal;
     font-size: 30px;
     padding: 10px 20px 10px 20px;
 }

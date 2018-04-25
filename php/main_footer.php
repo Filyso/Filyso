@@ -19,9 +19,9 @@
 
 
                 <p class="footer-links">
-                    <a href="./about.php">L'équipe</a> ·
-                    <a href="./about.php">Boîte à idée</a> ·
-                    <a href="./about.php">À venir</a>
+                    <a href="./about.php#equipe">L'équipe</a> ·
+                    <a href="./about.php#idee">Boîte à idée</a> ·
+                    <a href="./about.php#avenir">À venir</a>
 
                 </p>
 
