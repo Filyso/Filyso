@@ -15,23 +15,23 @@
 
     <main class="preGamePage">
         <h1>Sélectionnez la langue et la catégorie</h1>
-        <form action="./solo_game.php" method="post">
+        <form action="./solo_game.php" method="get">
 
-            <fieldset class="section" >
+            <fieldset class="section">
                 <div class="container">
-                    
+
                     <input type="radio" name="langue" id="français" value="fr" class="inputRadio" required />
                     <label for="français"><img src="../images/FR.png" alt="drapeau français"></label>
                 </div>
 
                 <div class="container">
-                    
-                    <input type="radio" name="langue" id="anglais" value="en" class="inputRadio"/>
+
+                    <input type="radio" name="langue" id="anglais" value="en" class="inputRadio" />
                     <label for="anglais"><img src="../images/UK.png" alt="drapeau anglais"></label>
                 </div>
 
                 <div class="container">
-                    
+
                     <input type="radio" name="langue" id="bilingue" value="bilingue" class="inputRadio" checked/>
                     <label for="bilingue"><img src="../images/FRUK.png" alt="drapeau bilingue"></label>
                 </div>
@@ -40,12 +40,36 @@
             <fieldset>
                 <div>
                     <label for="categorie">Catégorie</label>
-                    <select id="categorie">
+                    <select id="categorie" name="categorie">
                         <option value="0">Toutes les catégories</option>
-                        <option value="1">Pop</option>
-                        <option value="2">Rock</option>
-                        <option value="3">Metal</option>
-                        <option value="4">Disney</option>
+                        <?php
+                            try {
+                            // ETAPE 1 : Se connecter au serveur de base de données
+                                require("./param.inc.php");
+                                $pdo = new PDO("mysql:host=".MYHOST.";dbname=".MYDB, MYUSER, MYPASS);
+                                $pdo->query("SET NAMES utf8");
+                                $pdo->query("SET CHARACTER SET 'utf8'");
+
+                            // ETAPE 2 : Envoyer une requête SQL (demander la liste des données)
+                                $requeteSQL = "SELECT idCat, nameCat FROM CATEGORIES";
+                                $statement = $pdo->query($requeteSQL);
+
+                            // ETAPE 3 : Traiter les données retourner
+                                $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                                while($ligne != false) {
+                        ?>
+                        <option value="<?php echo($ligne["idCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
+                            
+                        <?php
+                                    $ligne = $statement->fetch(PDO::FETCH_ASSOC);
+                                }
+                            // Fin de la boucle
+                            // ETAPE 4 : Déconnecter du serveur
+                                $pdo = null;
+                            } catch (Exception $e) {
+                                echo($e);
+                            }
+                        ?>
                     </select>
                 </div>
 

@@ -95,7 +95,6 @@
                 <select id="catSong" size="1" type="text" name="catSong" required>
                         
                     <option value="" disabled selected>Choisissez une catégorie</option>
-                    <option value="1" >test</option>
                     <?php
                         try {
                         // ETAPE 1 : Se connecter au serveur de base de données
