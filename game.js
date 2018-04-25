@@ -76,13 +76,16 @@ function swap(evt){
             
         }
     }
+    /*if(evt.data == YT.PlayerState.PAUSE){
+        this.playVideo();
+    }*/
     if(evt.data == YT.PlayerState.ENDED && verifMemory){
         stateChangeTamponMemory = [];
         verifMemory = false;
         document.getElementById("ytplayer").style.display = "none"; 
         
         document.getElementsByClassName("contenu")[0].style.display = "block";
-        //timerStart();
+        timerStart();
         document.getElementById("numQuestion").textContent="Question n° "+(numQuest+1);
         document.getElementById("phraseACompleter").textContent=tabMusique[numQuest].quest;
 
@@ -113,7 +116,9 @@ function swap(evt){
 }
 function verfierReps(evt){
     //window.addEventListener("click",stopProp,true);
-    
+    for(var rep of reps){
+            rep.removeEventListener("click",verfierReps);
+    }
     if(!timeOut){
         if(this.value==tabMusique[numQuest].reponse){
             this.style.backgroundColor="#3df22d";

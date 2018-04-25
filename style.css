@@ -503,7 +503,9 @@ body {
 /**************************************/
 
 /*****Général*****/
-
+.ytplayer{
+    pointer-events: none;
+}
 
 .sectionSolo {
     display: flex;
