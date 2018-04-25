@@ -4,6 +4,7 @@
 
     <head>
         <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
     </head>
 
     <body>
@@ -13,11 +14,11 @@
                 <ul>
 
                     <li>
-                        <a href="index.php">Accueil</a>
+                        <a href="index.php">ACCUEIL</a>
                     </li>
 
                     <li>
-                        <a href="./select_game.php">Jouer</a>
+                        <a href="./select_game.php">JOUER</a>
                     </li>
 
                     <li class="mainLogo">
@@ -25,11 +26,11 @@
                     </li>
 
                     <li>
-                        <a href="rank.php">Classement</a>
+                        <a href="rank.php">CLASSEMENT</a>
                     </li>
 
                     <li>
-                        <a href="login.php">Connexion</a>
+                        <a href="login.php">CONNEXION</a>
                     </li>
 
                 </ul>
