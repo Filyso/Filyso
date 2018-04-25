@@ -46,7 +46,7 @@
                     <p id="numQuestion" class="numQuestion">Question n°1</p>
                     
                 </div>
-            
+                
                 <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
                 
                 <div class="reponses">
