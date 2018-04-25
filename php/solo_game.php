@@ -26,16 +26,16 @@
             <div class="popup_regle">
                 <div class="popup-content_regle">
                     <span class="close_regle">&times;</span>
-                    <h2>REGLES</h2>
+                    <h2>RÈGLES</h2>
                     <ul>
                         <li>
-                            <p>É</p>
+                            <p>Écoutez la chanson diffusée par la vidéo ;</p>
                         </li>
                         <li>
-                            <p></p>
+                            <p>Des propositions de réponse vont s'afficher ;</p>
                         </li>
                         <li>
-                            <p></p>
+                            <p>Cliquer sur la bonne proposition pour compléter la phrase !</p>
                         </li>
                     </ul>
                 </div>

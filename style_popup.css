@@ -108,3 +108,9 @@ body {
     text-decoration: none;
     cursor: pointer;
 }
+.popup-content_regle ul{
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    list-style-image: url(images/list.png);
+}
