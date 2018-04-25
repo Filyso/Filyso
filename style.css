@@ -107,7 +107,9 @@ body {
     text-decoration: none;
     font-size: 28px;
 }
-
+.mainHeader p:hover{
+    cursor: pointer;
+}
 .mainHeader a:hover {
     color: lightgrey;
 }

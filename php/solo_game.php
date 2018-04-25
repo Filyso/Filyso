@@ -2,76 +2,96 @@
 	header("Content-type: text/html; charset: UTF-8");
 ?>
 
-<!DOCTYPE html>
-<html lang="fr">
+    <!DOCTYPE html>
+    <html lang="fr">
 
-<head>
+    <head>
 
-    <meta charset="utf-8">
-    <title>Jeu en Solo</title>
-    <meta name="description" content="Jouez !">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../style.css"/>
+        <meta charset="utf-8">
+        <title>Jeu en Solo</title>
+        <meta name="description" content="Jouez !">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+        <link rel="stylesheet" type="text/css" href="../style_popup.css" />
+        <script type="text/javascript" src="../javascript/popup_regles.js"></script>
     <script type="text/javascript" src="../game.js"></script>
-</head>
 
-<body>
-    <?php include("./main_header.php");?>
-    
-    <main class="mainJeuSolo">
-
-        <section class="sectionSolo">
-            
         
-            <div id="ytplayer" class="ytplayer"></div>
-            <div class="score">
-            
-                <figure>
-                    <img alt="Photo de profil" src="../images/chat.jpg"/>
-                </figure>
-                
-                <div class="barScoreMax">
-                    <div class="barScore">
-                    </div>
+    </head>
+
+    <body>
+        <?php include("./main_header.php");?>
+
+        <main class="mainJeuSolo">
+
+            <div class="popup_regle">
+                <div class="popup-content_regle">
+                    <span class="close_regle">&times;</span>
+                    <h2>RÈGLES</h2>
+                    <ul>
+                        <li>
+                            <p>Écoutez la chanson diffusée par la vidéo ;</p>
+                        </li>
+                        <li>
+                            <p>Des propositions de réponse vont s'afficher ;</p>
+                        </li>
+                        <li>
+                            <p>Cliquer sur la bonne proposition pour compléter la phrase !</p>
+                        </li>
+                    </ul>
                 </div>
-            
             </div>
-            
-            <div class="contenu">
-                
-                <div class="numEtTuto">
 
-                    <input type="button" value="?" id="tutoButton" class="tutoButton"/>
-            
-                    <p id="numQuestion" class="numQuestion">Question n°1</p>
-                    
-                </div>
-            
-                <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
-                
-                <div class="reponses">
-                    <div class="Sousreponses">
-                        <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton"/>
+            <section class="sectionSolo">
 
-                        <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton"/>
+                <div class="score">
+
+                    <figure>
+                        <img alt="Photo de profil" src="../images/chat.jpg" />
+                    </figure>
+
+                    <div class="barScoreMax">
+                        <div class="barScore">
+                        </div>
                     </div>
+
+                </div>
+
+                <div class="contenu">
+
+                    <div class="numEtTuto">
+
+                        <input type="button" value="?" id="tutoButton" class="tutoButton" />
+
+                        <p id="numQuestion" class="numQuestion">Question n°1</p>
+
+                    </div>
+
+                    <p id="phraseACompleter" class="phraseACompleter">Phrase à compléter</p>
+
+                    <div class="reponses">
+                        <div class="Sousreponses">
+                            <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton" />
+
+                            <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton" />
+                        </div>
                         <div class="divTimer">
                             <p id="timer" class="timer">10</p>
                         </div>
-                    <div class="Sousreponses">
-                        <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton"/>
+                        <div class="Sousreponses">
+                            <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton" />
 
-                        <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton"/>
+                            <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton" />
+                        </div>
                     </div>
+
                 </div>
-                
-            </div>
-            
-        </section>
 
-    </main>
+            </section>
 
-    <?php include("./main_footer.php");?>
-</body>
+        </main>
 
-</html>
+        <?php include("./main_footer.php");?>
+    </body>
+
+    </html>
