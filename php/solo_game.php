@@ -48,17 +48,17 @@
                 
                 <div class="reponses">
                     <div class="Sousreponses">
-                        <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton"/>
+                        <button id="reponse1Button" class="reponseButton"></button>
 
-                        <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton"/>
+                        <button id="reponse2Button" class="reponseButton"></button>
                     </div>
                         <div class="divTimer">
                             <p id="timer" class="timer">00</p>
                         </div>
                     <div class="Sousreponses">
-                        <input type="button" value="Réponse n°3" id="reponse3Button" class="reponseButton"/>
+                        <button id="reponse3Button" class="reponseButton"></button>
 
-                        <input type="button" value="Réponse n°4" id="reponse4Button" class="reponseButton"/>
+                        <button id="reponse4Button" class="reponseButton"></button>
                     </div>
                 </div>
                 
