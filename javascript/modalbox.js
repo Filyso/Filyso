@@ -1,29 +1,33 @@
-document.addEventListener("DOMContentLoaded", initialiser);
+(function () {
+    "use strict";
+    document.addEventListener("DOMContentLoaded", initialiser);
 
-var modal;
+    var modal;
 
-function initialiser(evt) {
+    function initialiser(evt) {
 
-    modal = document.getElementById("myModal");
+        modal = document.querySelector(".modal");
 
-    modal.style.visibility = "hidden";
-
-    var btn = document.getElementById("myBtn");
-    btn.addEventListener("click", show);
-
-    var span = document.getElementsByClassName("close");
-    span[0].addEventListener("click", hide);
-
-}
-
-function show(evt) {
-    modal.style.visibility = "visible";
-    modal.classList.add("is-open");
-}
-
-function hide(evt) {
-    modal.classList.remove("is-open");
-    modal.addEventListener("transitionend", function () {
         modal.style.visibility = "hidden";
-    })
-}
+        var btn = document.getElementById("myBtn");
+        btn.addEventListener("click", show);
+    }
+
+    function show(evt) {
+        modal.style.visibility = "visible";
+        modal.classList.toggle("is-open");
+        
+        var span = document.getElementsByClassName("close");
+        span[0].addEventListener("click", hide);
+    }
+
+    function hide(evt) {
+        modal.classList.toggle("is-open");
+        modal.addEventListener("transitionend", cacher);
+    }
+
+    function cacher(evt) {
+        modal.removeEventListener("transitionend",cacher);
+        modal.style.visibility = "hidden";
+    }
+}());
