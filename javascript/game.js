@@ -13,6 +13,7 @@ var verifMemory = false;
 var timeOut = false;
 var scoreGeneral = 0;
 var scoreGeneralPourcent = 0;
+var nbGoodAnswer = 0;
 
 var musique1 = new Musique("Basique", "Orelsan", "2bjk26RwjyU", 58, 72, "Les mecs les plus fous sont souvent", "les mecs les plus tristes", "les hommes les plus tristes", "les types les plus activistes", "les mecs les plus alcoolique");
 
@@ -131,6 +132,7 @@ function verfierReps(evt) {
     }
     if (!timeOut) {
         if (this.value == tabMusique[numQuest].reponse) {
+            nbGoodAnswer = nbGoodAnswer +1;
             this.style.backgroundColor = "#3df22d";
             stopTimer();
             calculScore();
@@ -143,13 +145,14 @@ function verfierReps(evt) {
         document.getElementsByClassName("divTimer")[0].style.borderColor = "red";
     }
 
-    if (numQuest < 6) {
-        setTimeout(function () {
+    
+    setTimeout(function () {
+        if (numQuest < 6) {
             numQuest = numQuest + 1;
             document.getElementsByClassName("contenu")[0].style.display = "none";
             document.getElementById("ytplayer").style.display = "block";
 
-            player.loadVideoById({
+                player.loadVideoById({
                 videoId: tabMusique[numQuest].url,
                 startSeconds: tabMusique[numQuest].timeCodeStart,
                 endSeconds: tabMusique[numQuest].timeCodeEnd,
@@ -159,23 +162,31 @@ function verfierReps(evt) {
             reps[1].style.backgroundColor = "#784199";
             reps[2].style.backgroundColor = "#784199";
             reps[3].style.backgroundColor = "#784199";
+        } else {
+            var childMain = document.querySelectorAll(".mainJeuSolo > *");
+            for (var currentElem of childMain) {
+                 currentElem.style.display = "none";
+            }
+//            document.getElementsByClassName("contenu")[0].style.display = "none";
+//            document.getElementById("ytplayer").style.display = "none";
+            document.querySelector(".resultat").style.display = "flex";
+            document.getElementById("chiffreScoreResultat").textContent = scoreGeneral;
+            document.getElementById("nbBonneReponse").textContent = nbGoodAnswer;
+            document.querySelector("main").className = "mainResultat";
+        }
             //player.addEventListener("onStateChange",swap);
             //window.removeEventListener("click",stopProp);
         }, 2000);
-    } else {
-        document.getElementsByClassName("contenu")[0].style.display = "none";
-        document.getElementById("ytplayer").style.display = "none";
-    }
-
 }
 
-function stopProp(evt) {
+/*function stopProp(evt) {
     evt.stopPropagation();
-}
+}*/
 
 function initialiser(evt) {
     document.getElementsByClassName("barScore")[0].style.height = 0 + "%";
-
+    
+    document.querySelector(".resultat").style.display = "none";
 }
 
 
@@ -237,9 +248,9 @@ function calculScore() {
     var tempsCourant = timerSec + (timerMilli / 100);
 
 
-    if (numQuest == 7) {
+    if (numQuest == 6) {
 
-        var tempsInitial = 20;
+        var tempsInitial = 10;
         var scoreMax = 40;
 
     } else {

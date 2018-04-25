@@ -23,7 +23,7 @@
                 </div>
                 <div class="partieDroite">
                     <div class="bonnesReponses">
-                        <p class="nbBonneReponse">6</p>
+                        <p class="nbBonneReponse" id="nbBonneReponse">6</p>
                         <p class="txtBonnesReponses">bonnes réponses</p>
                     </div>
                     <a href="pre_game_page.php"><button type="button" class="btnRejouer"><img src="../images/fleche.png" alt="fleche pour rejouer" class="imgReplay"><p>Rejouer</p></button></a>

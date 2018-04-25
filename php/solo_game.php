@@ -12,9 +12,8 @@
         <meta name="description" content="Jouez !">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:600,900" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="../style.css" />
-        <link rel="stylesheet" type="text/css" href="../style_popup.css" />
         <script type="text/javascript" src="../javascript/popup_regles.js"></script>
-        <script type="text/javascript" src="../game.js"></script>
+        <script type="text/javascript" src="../javascript/game.js"></script>
 
         <?php
     if(isset($_GET["categorie"])){
@@ -194,8 +193,34 @@
                     </div>
 
             </section>
+            
+            <div class="resultat">
+                <div class="partieGauche">
+                    <div class="cercleScore">
+                        <p class="scoreResultat">Score</p>
+                        <p class="chiffreScoreResultat" id="chiffreScoreResultat">85</p>
+                        <button type="button" class="btnSaveScore">Enregistrer</button>
+                    </div>
+                    <div class="partageReseaux">
+                        <img src="../images/share-on-facebook.png" alt="partager sur facebook">
+                        <img src="../images/share-twitter.png" alt="partager sur twitter">
+                    </div>
+                </div>
+                <div class="partieDroite">
+                    <div class="bonnesReponses">
+                        <p class="nbBonneReponse" id="nbBonneReponse">6</p>
+                        <p class="txtBonnesReponses">bonnes réponses</p>
+                    </div>
+                    <a href="pre_game_page.php"><button type="button" class="btnRejouer"><img src="../images/fleche.png" alt="fleche pour rejouer" class="imgReplay"><p>Rejouer</p></button></a>
+                    <div class="badgesObtenus">
+                        <img src="../images/tropheeexemple.png" alt="exemples de badges gagnés">
+                        <p>Badges obtenus</p>
+                    </div>
+                </div>
+            </div>
 
         </main>
+        
 
         <?php include("./main_footer.php");?>
     </body>
