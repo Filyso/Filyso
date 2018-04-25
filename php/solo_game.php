@@ -1,6 +1,19 @@
 <?php
     
 	header("Content-type: text/html; charset: UTF-8");
+
+?>
+
+    <!DOCTYPE html>
+    <html lang="fr">
+
+    <head>
+
+        <meta charset="utf-8">
+        <title>Jeu en Solo</title>
+        <meta name="description" content="Jouez !">
+        <link rel="stylesheet" type="text/css" href="../style.css" />
+<?php
     if(isset($_GET["categorie"])){
      // ETAPE 1 : Se connecter au serveur de base de données
         try {
@@ -39,33 +52,46 @@
             }
                
             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
-
+?>
+        <script> 
+<?php            
             while($ligne != false) {
-                echo($ligne["nameSong"])."\n";
+                
+                $startTime;
+                $time0 = $ligne["startTimeCode"];
+                $timeSegment0 = explode(":",$time0);
+                $minute0 = intval($timeSegment0[1]);
+                $seconde0 = intval($timeSegment0[2]);
+                $startTime = 60*$minute0 + $seconde0;
+                
+                $endTime;
+                $time1 = $ligne["timeCode"];
+                $timeSegment1 = explode(":",$time1);
+                $minute1 = intval($timeSegment1[1]);
+                $seconde1 = intval($timeSegment1[2]);
+                $endTime = 60*$minute1 + $seconde1;                                   
+?>        
+            
+            var musique1 = new Musique(<?php echo('"'.$ligne["nameSong"].'"') ?> , <?php echo('"'.$ligne["nameArtist"].'"') ?> , "2bjk26RwjyU", <?php echo('"'.$startTime.'"') ?> , <?php echo('"'.$endTime.'"') ?> , <?php echo('"'.$ligne["previousLyrics"].'"') ?> , <?php echo('"'.$ligne["trueRep"].'"') ?> , <?php echo('"'.$ligne["falseRep1"].'"') ?> , <?php echo('"'.$ligne["falseRep2"].'"') ?> , <?php echo('"'.$ligne["falseRep3"].'"') ?>;
+                
+<?php
                 $ligne = $statement->fetch(PDO::FETCH_ASSOC);
             }
-
+?>
+            </script>
+<?php                                   
         // ETAPE 3 : Déconnecter du serveur
-
+                                           
             $pdo = null;
         
         } catch (Exception $e){
             echo($e);
         }
+                                           
     }
 
 ?>
-
-    <!DOCTYPE html>
-    <html lang="fr">
-
-    <head>
-
-        <meta charset="utf-8">
-        <title>Jeu en Solo</title>
-        <meta name="description" content="Jouez !">
-        <link rel="stylesheet" type="text/css" href="../style.css" />
-
+   
     </head>
 
     <body>
