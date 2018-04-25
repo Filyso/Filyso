@@ -15,7 +15,7 @@ var scoreGeneral = 0;
 var scoreGeneralPourcent = 0;
 var nbGoodAnswer = 0;
 
-var musique1 = new Musique("Basique", "Orelsan", "2bjk26RwjyU", 58, 72, "Les mecs les plus fous sont souvent", "les mecs les plus tristes", "les hommes les plus tristes", "les types les plus activistes", "les mecs les plus alcoolique");
+/*var musique1 = new Musique("Basique", "Orelsan", "2bjk26RwjyU", 58, 72, "Les mecs les plus fous sont souvent", "les mecs les plus tristes", "les hommes les plus tristes", "les types les plus activistes", "les mecs les plus alcoolique");
 
 var musique2 = new Musique("Nothing Else Matters", "Metallica", "tAGnKpE4NCI", 120, 134, "Never cared for what they do", "Never cared for what they know", "Never cared for what they show", "Never cared for what they say", "Never cared for games they play");
 
@@ -29,7 +29,7 @@ var musique6 = new Musique("Les Lacs du Connemara", "Michel Sardou", "bpEmjxobvb
 
 var musique7 = new Musique("Take On Me", "a-ha", "djV11Xbc914", 35, 58, "Take on me,", "Take me on", "Take on me", "Take on you", "Take you on");
 
-var tabMusique = new Array(musique1, musique2, musique3, musique4, musique5, musique6, musique7);
+var tabMusique = new Array(musique1, musique2, musique3, musique4, musique5, musique6, musique7);*/
 melangeMusique();
 
 

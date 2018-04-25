@@ -121,7 +121,7 @@
     }
 
 ?>
-        <script type="text/javascript" src="../game.js"></script>
+        <script type="text/javascript" src="../javascript/game.js"></script>
     </head>
 
     <body>
