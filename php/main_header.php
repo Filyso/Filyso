@@ -5,6 +5,8 @@
     <head>
         <link rel="stylesheet" href="../style.css" type="text/css" media="screen" />
         <link href="https://fonts.googleapis.com/css?family=Raleway:300,500,700" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="../style_popup_login.css" />
+        <script type="text/javascript" src="../javascript/popup_login.js"></script>
     </head>
 
     <body>
@@ -22,7 +24,7 @@
                     </li>
 
                     <li class="mainLogo">
-                        <img src="../images/logo.png"/>
+                        <img src="../images/logo.png" />
                     </li>
 
                     <li>
@@ -30,11 +32,21 @@
                     </li>
 
                     <li>
-                        <a href="login.php">CONNEXION</a>
+                        <p class="login">CONNEXION</p>
                     </li>
 
                 </ul>
-
             </nav>
+            <div class="popup">
+                <div class="popup-content">
+                    <span class="close">&times;</span>
+                    <form>
+                        <input id="email" type="email" required="required" name="email" placeholder="Adresse Email..." >
+                        <input id="passwd" type="password" required="required" name="passwd" placeholder="Mot de passe..." >
+                        <button type="submit">SE CONNECTER</button>
+                    </form>
+                </div>
+            </div>
         </header>
+
     </body>

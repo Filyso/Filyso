@@ -1,55 +1,58 @@
+/***************************/
+
+/***    POPUP CONNEXION   **/
+
+/***************************/
+
 body {
     position: relative;
 }
 
-#myBtn {
-    text-align: center;
-    line-height: 10px;
-    width: 80px;
-    height: 40px;
-    background-color: #784199;
-    color: white;
-    border-radius: 8px;
-    /*Placement du bouton*/
-    position: absolute;
-    right: 20px;
-    top: 120px;
-    cursor: pointer;
-}
-
-.modal {
+.popup {
     display: block;
     opacity: 0;
     transition: opacity linear .2s;
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4);
     animation-play-state: running;
-   
 }
 
 .is-open {
-     opacity: 1;
+    opacity: 1;
 }
 
-.modal-content {
+.popup-content {
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 2px solid #888;
-    width: 50%;
+    width: 40%;
+    height: 40%;
     border-radius: 18px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.popup-content form{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
 }
 
 .close {
     color: #aaa;
-    float: right;
     font-size: 28px;
     font-weight: bold;
+    
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 .close:hover,
