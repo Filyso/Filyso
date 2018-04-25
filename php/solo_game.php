@@ -43,7 +43,7 @@
             </div>
 
             <section class="sectionSolo">
-
+                <div id="ytplayer" class="ytplayer"></div>
                 <div class="score">
 
                     <figure>
