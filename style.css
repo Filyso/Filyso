@@ -40,6 +40,7 @@ h1 {
     text-align: center;
     justify-content: center;
     margin: 20px 0 50px 0;
+    font-weight: 300;
     font-family: 'Raleway', sans-serif;
 }
 
@@ -54,7 +55,8 @@ h1 {
     padding: 20px 0 20px 0;
     border-radius: 20px;
     transition: 0.2s ;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
 }
 
 .mainIndex a:hover {
@@ -62,6 +64,7 @@ h1 {
     transform-origin: center;
     box-shadow: 0px 0px 0px 10px #85e0db;
     transition: 0.2s ;
+    font-weight: 500;
 }
 
 /*************************/
@@ -199,7 +202,8 @@ body {
 .mainAdmin h1,
 .mainRank h1{
     margin-top: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
 }
 
 
@@ -213,12 +217,17 @@ body {
     height: 48vh;
     padding-top: 170px;
 }
+.mainSelect h1{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+}
 .mainSelect div {
     width: 60%;
     text-align: justify;
     margin: 20px 0 50px 0;
-
-    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+   font-family: 'Raleway', sans-serif;
 
     display: flex;
     flex-direction: column;
@@ -234,7 +243,9 @@ body {
     width: 180px;
     padding: 20px 0 20px 0;
     border-radius: 20px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    transition: 0.2s;
 }
 
 .buttonMulti a {
@@ -246,20 +257,24 @@ body {
     width: 220px;
     padding: 20px 0 20px 0;
     border-radius: 30px;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    transition: 0.2s;
+    font-family: 'Raleway', sans-serif;
 }
 
 .buttonSolo a:hover {
     transition: 0.2s;
     box-shadow: 0px 0px 0px 10px #a470c2;
+    font-weight: 500;
 }
 .buttonMulti a:hover {
     transition: 0.2s;
     box-shadow: 0px 0px 0px 10px #85e0db;
+    font-weight:500;
 }
 
 .selectMulti{
-    height: 80vh;
+    height: calc(100vh - 74px);
     display: flex;
 }
 .selectMulti h1{
@@ -269,7 +284,8 @@ body {
     background-color : #2D2D2D;
     border-radius: 20px;
     color:white;
-    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-family: 'Raleway', sans-serif;
 }
 /*************************/
 
@@ -281,11 +297,12 @@ body {
     height: 80vh;
     padding: 50px;
     padding-top:150px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     text-align: center;
 }
 .preGamePage h1{
     margin-bottom: 30px;
+    font-weight: 300;
 }
 
 .preGamePage form {
@@ -334,8 +351,7 @@ body {
 .preGamePage label {
     padding: 0px 5px 0 5px;
     vertical-align: middle;
-    
-    
+    font-weight: 500;    
 }
 
 .preGamePage button[type="button"] {
@@ -344,6 +360,7 @@ body {
     border-radius: 20px;
     background-color: #4CD1CB;
     color: white;
+    font-weight: 300;
     border:none;
     font-family: inherit;
     font-size: 20px;
@@ -355,6 +372,7 @@ body {
     transform-origin: center;
     transition: 0.2s;
     cursor: pointer;
+    font-weight: 500;
     color: #2D2D2D;
     box-shadow: 0px 0px 0px 5px #85e0db;
 }
@@ -393,7 +411,9 @@ body {
     font-family: inherit;
     font-size: 30px;
     border :none;
+    font-weight: 300;
     outline: none;
+    padding: 5px 0px 5px 0px;
     color: #2D2D2D;
     border-radius: 20px;
     transition: 0.2s;
@@ -407,6 +427,7 @@ body {
     box-shadow: 0px 0px 0px 10px #a470c2;
     transition: 0.2s;
     cursor: pointer;
+    font-weight: 500;
     
 }
 
@@ -473,7 +494,7 @@ body {
 
 .sectionSolo {
     display: flex;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     min-height: calc(100vh - 74px);
 }
 
@@ -545,6 +566,7 @@ body {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
+    font-weight: 500;
 }
 
 .tutoButton {
@@ -570,6 +592,7 @@ body {
 .phraseACompleter {
     text-align: center;
     font-size: 40px;
+    font-weight: 500;
     margin-bottom: 10%;
 }
 
@@ -596,7 +619,8 @@ body {
     font-size: 25px;
     outline: none;
     transition: 0.2s;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
 }
 
 .Sousreponses {
@@ -694,7 +718,7 @@ body {
 .footer .footer-links a {
     text-decoration: none;
     color: inherit;
-    font-weight: 700;
+    font-weight: 300;
 
 }
 
@@ -864,6 +888,7 @@ body {
 
 .equipe h2 {
     padding-left: 18vw;
+    font-weight: 500;
 }
 
 .lesPhotos {
@@ -899,10 +924,12 @@ body {
 .unePhoto figcaption h3 {
     margin: 10px;
     font-weight: normal;
+    font-weight: 500;
 }
 
 .unePhoto figcaption {
     color: white;
+    font-weight: 300;
     padding-bottom: 15px;
     font-family: 'Raleway', sans-serif;
 }
@@ -912,7 +939,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 50 10vw 0 10vw;
-    font-family: 'Montserrat', sans-serif;
+   font-family: 'Raleway', sans-serif;
     padding-bottom: 10vh;
 }
 
@@ -926,11 +953,13 @@ body {
 .BoiteAIdee h2 {
     font-weight: normal;
     margin: 0;
+    font-weight: 500;
     color: white;
 }
 
 .BoiteAIdee p {
     color: white;
+    font-weight: 300;
 }
 
 .BoiteAIdee form textarea {
@@ -972,11 +1001,12 @@ body {
 
 .BoiteAIdee button {
     cursor: pointer;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     border-radius: 3px;
     background-color: #33383b;
     color: white;
     border: 0;
+    font-weight: 700;
     outline: none;
     padding: 10px;
 
@@ -993,14 +1023,18 @@ body {
     border-radius: 5px;
     background-color: #2D2D2D;
     margin-top: 50px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .AVenir h2 {
     color: white;
     font-weight: normal;
     margin: 0;
+    font-weight: 500;
 }
-
+.AVenir p{
+    font-weight: 500;
+}
 .AVenir p,
 .AVenir ul {
     color: white;
@@ -1009,12 +1043,13 @@ body {
 .AVenir li {
     padding-top: 10px;
     color: darkgrey;
+    font-weight: 300;
 }
 
 /* === rank.php === */
 
 .mainRank table {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Raleway', sans-serif;
     width: 50%;
     border-collapse: collapse;
     font-size: 20px;
@@ -1032,6 +1067,7 @@ body {
 }
 
 .mainRank td {
+    font-weight: 300;
     padding: 5px 20px 5px 20px;
 }
 
