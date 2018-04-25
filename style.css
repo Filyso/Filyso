@@ -1,6 +1,7 @@
 main {
     background: linear-gradient(90deg, #8F8F8F, #F6F6F6, #8F8F8F);
-    
+    min-height: calc(100vh - 74px);
+    box-sizing: border-box;
 }
 
 h1 {
@@ -454,7 +455,7 @@ body {
 .mainAdmin {
     color: white;
     font-family: 'Raleway', sans-serif;
-    padding-bottom: 20%;
+    padding-bottom: 5px;
     padding-top: 5px;
 }
 
@@ -1109,7 +1110,6 @@ body {
     max-width: 60vw;
     text-align: center;
     padding: 10px 30px 10px 30px;
-    max-height: 54vh;
 }
 .addSongSection h3{
     color:white;

@@ -19,9 +19,10 @@
 
                 <div>
                     <h2>Gestion de contenu</h2>
-                    <input type="button" value="Gestion de contenu" disabled="disabled" />
-                    <input type="button" value="Ajout de médias" />
-                    <input type="button" value="Modification/Suppression de médias" />
+                    <form action="./admin.php" method="get">
+                        <input type="submit" value="Ajout de médias" name="admin"/>
+                        <input type="submit" value="Modification/Suppression de médias" name="admin"/>
+                    </form>
                 </div>
 
                 <div>
@@ -30,7 +31,19 @@
                 </div>
             </header>
             
-            <?php include("./add_song_admin.php"); ?>
+            <?php 
+                if (isset($_GET["admin"])) {
+                    if ($_GET["admin"] == "Ajout de médias") {
+                        include("./add_song_admin.php");
+                    } else if ($_GET["admin"] == "Modification/Suppression de médias") {
+                        include("./modify_song_admin.php");
+                    } else {
+                        include("./add_song_admin.php");
+                    }
+                } else {
+                    include("./add_song_admin.php");
+                }
+            ?>
 
         </main>
 
