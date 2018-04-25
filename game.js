@@ -79,14 +79,13 @@ function swap(evt){
     if(evt.data == YT.PlayerState.ENDED && verifMemory){
         stateChangeTamponMemory = [];
         verifMemory = false;
-        document.getElementById("ytplayer").style.display = "none"; //player.getDuration()>(tabMusique[numQuest].timeCodeEnd - tabMusique[numQuest].timeCodeStart)
+        document.getElementById("ytplayer").style.display = "none"; 
         
-        //player.destroy();
         document.getElementsByClassName("contenu")[0].style.display = "block";
-        timerStart();
+        //timerStart();
         document.getElementById("numQuestion").textContent="Question n° "+(numQuest+1);
         document.getElementById("phraseACompleter").textContent=tabMusique[numQuest].quest;
-        //setInterval(function(){stopTimer();},2000) test
+
         reps = document.querySelectorAll(".reponses input");
         
         reps[0].value=tabMusique[numQuest].reponse;
@@ -99,8 +98,11 @@ function swap(evt){
             reps[3].style.display = "none";
         }else if(numQuest < 4){
             reps[2].style.display = "block";
+            reps[2].style.margin="auto";
+            reps[2].style.marginTop="120px";
             reps[3].style.display = "none";     
         }else if(numQuest < 7){
+            reps[2].style.margin="10px";
             reps[3].style.display = "block"; 
         }
         for(var rep of reps){
