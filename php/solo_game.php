@@ -16,7 +16,7 @@
         <script type="text/javascript" src="../javascript/popup_regles.js"></script>
         <script type="text/javascript" src="../game.js"></script>
 
-    <?php
+        <?php
     if(isset($_GET["categorie"])){
      // ETAPE 1 : Se connecter au serveur de base de données
         try {
@@ -56,22 +56,21 @@
                
             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
 ?>
-        <script> 
-            
-            function Musique(nom,nomAutheur,url,timeCodeStart,timeCodeEnd,quest,reponse,false1,false2,false3){
-                this.nom = nom;
-                this.nomAutheur = nomAutheur;
-                this.url = url;
-                this.timeCodeStart = timeCodeStart;
-                this.timeCodeEnd = timeCodeEnd;
-                this.quest = quest;
-                this.reponse = reponse;
-                this.false1 = false1;
-                this.false2 = false2;
-                this.false3 = false3;
-            }
+            <script>
+                function Musique(nom, nomAutheur, url, timeCodeStart, timeCodeEnd, quest, reponse, false1, false2, false3) {
+                    this.nom = nom;
+                    this.nomAutheur = nomAutheur;
+                    this.url = url;
+                    this.timeCodeStart = timeCodeStart;
+                    this.timeCodeEnd = timeCodeEnd;
+                    this.quest = quest;
+                    this.reponse = reponse;
+                    this.false1 = false1;
+                    this.false2 = false2;
+                    this.false3 = false3;
+                }
 
-<?php            
+                <?php            
             $currentMusic = 0;
             
             while($ligne != false) {
@@ -98,21 +97,21 @@
                 
                 $currentMusic += 1;
            
-?>        
-            
-            var musique<?php echo($currentMusic) ?> = new Musique(<?php echo('"'.$ligne["nameSong"].'"') ?> , <?php echo('"'.$ligne["nameArtist"].'"') ?> , <?php echo('"'.$url.'"') ?> , <?php echo('"'.$startTime.'"') ?> , <?php echo('"'.$endTime.'"') ?> , <?php echo('"'.$ligne["previousLyrics"].'"') ?> , <?php echo('"'.$ligne["trueRep"].'"') ?> , <?php echo('"'.$ligne["falseRep1"].'"') ?> , <?php echo('"'.$ligne["falseRep2"].'"') ?> , <?php echo('"'.$ligne["falseRep3"].'"') ?>);
-                
-<?php
+?>
+
+                var musique <?php echo($currentMusic) ?> = new Musique(<?php echo('"'.$ligne["nameSong"].'"') ?>, <?php echo('"'.$ligne["nameArtist"].'"') ?>, <?php echo('"'.$url.'"') ?>, <?php echo('"'.$startTime.'"') ?>, <?php echo('"'.$endTime.'"') ?>, <?php echo('"'.$ligne["previousLyrics"].'"') ?>, <?php echo('"'.$ligne["trueRep"].'"') ?>, <?php echo('"'.$ligne["falseRep1"].'"') ?>, <?php echo('"'.$ligne["falseRep2"].'"') ?>, <?php echo('"'.$ligne["falseRep3"].'"') ?>);
+
+                <?php
                     
             //Fin de la boucle
                     
                 $ligne = $statement->fetch(PDO::FETCH_ASSOC);
             }
 ?>
-            var tabMusique = new Array(musique1,musique2,musique3,musique4,musique5,musique6,musique7);
-            
+                var tabMusique = new Array(musique1, musique2, musique3, musique4, musique5, musique6, musique7);
+
             </script>
-<?php                                   
+            <?php                                   
         // ETAPE 3 : Déconnecter du serveur
                                            
             $pdo = null;
@@ -124,7 +123,7 @@
     }
 
 ?>
-   
+
     </head>
 
     <body>
@@ -179,20 +178,20 @@
 
                     <div class="reponses">
                         <div class="Sousreponses">
-                            <input type="button" value="Réponse n°1" id="reponse1Button" class="reponseButton" />
+                            <button id="reponse1Button" class="reponseButton"></button>
 
-                            <input type="button" value="Réponse n°2" id="reponse2Button" class="reponseButton" />
+                            <button id="reponse2Button" class="reponseButton"></button>
                         </div>
                         <div class="divTimer">
                             <p id="timer" class="timer">10</p>
                         </div>
-                    <div class="Sousreponses">
-                        <button id="reponse3Button" class="reponseButton"></button>
+                        <div class="Sousreponses">
+                            <button id="reponse3Button" class="reponseButton"></button>
 
-                        <button id="reponse4Button" class="reponseButton"></button>
+                            <button id="reponse4Button" class="reponseButton"></button>
+                        </div>
+
                     </div>
-
-                </div>
 
             </section>
 
