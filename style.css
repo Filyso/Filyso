@@ -17,7 +17,7 @@ h1 {
 .mainIndex {
     height: 54vh;
     margin: 0;
-    padding: 120px 50px 15% 50px;
+    padding: 120px 50px 50px 50px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -76,6 +76,7 @@ h1 {
 body {
     margin: 0;
     padding: 0;
+    position: relative;
 }
 
 .mainHeader {
@@ -198,7 +199,7 @@ body {
 .mainRank
 {
     margin: 0;
-    padding: 120px 50px 15% 50px;
+    padding: 120px 50px 50px 50px;
 
     display: flex;
     flex-direction: column;
@@ -1231,106 +1232,9 @@ body {
     margin: 0;
 }
 
-/***************************/
 
-/***    POPUP CONNEXION   **/
 
-/***************************/
-
-body {
-    position: relative;
-}
-
-.popup {
-    display: block;
-    opacity: 0;
-    transition: opacity linear .2s;
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    animation-play-state: running;
-}
-
-.is-open {
-    opacity: 1;
-}
-
-.popup-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    border: 2px solid #888;
-    width: 40%;
-    height: 50%;
-    border-radius: 18px;
-    position: relative;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
-}
-.popup-content form {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
-}
-.popup-content h2{
-    padding-top: 10%;
-    margin: 0;
-    font-family: 'Raleway', sans-serif;
-    font-size: 28px;
-    font-weight: 300;
-}
-
-.popup-content input {
-    height: 10%;
-    margin-bottom: 10%;
-    font-family: 'Raleway', sans-serif;
-}
-
-.popup-content input:first-child {
-    margin-top: 10%;
-}
-
-.popup-content button {
-    height: 20%;
-    width: 50%;
-    align-self: center;
-    font-family: 'Raleway', sans-serif;
-    font-size: 15px;
-    background-color: #4CD1CB;
-    border: none;
-    border-radius: 20px;
-    color: white;
-}
-.popup-content button:hover {
-    background-color: #4CD1CB;
-    transform-origin: center;
-    box-shadow: 0px 0px 0px 10px #85e0db;
-    transition: 0.2s ;
-    font-weight: 700;
-}
-.close {
-    color: #aaa;
-    font-size: 28px;
-    font-weight: bold;
-
-    position: absolute;
-    top: 0;
-    left: calc(100% - 28px);
-}
-
-.close:hover,
-.close:focus {
-    color: #784199;
-    text-decoration: none;
-    cursor: pointer;
-}
+/***********************************************/
 /***************** PAGE RESULTAT ***************/
 /***********************************************/
 
@@ -1518,4 +1422,118 @@ body {
     font-size: 20px;
     font-weight: 300;
     padding-top:20px;
+}
+
+
+/***************************/
+
+/***    POPUP TUTO   **/
+
+/***************************/
+
+.popup,
+.popup_regle{
+    display: block;
+    opacity: 0;
+    transition: opacity linear .2s;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    animation-play-state: running;
+}
+
+.is-open {
+    opacity: 1;
+}
+
+.popup-content,
+.popup-content_regle{
+    background-color: #fefefe;
+    margin: 15% auto;
+    border: 2px solid #888;
+    width: 40%;
+    height: 50%;
+    border-radius: 18px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+}
+
+.popup-content form {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.popup-content h2,
+.popup-content_regle h2{
+    padding-top: 10%;
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.popup-content input {
+    height: 10%;
+    margin-bottom: 10%;
+    font-family: 'Raleway', sans-serif;
+}
+
+.popup-content input:first-child {
+    margin-top: 10%;
+}
+
+.popup-content button {
+    height: 20%;
+    width: 50%;
+    align-self: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 15px;
+    background-color: #4CD1CB;
+    border: none;
+    border-radius: 20px;
+    color: white;
+}
+
+.popup-content button:hover {
+    background-color: #4CD1CB;
+    transform-origin: center;
+    box-shadow: 0px 0px 0px 10px #85e0db;
+    transition: 0.2s;
+    font-weight: 700;
+}
+
+.close,
+.close_regle{
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+
+    position: absolute;
+    top: 0;
+    left: calc(100% - 28px);
+}
+
+.close:hover,
+.close:focus,
+.close_regle:hover,
+.close_regle:focus {
+    color: #784199;
+    text-decoration: none;
+    cursor: pointer;
+}
+.popup-content_regle ul{
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    list-style-image: url(images/list.png);
 }
