@@ -20,19 +20,19 @@
             <fieldset class="section" >
                 <div class="container">
                     
-                    <input type="radio" name="langue" id="français" value="français" class="inputRadio" required />
+                    <input type="radio" name="langue" id="français" value="fr" class="inputRadio" required />
                     <label for="français"><img src="../images/FR.png" alt="drapeau français"></label>
                 </div>
 
                 <div class="container">
                     
-                    <input type="radio" name="langue" id="anglais" value="anglais" class="inputRadio"/>
+                    <input type="radio" name="langue" id="anglais" value="en" class="inputRadio"/>
                     <label for="anglais"><img src="../images/UK.png" alt="drapeau anglais"></label>
                 </div>
 
                 <div class="container">
                     
-                    <input type="radio" name="langue" id="bilingue" value="bilingue" class="inputR  adio"/>
+                    <input type="radio" name="langue" id="bilingue" value="bilingue" class="inputRadio" checked/>
                     <label for="bilingue"><img src="../images/FRUK.png" alt="drapeau bilingue"></label>
                 </div>
             </fieldset>
@@ -41,10 +41,11 @@
                 <div>
                     <label for="categorie">Catégorie</label>
                     <select id="categorie">
-                        <option value="pop">Pop</option>
-                        <option value="rock">Rock</option>
-                        <option value="metal">Metal</option>
-                        <option value="disney">Disney</option>
+                        <option value="0">Toutes les catégories</option>
+                        <option value="1">Pop</option>
+                        <option value="2">Rock</option>
+                        <option value="3">Metal</option>
+                        <option value="4">Disney</option>
                     </select>
                 </div>
 
