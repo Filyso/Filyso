@@ -58,8 +58,7 @@
                                 $ligne = $statement->fetch(PDO::FETCH_ASSOC);
                                 while($ligne != false) {
                         ?>
-                        <option value="<?php echo($ligne["idCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
-                            
+                        <option value="<?php echo($ligne["idCat"]);?>"><?php echo(ucfirst($ligne["nameCat"]));?></option>
                         <?php
                                     $ligne = $statement->fetch(PDO::FETCH_ASSOC);
                                 }

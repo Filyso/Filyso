@@ -35,11 +35,11 @@
 
                 $requeteSQL = "INSERT INTO TIMECODES(startTimeCode,timeCode,previousLyrics,trueRep,falseRep1,falseRep2,falseRep3,idSong) VALUES ('" . $startTimeCode . "','" . $timeCode . "', :paramPrevLyrics, :paramGoodRep, :paramBadRep1, :paramBadRep2, :paramBadRep3," . $idSong . ")";
                 $statement = $pdo->prepare($requeteSQL);
-                $statement->execute(array(":paramPrevLyrics" => $_POST["prevLyrics_".$i],
-                                          ":paramGoodRep" => $_POST["goodRep_".$i],
-                                          ":paramBadRep1" => $_POST["badRep1_".$i],
-                                          ":paramBadRep2" => $_POST["badRep2_".$i],
-                                          ":paramBadRep3" => $_POST["badRep3_".$i]));
+                $statement->execute(array(":paramPrevLyrics" => addslashes($_POST["prevLyrics_".$i]),
+                                          ":paramGoodRep" => addslashes($_POST["goodRep_".$i]),
+                                          ":paramBadRep1" => addslashes($_POST["badRep1_".$i]),
+                                          ":paramBadRep2" => addslashes($_POST["badRep2_".$i]),
+                                          ":paramBadRep3" => addslashes($_POST["badRep3_".$i])));
             }
         
             // GESTION AUTEUR
@@ -111,8 +111,7 @@
                             $ligne = $statement->fetch(PDO::FETCH_ASSOC);
                             while($ligne != false) {
                     ?>
-                    <option value="<?php echo($ligne["idCat"]);?>"><?php echo($ligne["nameCat"]);?></option>
-                            
+                    <option value="<?php echo($ligne["idCat"]);?>"><?php echo(ucfirst($ligne["nameCat"]));?></option>
                     <?php
                                 $ligne = $statement->fetch(PDO::FETCH_ASSOC);
                             }
