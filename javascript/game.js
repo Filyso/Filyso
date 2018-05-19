@@ -81,7 +81,6 @@ function onYouTubePlayerAPIReady() {
 
 function swap(evt) {
 
-
     stateChangeTamponMemory.push(evt.data);
     for (var z = 0; z < stateChangeTamponMemory.length; z++) {
         if (stateChangeTamponMemory[z] == 3) {
